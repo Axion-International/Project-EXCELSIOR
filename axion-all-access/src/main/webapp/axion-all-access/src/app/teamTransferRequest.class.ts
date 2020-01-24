@@ -1,5 +1,5 @@
 export class TeamTransferRequest {
-    team_transfer_id: number;
+    teamTransferId: number;
     status: number;
     superbeing: number;
     team: number;

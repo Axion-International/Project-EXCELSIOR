@@ -1,5 +1,5 @@
 export class PromotionRequest {
-    prom_id: number;
+    promId: number;
     status: number;
     superbeing: number;
   }

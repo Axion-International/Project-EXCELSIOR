@@ -1,5 +1,5 @@
 export class Superbeing {
-    superbeing_id: number;
+    superbeingId: number;
     user: number;
     team: number;
     location: number;
