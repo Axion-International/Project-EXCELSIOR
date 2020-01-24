@@ -10,7 +10,7 @@ local.properties
 .loadpath
 .recommenders
 
-/axion-all-access/target
+/axion-all-access/target/*
 
 # External tool builders
 .externalToolBuilders/
