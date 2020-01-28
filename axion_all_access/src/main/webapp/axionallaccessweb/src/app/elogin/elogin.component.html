@@ -1,22 +1,4 @@
 <body>
-    <!--NAV BAR-->
-    <header>
-        <nav class="navbar fixed-top"id="cNavBar">
-            <div class="container-fluid">
-              <div class="navbar-header">
-                <img class="a3Logo" style="padding-left: 3px;" src="../../assets/images/A3.svg" alt="A3 logo">
-                <img class="a3Verbage" style="padding-left: 35em; padding-top:7px" src="../../assets/images/AxionAllAccess.svg" alt="A3 verbage">
-              </div>
-                <div class="form-inline my-2 my-lg-0">
-                        <button id="btnPad" class="btn btn-outline-info my-2 my-sm-0" type="button" mdbBtn color="default" rounded="true" data-toggle="modal" data-target="#basicExample"
-                        (click)="openLogin(login)" mdbWavesEffect>Login</button>
-                </div>
-            </div>
-        </nav>
-    </header>
-    
-    
-    
     <!--CAROUSEL-->
     <div class = "container"id="spacing">
         <div id="demo" class="carousel slide" data-ride="carousel">
@@ -126,36 +108,6 @@
       <br/>
       <br/>
       <br/>
-    <!--FOOTER-->
-    <!--CHANGE SPAN TO BUTTONS-->
-    <footer class="cFoot">
-        <div class="container"style="padding-top:13px">
-            <span ><h5>about us    |    customer service    |    careers    |    terms of use    |    security    |   privacy</h5></span>
-        </div>
-    </footer>
-    </body>
-    
-    <!--LOGIN MODAL-->
-    <ng-template #login let-modal>
-        <div class="modal-header" id="loginModal">
-          <h4 id="modText">Login</h4>
-          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <form>
-        <div class="modal-body"id="loginModalBord">
-            <div class="container" style="text-align: center;">
-                <br/>
-                <input id="username" name="username" ngModel pattern="[a-zA-Z]{3,}" class="form-control" required minlength="5" [(ngModel)]="username" placeholder="Username"/>
-                <br/>
-                <input id="password" name="password" class="form-control"[(ngModel)]="password" placeholder="Password"/>
-            </div>
-            
-        </div>
-        <div class="modal-footer"id="loginModal">
-          <button id="btnPad" type="button" class="btn btn-outline-info my-2 my-sm-0" >Submit</button>
-        </div>
-        </form>
-    </ng-template>
+</body>
+
 

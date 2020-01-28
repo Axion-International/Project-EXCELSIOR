@@ -1,32 +1,176 @@
-<!--NAV BAR-->
-<header>
-    <nav class="navbar fixed-top"id="cNavBar">
-        <div class="container-fluid">
-            <div class="navbar-header">
-            <img class="a3Logo" style="padding-left: 3px;" src="../../assets/images/A3.svg" alt="A3 logo">
-            <img class="a3Verbage" style="padding-left: 35em; padding-top:7px" src="../../assets/images/AxionAllAccess.svg" alt="A3 verbage">
+<!--Checking what URL-->
+<div *ngIf="router.url === '/login'; then thenBlock else elseBlock"></div>
+<!---->
+<!--USER SIDE-->
+<!---->
+<ng-template #thenBlock>
+    <!--NAV BAR-->
+    <header>
+        <nav class="navbar fixed-top"id="cNavBar">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                <img class="a3Logo" style="padding-left: 3px;" src="../../assets/images/A3.svg" alt="A3 logo">
+                <img class="a3Verbage" style="padding-left: 35em; padding-top:7px" src="../../assets/images/AxionAllAccess.svg" alt="A3 verbage">
+                </div>
+                <div class="form-inline my-2 my-lg-0">
+                        <button id="btnPad" class="btn btn-outline-info my-2 my-sm-0" type="button" mdbBtn color="default" rounded="true" data-toggle="modal" data-target="#basicExample"
+                        (click)="openLogin(login)" mdbWavesEffect>Login</button>
+                        <div class="divider"></div>
+                        <button id="btnPad" class="btn btn-outline-info my-2 my-sm-0" type="button" mdbBtn color="default" rounded="true" data-toggle="modal" data-target="#basicExample"
+                        (click)="openRegister(registration)" mdbWavesEffect>Register</button>
+                </div>
             </div>
-            <div class="form-inline my-2 my-lg-0">
-                    <button id="btnPad" class="btn btn-outline-info my-2 my-sm-0" type="button" mdbBtn color="default" rounded="true" data-toggle="modal" data-target="#basicExample"
-                    (click)="openLogin(login)" mdbWavesEffect>Login</button>
-                    <div class="divider"></div>
-                    <button id="btnPad" class="btn btn-outline-info my-2 my-sm-0" type="button" mdbBtn color="default" rounded="true" data-toggle="modal" data-target="#basicExample"
-                    (click)="openRegister(registration)" mdbWavesEffect>Register</button>
+        </nav>
+    </header>
+
+    <router-outlet></router-outlet>
+
+    <!--FOOTER-->
+    <footer class="cFoot">
+        <div class="container"style="padding-top:13px">
+            <span ><h5><a [routerLink]="'/aboutus'">about us</a>    |    <a [routerLink]="'/cserve'">customer service</a>    |    <a [routerLink]="'/careers'">careers</a>     |    <a [routerLink]="'/employee'">employee</a>    |   <a [routerLink]="'/privacy'">privacy</a></h5></span>
+        </div>
+    </footer>
+
+</ng-template>
+
+<!---->
+<!--EMPLOYEE SIDE-->
+<!---->
+<ng-template #elseBlock>
+    <!--NAV BAR-->
+    <header>
+        <nav class="navbar fixed-top"id="cNavBarE">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                <img class="a3Logo" style="padding-left: 3px;" src="../../assets/images/A3.svg" alt="A3 logo">
+                <img class="a3Verbage" style="padding-left: 35em; padding-top:7px" src="../../assets/images/AxionAllAccess.svg" alt="A3 verbage">
+                </div>
+                <div class="form-inline my-2 my-lg-0">
+                        <button id="btnPad" class="btn btn-outline-info my-2 my-sm-0" type="button" mdbBtn color="default" rounded="true" data-toggle="modal" data-target="#basicExample"
+                        (click)="openeLogin(elogin)" mdbWavesEffect>Login</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <router-outlet></router-outlet>
+
+    <!--FOOTER-->
+    <!--CHANGE SPAN TO BUTTONS-->
+    <footer class="cFootE">
+        <div class="container"style="padding-top:13px">
+            <span ><h5><a [routerLink]="'/aboutus'">about us</a>    |    <a [routerLink]="'/cserve'">customer service</a>    |    <a [routerLink]="'/careers'">careers</a>     |    <a [routerLink]="'/login'">login</a>    |   <a [routerLink]="'/privacy'">privacy</a></h5></span>
+        </div>
+    </footer>
+</ng-template>
+
+
+<!--MODALS-->
+    <!--E LOGIN MODAL-->
+    <ng-template #elogin let-modal>
+        <div class="modal-header" id="loginModal">
+          <h4 id="modText">Login</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form>
+        <div class="modal-body"id="loginModalBord">
+            <div class="container" style="text-align: center;">
+                <br/>
+                <input id="username" name="username" ngModel pattern="[a-zA-Z]{3,}" class="form-control" required minlength="5" [(ngModel)]="username" placeholder="Username"/>
+                <br/>
+                <input id="password" name="password" class="form-control"[(ngModel)]="password" placeholder="Password"/>
+            </div>
+            
+        </div>
+        <div class="modal-footer"id="loginModal">
+          <button id="btnPad" type="button" class="btn btn-outline-info my-2 my-sm-0" >Submit</button>
+        </div>
+        </form>
+    </ng-template>
+
+    <!--LOGIN MODAL-->
+    <ng-template #login let-modal>
+        <div class="modal-header" id="loginModalBord">
+            <h4 id="modText">Login</h4>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <form>
+        <div class="modal-body"id="loginModal">
+            <div class="container" style="text-align: center;">
+                <br/>
+                <input id="username" name="username" ngModel pattern="[a-zA-Z]{3,}" class="form-control" required minlength="5" [(ngModel)]="username" placeholder="Username"/>
+                <br/>
+                <input id="password" name="password" class="form-control"[(ngModel)]="password" placeholder="Password"/>
+            </div>
+            
+        </div>
+        <div class="modal-footer"id="loginModalBord">
+            <button id="btnPad" type="button" class="btn btn-outline-info my-2 my-sm-0" >Submit</button>
+        </div>
+        </form>
+    </ng-template>
+
+    <!--REGISTER MODAL-->
+    <ng-template #registration let-modal>
+        <div class="modal-header" id="loginModalBord">
+            <h4 id="modText">Register</h4>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <form>
+        <div class="modal-body"id="loginModal">
+            <div class="container" style="text-align: center;">
+                <h4 id="modText">Please enter your information</h4>
+                <table align="center">
+                    <tr>
+                        <td><h5 id="modText">Super Name:</h5></td>
+                        <td><input id="sName" name="sName" class="form-control"[(ngModel)]="sName" placeholder="Super Name"/></td>
+                        <td></td>
+                        <td><h5 id="modText">Strength:</h5></td>
+                        <td><input type="number" id="strength" name="strength" class="form-control"[(ngModel)]="str" placeholder="Strength"/></td>
+                    </tr>
+                    <tr>
+                        <td><h5 id="modText">First Name:</h5></td>
+                        <td><input id="fName" name="fName" class="form-control"[(ngModel)]="fName" placeholder="First Name"/></td>
+                        <td></td>
+                        <td><h5 id="modText">Constitution:</h5></td>
+                        <td><input type="number" id="constitution" name="constitution" class="form-control"[(ngModel)]="con" placeholder="Constitution"/></td>
+                    </tr>
+                    <tr>
+                        <td><h5 id="modText">Last Name:</h5></td>
+                        <td><input id="lName" name="lName" class="form-control"[(ngModel)]="lName" placeholder="Last Name"/></td>
+                        <td></td>
+                        <td><h5 id="modText">Agility:</h5></td>
+                        <td><input type="number" id="agility" name="agility" class="form-control"[(ngModel)]="agi" placeholder="Agility"/></td>
+                    </tr>
+                    <tr>
+                        <td><h5 id="modText">Age:</h5></td>
+                        <td><input type="number" id="age" name="age" class="form-control"[(ngModel)]="age" placeholder="Age"/></td>
+                        <td></td>
+                        <td><h5 id="modText">Intelligence:</h5></td>
+                        <td><input type="number" id="intelligence" name="intelligence" class="form-control"[(ngModel)]="int" placeholder="Intelligence"/></td>
+                    </tr>
+                </table>
+                <br/>
+
+                <div class="container" style="padding: 0 23em">
+                    <h5 id="modText">Username:</h5>
+                    <span ><input id="username" name="username" class="form-control" [(ngModel)]="username" placeholder="Username"/></span>
+                    <h5 id="modText">Password:</h5>
+                    <input id="password" name="password" class="form-control" [(ngModel)]="password1" placeholder="Password"/>
+                    <h5 id="modText">Verify Password:</h5>
+                    <input id="password" name="password" class="form-control" [(ngModel)]="password2" placeholder="Password"/>
+                </div>
             </div>
         </div>
-    </nav>
-</header>
-
-<app-login></app-login>
-<!-- <app-elogin></app-elogin> -->
-<!-- <router-outlet></router-outlet> -->
-
-<!--FOOTER-->
-<!--CHANGE SPAN TO BUTTONS-->
-<footer class="cFoot">
-    <div class="container"style="padding-top:13px">
-        <span ><h5>about us    |    customer service    |    careers    |    <button router-link = "/employee">employee</button>    |   privacy</h5></span>
-        <!-- <a [router-link] = "">about us</a><h5> | </h5><a [router-link] = "">customer service</a><h5> | </h5>
-        <a [router-link] = "">careers</a><h5> | </h5><a [router-link] = "">employee</a><h5> | </h5><a [router-link] = "">privacy</a><h5> | </h5> -->
-    </div>
-</footer>
+        <div class="modal-footer"id="loginModalBord">
+            <button id="btnPad" class="btn btn-outline-info my-2 my-sm-0" type="button" mdbBtn color="default" rounded="true" data-toggle="modal" data-target="#basicExample" mdbWavesEffect>Submit</button>
+        </div>
+        </form>
+    </ng-template>

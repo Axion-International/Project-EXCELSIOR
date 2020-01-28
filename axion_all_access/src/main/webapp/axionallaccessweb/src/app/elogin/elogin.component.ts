@@ -10,15 +10,10 @@ import { Router } from '@angular/router';
 export class EloginComponent implements OnInit {
   modalOptions : NgbModalOptions;
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal, public router: Router) { }
 
   ngOnInit() {
   }
-  openLogin(login) {
-    this.modalService.open(login, { 
-    backdrop:'static',
-    backdropClass:'customBackdrop',
-    centered: true });
-  }
+
 }
 

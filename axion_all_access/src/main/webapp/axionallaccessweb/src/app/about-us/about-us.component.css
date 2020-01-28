@@ -1,0 +1,9 @@
+body{
+    background-image: url(../../assets/images/bckgrnd_1.jpg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: top ;
+    background-color: #9ba8b6;
+}
+.jumbotron{
+    background-color: rgba(133, 133, 147, .4);
+}
