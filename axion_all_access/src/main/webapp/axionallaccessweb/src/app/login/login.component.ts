@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal, ModalDismissReasons, NgbModalOptions} from '@ng-bootstrap/ng-bootstrap';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import { Router } from '@angular/router';
 
 
 @Component({
