@@ -17,14 +17,20 @@ public class EmployeeController {
 	
 	@Autowired
 	private EmployeeService service;
+	
 	@PostMapping("/employee")
 	public User registerEmployee(@RequestBody User users) {
 		return service.registerEmployee(users);
 	}
 	
-	@GetMapping("/employee/{username}")
-	public User getUserByUsername(@PathVariable("username") String username) {
-		return service.findByUsername(username);
+//	@GetMapping("/employee/{username}")
+//	public User getUserByUsername(@PathVariable("username") String username) {
+//		return service.findByUsername(username);
+//	}
+	
+	@GetMapping("/employee/login")
+	public User authentication(@RequestBody User users) {
+		return service.authenication(users);
 	}
 	
 	

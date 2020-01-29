@@ -8,5 +8,5 @@ import com.axion.model.SuperBeing;
 @Repository
 public interface SuperBeingDao extends JpaRepository<SuperBeing, Integer> {
 	
-	public SuperBeing findbySuperName(String superName);
+	//SuperBeing findbySuperName(String superName);
 }

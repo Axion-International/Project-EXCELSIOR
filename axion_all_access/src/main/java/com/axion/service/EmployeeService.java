@@ -10,12 +10,13 @@ import com.axion.model.User;
 
 public interface EmployeeService {
 	public User registerEmployee(User users);
-	public User findByUsername(String username);
+	//public User findByUsername(String username);
+	public User authenication(User users);
 	public List<SuperBeing> getAllSuperBeings();
-	public SuperBeing getBySuperName(String superName);
+//	public SuperBeing getBySuperName(String superName);
 	public SuperBeing updateSuperBeing(SuperBeing superBeing);
 	public List<Team> getAllTeams();
-	public Team getByTeamName(String teamName);
+//	public Team getByTeamName(String teamName);
 	public void deleteTransferRequest(TeamTransferRequest teamTransferRequest);
 	public void deletePromotionRequest(PromotionRequest promotionRequest);
 	

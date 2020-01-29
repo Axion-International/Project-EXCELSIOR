@@ -1,5 +1,6 @@
 package com.axion.service;
 
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,20 +36,34 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public User findByUsername(String username) {
-		return userDao.findByUsername(username);
+	public User authenication(User users) {
+		User user = userDao.findByUsername(users.getUsername());
+		if(user == null) {
+			throw new RuntimeException("User does not exist!");
+		}
+		if(!user.getPassword().equals(users.getPassword())) {
+			System.out.println(user.getPassword() + " " + users.getPassword());
+			throw new RuntimeException("Wrong password. Try again");
+		}
+		return user;
 	}
+
+//	@Override
+//	public User findByUsername(String username) {
+//		return userDao.findByUsername(username);
+//	}
+	
 
 	@Override
 	public List<SuperBeing> getAllSuperBeings() {	
 		return superBeingDao.findAll();
 	}
 
-	@Override
-	public SuperBeing getBySuperName(String superName) {	
-		return superBeingDao.findbySuperName(superName);
-	}
-
+//	@Override
+//	public SuperBeing getBySuperName(String superName) {	
+//		return superBeingDao.findbySuperName(superName);
+//	}
+//
 	@Override
 	public SuperBeing updateSuperBeing(SuperBeing superBeing) {	
 		return superBeingDao.save(superBeing);
@@ -58,12 +73,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 	public List<Team> getAllTeams() {		
 		return teamDao.findAll();
 	}
-
-	@Override
-	public Team getByTeamName(String teamName) {	
-		return teamDao.findbyTeamName(teamName);
-	}
-
+//
+//	@Override
+//	public Team getByTeamName(String teamName) {	
+//		return teamDao.findbyTeamName(teamName);
+//	}
+//
 	@Override
 	public void deleteTransferRequest(TeamTransferRequest teamTransferRequest) {
 		teamTransferRequestDao.delete(teamTransferRequest);

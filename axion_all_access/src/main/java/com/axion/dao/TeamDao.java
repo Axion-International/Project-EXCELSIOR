@@ -9,6 +9,6 @@ import com.axion.model.Team;
 
 @Repository
 public interface TeamDao extends JpaRepository<Team, Integer> {
-	public Team findbyTeamName(String teamName);
-	public List<Team> findAllTeams();
+	//Team findByTeamName(String teamName);
+	//public List<Team> findAllTeams();
 }
