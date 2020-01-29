@@ -1,4 +1,4 @@
-// export class Alignment.Class {
-//    alignment_id: number;
-//    alignment: string;
-//  }
+export class Alignment{
+   alignment_id: number;
+   alignment: string;
+ }

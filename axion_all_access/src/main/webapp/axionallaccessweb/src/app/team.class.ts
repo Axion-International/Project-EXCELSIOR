@@ -1,7 +1,11 @@
+import { Location } from './location.class';
+import { Superbeing } from './superbeing.class';
+import { TeamStatus } from './team-status.class';
+
 export class Team {
    teamId: number;
-   teamStatus: number;
-   teamLeader: number;
-   location: number;
+   teamStatus: TeamStatus;
+   teamLeader: Superbeing;
+   location: Location;
    name: string;
  }

@@ -1,7 +1,7 @@
-import { RequestStatus.Class } from './request-status.class';
+import { RequestStatus } from './request-status.class';
 
-describe('RequestStatus.Class', () => {
+describe('RequestStatus', () => {
   it('should create an instance', () => {
-    expect(new RequestStatus.Class()).toBeTruthy();
+    expect(new RequestStatus()).toBeTruthy();
   });
 });

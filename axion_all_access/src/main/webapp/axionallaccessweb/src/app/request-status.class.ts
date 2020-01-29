@@ -1,4 +1,4 @@
-export class requestStatus {
+export class RequestStatus {
    statusId: number;
    statusName: string;
  }
