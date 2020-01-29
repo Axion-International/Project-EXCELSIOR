@@ -10,6 +10,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { CustServComponent } from './cust-serv/cust-serv.component';
 import { CareersComponent } from './careers/careers.component';
 import { PrivacyComponent } from './privacy/privacy.component';
+import { UserpageComponent } from './userpage/userpage.component';
 
 // TO INSTALL -- npm i moduleName  (ie  npm i @ng-bootstrap/ng-bootstrap)
 // REQUIRED-- npm i tslib
@@ -24,7 +25,9 @@ import { PrivacyComponent } from './privacy/privacy.component';
     AboutUsComponent,
     CustServComponent,
     CareersComponent,
-    PrivacyComponent
+    PrivacyComponent,
+    UserpageComponent
+
   ],
   imports: [
     BrowserModule,

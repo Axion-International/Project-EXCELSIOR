@@ -6,10 +6,12 @@ import { PrivacyComponent} from './privacy/privacy.component';
 import { CustServComponent} from './cust-serv/cust-serv.component';
 import { AboutUsComponent} from './about-us/about-us.component';
 import { CareersComponent } from './careers/careers.component';
+import { UserpageComponent } from './userpage/userpage.component';
 
 const routes: Routes = [
 {path: '',  redirectTo: '/login', pathMatch: 'full' },
 {path: 'login',component:LoginComponent},
+{path: 'user',component:UserpageComponent},
 {path: 'employee',component:EloginComponent},
 {path: 'privacy',component:PrivacyComponent},
 {path: 'cserve',component:CustServComponent},
