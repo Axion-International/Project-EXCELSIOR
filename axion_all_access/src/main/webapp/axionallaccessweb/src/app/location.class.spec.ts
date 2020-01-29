@@ -1,7 +1,7 @@
-import { Location.Class } from './location.class';
+import { Location } from './location.class';
 
-describe('Location.Class', () => {
+describe('Location', () => {
   it('should create an instance', () => {
-    expect(new Location.Class()).toBeTruthy();
+    expect(new Location()).toBeTruthy();
   });
 });

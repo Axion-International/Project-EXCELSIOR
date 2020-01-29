@@ -1,5 +1,8 @@
+import { Superbeing } from './superbeing.class';
+import { RequestStatus } from './request-status.class';
+
 export class PromotionRequest {
    promId: number;
-   status: number;
-   superbeing: number;
+   requestStatus: RequestStatus;
+   superbeing: Superbeing;
  }

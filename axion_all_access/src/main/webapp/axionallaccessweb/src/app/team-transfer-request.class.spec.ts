@@ -1,7 +1,7 @@
-import { TeamTransferRequest.Class } from './team-transfer-request.class';
+import { TeamTransferRequest } from './team-transfer-request.class';
 
-describe('TeamTransferRequest.Class', () => {
+describe('TeamTransferRequest', () => {
   it('should create an instance', () => {
-    expect(new TeamTransferRequest.Class()).toBeTruthy();
+    expect(new TeamTransferRequest()).toBeTruthy();
   });
 });

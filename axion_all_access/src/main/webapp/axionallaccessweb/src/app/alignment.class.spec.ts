@@ -1,7 +1,7 @@
-import { Alignment.Class } from './alignment.class';
+import { Alignment } from './alignment.class';
 
-describe('Alignment.Class', () => {
+describe('Alignment', () => {
   it('should create an instance', () => {
-    expect(new Alignment.Class()).toBeTruthy();
+    expect(new Alignment()).toBeTruthy();
   });
 });

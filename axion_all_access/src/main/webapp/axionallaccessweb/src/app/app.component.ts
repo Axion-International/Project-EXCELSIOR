@@ -9,6 +9,8 @@ import {NgbModal, ModalDismissReasons, NgbModalOptions} from '@ng-bootstrap/ng-b
 })
 export class AppComponent {
   title = 'axionallaccessweb';
+  username : string;
+  password : string;
   
   constructor(private modalService: NgbModal, public router: Router){
 
@@ -43,5 +45,7 @@ export class AppComponent {
         return  `with: ${reason}`;
       }
     }
+
+
   
 }

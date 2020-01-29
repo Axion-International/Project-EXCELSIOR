@@ -1,7 +1,7 @@
-import { Team.Class } from './team.class';
+import { Team } from './team.class';
 
-describe('Team.Class', () => {
+describe('Team', () => {
   it('should create an instance', () => {
-    expect(new Team.Class()).toBeTruthy();
+    expect(new Team()).toBeTruthy();
   });
 });

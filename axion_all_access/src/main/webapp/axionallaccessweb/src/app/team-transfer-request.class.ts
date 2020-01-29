@@ -1,6 +1,10 @@
+import { Team } from './team.class';
+import { Superbeing } from './superbeing.class';
+import { RequestStatus } from './request-status.class';
+
 export class TeamTransferRequest {
    teamTransferId: number;
-   status: number;
-   superbeing: number;
-   team: number;
+   requestStatus: RequestStatus;
+   superbeing: Superbeing;
+   team: Team;
  }

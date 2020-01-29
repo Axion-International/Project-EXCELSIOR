@@ -1,9 +1,13 @@
+import { Alignment } from './alignment.class';
+import { Team } from './team.class';
+import { Location } from './location.class';
+
 export class Superbeing {
    superbeingId: number;
    user: number;
-   team: number;
-   location: number;
-   alignment: number;
+   team: Team;
+   location: Location;
+   alignment: Alignment;
    firstname: string;
    lastname: string;
    strength: number;

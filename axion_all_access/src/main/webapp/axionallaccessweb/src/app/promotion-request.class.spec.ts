@@ -1,7 +1,7 @@
-import { PromotionRequest.Class } from './promotion-request.class';
+import { PromotionRequest } from './promotion-request.class';
 
-describe('PromotionRequest.Class', () => {
+describe('PromotionRequest', () => {
   it('should create an instance', () => {
-    expect(new PromotionRequest.Class()).toBeTruthy();
+    expect(new PromotionRequest()).toBeTruthy();
   });
 });

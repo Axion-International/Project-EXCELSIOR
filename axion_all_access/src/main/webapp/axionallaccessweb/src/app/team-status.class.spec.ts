@@ -1,7 +1,7 @@
-import { TeamStatus.Class } from './team-status.class';
+import { TeamStatus } from './team-status.class';
 
-describe('TeamStatus.Class', () => {
+describe('TeamStatus', () => {
   it('should create an instance', () => {
-    expect(new TeamStatus.Class()).toBeTruthy();
+    expect(new TeamStatus()).toBeTruthy();
   });
 });
