@@ -1,22 +1,29 @@
 package com.axion.model;
 
-import java.util.List;
-
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 @Entity
 @Table
 public class PromotionRequest {
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int promId;
 	
-	@OneToMany
-	List<SuperBeing> superbeing;
+	@OneToOne
+	SuperBeing superbeing;
 	
-	@OneToMany
-	List<RequestStatus> requestStatus;
+	@OneToOne
+	RequestStatus requestStatus;
 	
 }
