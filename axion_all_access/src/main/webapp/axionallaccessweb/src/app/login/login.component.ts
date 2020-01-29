@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   modalOptions : NgbModalOptions;
   closeResult : string;
 
-  constructor(private modalService: NgbModal, public router: Router) {  
+  constructor(private modalService: NgbModal) {  
   }
 
   ngOnInit() {

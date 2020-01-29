@@ -1,0 +1,22 @@
+<ng-template #login let-modal>
+    <div class="modal-header" id="loginModalBord">
+        <h4 id="modText">Login</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <form>
+    <div class="modal-body"id="loginModal">
+        <div class="container" style="text-align: center;">
+            <br/>
+            <input id="username" name="username" class="form-control" [(ngModel)]="user.username" placeholder="Username"/>
+            <br/>
+            <input id="password" name="password" class="form-control" [(ngModel)]="user.password" placeholder="Password"/>
+        </div>
+        
+    </div>
+    <div class="modal-footer"id="loginModalBord">
+        <button id="btnPad" type="button" class="btn btn-outline-info my-2 my-sm-0" >Submit</button>
+    </div>
+    </form>
+</ng-template>

@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class EloginComponent implements OnInit {
   modalOptions : NgbModalOptions;
 
-  constructor(private modalService: NgbModal, public router: Router) { }
+  constructor(private modalService: NgbModal) { }
 
   ngOnInit() {
   }
