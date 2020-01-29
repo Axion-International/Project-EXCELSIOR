@@ -8,6 +8,7 @@ export class Superbeing {
    team: Team;
    location: Location;
    alignment: Alignment;
+   supername : string;
    firstname: string;
    lastname: string;
    strength: number;
