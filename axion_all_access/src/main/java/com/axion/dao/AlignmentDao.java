@@ -7,5 +7,4 @@ import com.axion.model.Alignment;
 
 @Repository
 public interface AlignmentDao extends JpaRepository<Alignment, Integer>{
-	//public Alignment findAllByAlignmentType(String alignment);
 }
