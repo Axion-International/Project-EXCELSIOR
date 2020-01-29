@@ -26,6 +26,7 @@ public class SuperBeing {
 	
 	String firstName;
 	String lastName;
+	String superName;
 	int strength;
 	int constitution;
 	int agility;
