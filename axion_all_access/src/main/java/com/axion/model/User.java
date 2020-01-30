@@ -23,4 +23,5 @@ public class User {
 	String password;
 	@OneToOne
 	Role role;
+	
 }
