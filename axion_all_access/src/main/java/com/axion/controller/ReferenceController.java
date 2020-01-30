@@ -2,33 +2,35 @@ package com.axion.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.axion.model.Alignment;
 import com.axion.model.Location;
 import com.axion.model.Role;
+import com.axion.service.ReferenceService;
 
 public class ReferenceController {
-//	get all role
-//	get all alignment
-//	get all location
+
+	@Autowired
+	private ReferenceService service;
 	
 	@GetMapping("/role")
-	public List<Role> getAllRole(@RequestBody Role role) {
+	public List<Role> getAllRole() {
 		// TODO Auto-generated method stub
-		return null;
+		return service.getAllRole();
 	}
 	
 	@GetMapping("/alignment")
-	public List<Alignment> getAllAlignment(@RequestBody Alignment alignment) {
+	public List<Alignment> getAllAlignment() {
 		// TODO Auto-generated method stub
-		return null;
+		return service.getAllAlignment();
 	}
 	
 	@GetMapping("/role")
-	public List<Location> getAllRole(@RequestBody Location location) {
+	public List<Location> getAllLocation() {
 		// TODO Auto-generated method stub
-		return null;
+		return service.getAllLocation();
 	}
 }

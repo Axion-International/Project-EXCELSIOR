@@ -3,7 +3,6 @@ package com.axion.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -35,13 +34,13 @@ public class EmployeeController {
 	@PostMapping("employee/location")
 	public Location addCity(@RequestBody Location location) {
 		// TODO Auto-generated method stub
-		return null;
+		return service.addCity(location);
 	}
 	
 	@PutMapping("emloyee/promotion")
-	public PromotionRequest updatePromotionRequest(@RequestBody PromotionRequest promotionRequest) {
+	public void updatePromotionRequest(@RequestBody PromotionRequest promotionRequest) {
 		// TODO Auto-generated method stub
-		return null;
+		service.updatePromotionRequest(promotionRequest);;
 	}
 	
 }
