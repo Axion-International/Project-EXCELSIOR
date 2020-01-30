@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { LoginService } from './login.service';
+import { LoginService } from './modal.service';
 
 describe('LoginService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

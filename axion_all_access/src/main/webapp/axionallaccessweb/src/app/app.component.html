@@ -155,38 +155,41 @@
             <span aria-hidden="true">&times;</span>
             </button>
         </div>
-        <form>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()"> <!--TESTING THIS-->
         <div class="modal-body"id="loginModal">
             <div class="container" style="text-align: center;">
                 <h4 id="modText">Please enter your information</h4>
                 <table align="center">
                     <tr>
                         <td><h5 id="modText">Super Name:</h5></td>
-                        <td><input id="sName" name="sName" class="form-control"[(ngModel)]="sName" placeholder="Super Name"/></td>
+                        <td><input class="form-control" type="text" placeholder="Supername" formcontrolName="supername" [(ngModel)]= "supername" [ngModelOptions]="{standalone: true}" /> </td>
+                        <div *ngIf="submitted && f.supername.errors" class="invalid-feedback">
+                            <div *ngIf="f.supername.errors.required">Supername is required</div>
+                        </div>
                         <td></td>
                         <td><h5 id="modText">Strength:</h5></td>
-                        <td><input type="number" id="strength" name="strength" class="form-control"[(ngModel)]="str" placeholder="Strength"/></td>
+                        <td><input type="number" id="strength" name="strength" class="form-control"[(ngModel)]="str" [ngModelOptions]="{standalone: true}" placeholder="Strength"/></td>
                     </tr>
                     <tr>
                         <td><h5 id="modText">First Name:</h5></td>
-                        <td><input id="fName" name="fName" class="form-control"[(ngModel)]="fName" placeholder="First Name"/></td>
+                        <td><input id="fName" name="fName" class="form-control"[(ngModel)]="fName" [ngModelOptions]="{standalone: true}" placeholder="First Name"/></td>
                         <td></td>
                         <td><h5 id="modText">Constitution:</h5></td>
-                        <td><input type="number" id="constitution" name="constitution" class="form-control"[(ngModel)]="con" placeholder="Constitution"/></td>
+                        <td><input type="number" id="constitution" name="constitution" class="form-control"[(ngModel)]="con" [ngModelOptions]="{standalone: true}" placeholder="Constitution"/></td>
                     </tr>
                     <tr>
                         <td><h5 id="modText">Last Name:</h5></td>
-                        <td><input id="lName" name="lName" class="form-control"[(ngModel)]="lName" placeholder="Last Name"/></td>
+                        <td><input id="lName" name="lName" class="form-control"[(ngModel)]="lName" [ngModelOptions]="{standalone: true}" placeholder="Last Name"/></td>
                         <td></td>
                         <td><h5 id="modText">Agility:</h5></td>
-                        <td><input type="number" id="agility" name="agility" class="form-control"[(ngModel)]="agi" placeholder="Agility"/></td>
+                        <td><input type="number" id="agility" name="agility" class="form-control"[(ngModel)]="agi" [ngModelOptions]="{standalone: true}" placeholder="Agility"/></td>
                     </tr>
                     <tr>
-                        <td><h5 id="modText">Age:</h5></td>
-                        <td><input type="number" id="age" name="age" class="form-control"[(ngModel)]="age" placeholder="Age"/></td>
+                        <td></td>
+                        <td></td>
                         <td></td>
                         <td><h5 id="modText">Intelligence:</h5></td>
-                        <td><input type="number" id="intelligence" name="intelligence" class="form-control"[(ngModel)]="int" placeholder="Intelligence"/></td>
+                        <td><input type="number" id="intelligence" name="intelligence" class="form-control"[(ngModel)]="int" [ngModelOptions]="{standalone: true}" placeholder="Intelligence"/></td>
                     </tr>
                 </table>
                 <br/>
@@ -202,7 +205,8 @@
             </div>
         </div>
         <div class="modal-footer"id="loginModalBord">
-            <button id="btnPad" class="btn btn-outline-info my-2 my-sm-0" type="button" mdbBtn color="default" rounded="true" data-toggle="modal" data-target="#basicExample" mdbWavesEffect>Submit</button>
+            <button id="btnPad" class="btn btn-outline-info my-2 my-sm-0" type="button" mdbBtn color="default" rounded="true" mdbWavesEffect (click)="onSubmit()">Submit</button>
         </div>
+
         </form>
     </ng-template>

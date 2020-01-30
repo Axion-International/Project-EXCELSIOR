@@ -11,7 +11,6 @@ import { CustServComponent } from './cust-serv/cust-serv.component';
 import { CareersComponent } from './careers/careers.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { UserpageComponent } from './userpage/userpage.component';
-import { LoginmodComponent } from './loginmod/loginmod.component';
 
 // TO INSTALL -- npm i moduleName  (ie  npm i @ng-bootstrap/ng-bootstrap)
 // REQUIRED-- npm i tslib
@@ -28,7 +27,7 @@ import { LoginmodComponent } from './loginmod/loginmod.component';
     CareersComponent,
     PrivacyComponent,
     UserpageComponent,
-    LoginmodComponent,
+
 
   ],
   imports: [
