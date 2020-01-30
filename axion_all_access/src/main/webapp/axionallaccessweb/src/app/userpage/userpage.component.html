@@ -1,113 +1,134 @@
 <body>
-    <div class = "container"id="spacing">
-    <!--LEFT SIDE OF PAGE-->
-    <div class="container mt-10 h-100">
-        <div class="col-sm-6" style="display: inline-block;">
-            <div class="interface-box container h-50">
-                <h1>Welcome, {{User.username}}</h1>
+    <div class = "container" id="spacing">
+        <!--LEFT SIDE OF PAGE-->
+        <div class="container mt-10 h-100">
+            <div class="col-sm-6" style="display: inline-block;">
+                <div class="interface-box container h-50">
+                    <h1>Welcome, {{User.username}}</h1>
+                </div>
+                <div class="interface-box container h-50">
+                    <input type="text" placeholder="Search Heroes/Villains...">
+                </div>
             </div>
-            <div class="interface-box container h-50">
-                <input type="text" placeholder="Search Heroes/Villains...">
+
+            <!-- TRANSFER REQUEST -->
+            <div class="border border-info rounded my-2 usection">
+                <h4>Make a Transfer Request</h4>    
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">By Id</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+
+            <!-- HERO INFO-->
+            <div class="border border-info rounded my-2 usection">
+                <h4>Search for a Superbeing</h4>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-searchUserById">By Id</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-searchUserByName">By Name</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+            
+            <!-- SEARCH FOR HERO -->
+            <div class="border border-info rounded my-2 usection">
+                <div id="superBeings" class="border border-info rounded my-2 usection">
+                    <h4>Search Results</h4>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">SuperBeing</th>
+                                <th scope="col">Strength</th>
+                                <th scope="col">Constitution</th>
+                                <th scope="col">Intelligence</th>
+                                <th scope="col">Agility</th>
+                                <th scope="col">Location</th>
+                                <th scope="col">Alignment</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="col">Encino Dude</th>
+                                <th scope="col">16</th>
+                                <th scope="col">12</th>
+                                <th scope="col">6</th>
+                                <th scope="col">7</th>
+                                <th scope="col">Anchorage</th>
+                                <th scope="col">Neutral</th>
+                            </tr>
+                            <tr>
+                                <th scope="col">Dead Horse</th>
+                                <th scope="col">3</th>
+                                <th scope="col">25</th>
+                                <th scope="col">2</th>
+                                <th scope="col">3</th>
+                                <th scope="col">Pittsburg</th>
+                                <th scope="col">Neutral</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- AGGREGRATES AND STATS SECTION -->
+            <div class="border border-info rounded my-2 usection">
+                <div id="averages" class="border border-info rounded my-2 usection">
+                    <h4>Averages</h4>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Strength</th>
+                                <th scope="col">Constitution</th>
+                                <th scope="col">Intelligence</th>
+                                <th scope="col">Agility</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="col">16</th>
+                                <th scope="col">12</th>
+                                <th scope="col">6</th>
+                                <th scope="col">7</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- TEAM SEARCH STUB -->
+            <div class="border border-info rounded my-2 usection">
+                <h4>Search for a Super Team</h4>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-searchTeamByName">By Name</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+
+            <!--- LEGAL -->
+            <div class="container" style="padding-left: 15px;">
+                <h5 style="padding-left: 13em;">Another quality product of</h5>
+            </div>
+            <div class="d-flex justify-content-center  p-5" >
+                <img style=" height: 150px" src="../../assets/images/AxionInt.svg" alt="Full logo">
+                <br />
+            </div>
+            <div class = "container">
+                <p id="legalScript">BY USING THE WEBSITE OR APP AND THE SERVICES OFFERED ON THE WEBSITE AND APP, YOU AGREE TO FOLLOW AND BE BOUND BY THESE TERMS AND CONDITIONS AND THE AXION INTERNATIONAL PRIVACY POLICY WHICH ARE HEREBY INCORPORATED BY REFERENCE. IF YOU DO NOT WISH TO BE BOUND BY THESE TERMS AND CONDITIONS AND THE PRIVACY POLICY, YOU MAY NOT ACCESS OR USE THIS WEBSITE OR APP AND THE SERVICES OFFERED ON THE WEBSITE OR VIA THE APP.</p>
             </div>
         </div>
-
-<!-- HERO INFO-->
-    Search for a Superbeing
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-        <span class="input-group-text" id="inputGroup-sizing-default">By Id</span>
-        </div>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-        <span class="input-group-text" id="inputGroup-sizing-default">By Name</span>
-        </div>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-    </div>
-
-    Make a Transfer Request    
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-        <span class="input-group-text" id="inputGroup-sizing-default">By Id</span>
-        </div>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-    </div>
-
-    <div id="superBeings" class="border border-info rounded my-2 usection">
-        <h4>Search Results</h4>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">SuperBeing</th>
-                    <th scope="col">Strength</th>
-                    <th scope="col">Constitution</th>
-                    <th scope="col">Intelligence</th>
-                    <th scope="col">Agility</th>
-                    <th scope="col">Location</th>
-                    <th scope="col">Alignment</th>
-              </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="col">Encino Dude</th>
-                    <th scope="col">16</th>
-                    <th scope="col">12</th>
-                    <th scope="col">6</th>
-                    <th scope="col">7</th>
-                    <th scope="col">Anchorage</th>
-                    <th scope="col">Neutral</th>
-                </tr>
-                <tr>
-                    <th scope="col">Dead Horse</th>
-                    <th scope="col">3</th>
-                    <th scope="col">25</th>
-                    <th scope="col">2</th>
-                    <th scope="col">3</th>
-                    <th scope="col">Pittsburg</th>
-                    <th scope="col">Neutral</th>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <!-- AGGREGRATES AND STATS SECTION -->
-
-    <!-- TEAM SEARCH STUB -->
-
-        <!-- <div class="col-sm-6" style="display: inline-block;">
-            <ul class="list-group">
-
-                <h1>Hero</h1>
-                <h2>Hero Name: {{Hero.name}}</h2>
-                <li>Strength: {{Hero.Strength}}</li>
-                <li>Constitiution: {{Hero.Constitiution}}</li>
-                <li>Intelligence: {{Hero.Intelligence}}</li>
-                <li>Agility: {{Hero.Agility}}</li>
-                <li>Location: {{Hero.Location}}</li>
-                <li>Alignment: {{Hero.Alignment}}</li>
-                <button>Connect Account</button>
-            </ul>
-        </div>
-      </div>
-       -->
-      <!--RIGHT SIDE OF PAGE-->
-    </div>
-
-    <!--- LEGAL -->
-
-         <div class="container" style="padding-left: 15px;">
-            <h5 style="padding-left: 13em;">Another quality product of</h5>
-        </div>
-         <div class="d-flex justify-content-center  p-5" >
-            <img style=" height: 150px" src="../../assets/images/AxionInt.svg" alt="Full logo">
-            <br />
-        </div>
-        <div class = "container">
-            <p id="legalScript">BY USING THE WEBSITE OR APP AND THE SERVICES OFFERED ON THE WEBSITE AND APP, YOU AGREE TO FOLLOW AND BE BOUND BY THESE TERMS AND CONDITIONS AND THE AXION INTERNATIONAL PRIVACY POLICY WHICH ARE HEREBY INCORPORATED BY REFERENCE. IF YOU DO NOT WISH TO BE BOUND BY THESE TERMS AND CONDITIONS AND THE PRIVACY POLICY, YOU MAY NOT ACCESS OR USE THIS WEBSITE OR APP AND THE SERVICES OFFERED ON THE WEBSITE OR VIA THE APP.</p>
-        </div>
-
-    </body>
+</body>
 
     <!-- 
         [~] Make a transfer request
