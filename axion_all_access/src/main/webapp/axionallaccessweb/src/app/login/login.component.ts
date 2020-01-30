@@ -20,17 +20,14 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
-  
 
- 
-
-  private validUsername(username){
-    if(username.match("/^[a-zA-Z]+$/.test(str);")){
-      console.log("true");
-    }else{
-      console.log("false");
-    }
-  }
+  // private validUsername(username){
+  //   if(username.match("/^[a-zA-Z]+$/.test(str);")){
+  //     console.log("true");
+  //   }else{
+  //     console.log("false");
+  //   }
+  // }
 }
 
 

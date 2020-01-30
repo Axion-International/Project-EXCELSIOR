@@ -1,0 +1,68 @@
+<body>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <div class=" container card"id ="loginModalBord">
+        <h4 class="card-header" id ="loginModal">Registration</h4>
+        <div class="card-body"id ="loginModalBord">
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
+                <div class="form-group">
+                    <label id="modText">Username</label>
+                    <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                        <div *ngIf="f.username.errors.required">Username is required</div>
+                        <div *ngIf="f.username.errors.pattern">Must be a valid username</div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col">
+                        <label id="modText">Password</label>
+                        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                            <div *ngIf="f.password.errors.required">Password is required</div>
+                            <div *ngIf="f.password.errors.pattern">Password must be at least 8 characters, have 1 capital, 1 lowercase and 1 number</div>
+                        </div>
+                    </div>
+                    <div class="form-group col">
+                        <label id="modText">Confirm Password</label>
+                        <input type="password" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
+                        <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+                            <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
+                            <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group form-check">
+                    <input type="checkbox" formControlName="acceptTerms" id="acceptTerms" class="form-check-input" [ngClass]="{ 'is-invalid': submitted && f.acceptTerms.errors }" />
+                    <label for="acceptTerms" class="form-check-label" id="modText">Accept Terms & Conditions</label>
+                    <div *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback">Accept Terms & Conditions is required</div>
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-primary mr-1">Register</button>
+                    <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+</body>

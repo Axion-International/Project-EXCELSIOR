@@ -13,6 +13,7 @@ import { PrivacyComponent } from './privacy/privacy.component';
 import { UserpageComponent } from './userpage/userpage.component';
 import { UserService } from './user.service';
 import { EmployeeService } from './employee.service';
+import { RegisterComponent } from './register/register.component';
 
 // TO INSTALL -- npm i moduleName  (ie  npm i @ng-bootstrap/ng-bootstrap)
 // REQUIRED-- npm i tslib
@@ -29,7 +30,7 @@ import { EmployeeService } from './employee.service';
     CareersComponent,
     PrivacyComponent,
     UserpageComponent,
-
+    RegisterComponent,
 
   ],
   imports: [

@@ -36,6 +36,9 @@ export class AppComponent implements OnInit{
 
   get f() { return this.registerForm.controls; }
 
+
+  
+  
     openLogin(login) {
       this.modalService.open(login, { 
       backdrop:'static',

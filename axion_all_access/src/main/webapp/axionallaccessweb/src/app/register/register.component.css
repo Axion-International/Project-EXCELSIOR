@@ -1,0 +1,57 @@
+#spacing{
+    padding-top: 10em;
+}
+
+.a3Logo{
+    height: 75px;
+    width: 75px;
+}
+.a3Verbage{
+    height: 63px;
+    text-align: center;
+}
+
+body{
+    background-image: url(../../assets/images/bckgrnd_3.jpg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: top ;
+    background-color: #182a40;
+}
+#btnPad{
+    padding:  0.5em 5em;
+}
+
+.divider{
+    width:3em;
+    height:auto;
+    display:inline-block;
+}
+
+#loginModal{
+    background-color: #274368; ;
+    
+}
+#loginModalBord{
+    background-color: #323840; ;
+}
+
+.jumbotron{
+    background-color: rgba(133, 133, 147, .4);
+}
+
+#legalScript{
+    font-size: 10px;
+    
+}
+
+#modText{
+    color:#9ba8b6;
+}
+
+td{
+    padding:1.25em;
+}
+
+.card-header{
+    color:#9ba8b6;
+}
