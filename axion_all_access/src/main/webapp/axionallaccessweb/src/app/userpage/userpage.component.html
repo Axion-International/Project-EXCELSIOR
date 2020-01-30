@@ -1,29 +1,30 @@
-
 <div class = "container" id="spacing">
     <!--LEFT SIDE OF PAGE-->
-    <div class="container mt-10 h-100">
+    <div class="mt-10 h-100">
         <div class="col-sm-6" style="display: inline-block;">
             <div class="interface-box container h-50">
                 <h1>Welcome, {{User.username}}</h1>
             </div>
-            <div class="interface-box container h-50">
-                <input type="text" placeholder="Search Heroes/Villains...">
-            </div>
         </div>
 
         <!-- TRANSFER REQUEST -->
-        <div class="border border-info rounded my-2 usection">
-            <h4>Make a Transfer Request</h4>    
+        <div class="border border-info rounded my-2 p-2 usection">
+            <h4>Request to join a Super Team</h4> 
+            <ul>
+                <li>Please remember that all transfer requests to a team must be approved by the team leader.</li>
+                <li>You cannot be an active member of more than one team.</li>
+                <li>Upon approval, your current team membership will be revoked if you have one.</li>
+            </ul>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-default">By Id</span>
+                <span class="input-group-text" id="inputGroup-sizing-default">Transfer Team Id</span>
                 </div>
                 <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
             </div>
         </div>
 
-        <!-- HERO INFO-->
-        <div class="border border-info rounded my-2 usection">
+        <!-- HERO SEARCH -->
+        <div class="border border-info rounded my-2 p-2 usection">
             <h4>Search for a Superbeing</h4>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -39,9 +40,9 @@
             </div>
         </div>
         
-        <!-- SEARCH FOR HERO -->
-        <div class="border border-info rounded my-2 usection">
-            <div id="superBeings" class="border border-info rounded my-2 usection">
+        <!-- HERO SEARCH RESULTS -->
+        <div class="border border-info rounded my-2 p-2 usection">
+            <div id="superBeings" >
                 <h4>Search Results</h4>
                 <table class="table">
                     <thead>
@@ -80,8 +81,8 @@
         </div>
 
         <!-- AGGREGRATES AND STATS SECTION -->
-        <div class="border border-info rounded my-2 usection">
-            <div id="averages" class="border border-info rounded my-2 usection">
+        <div class="border border-info rounded my-2 p-2 usection">
+            <div id="averages">
                 <h4>Averages</h4>
                 <table class="table">
                     <thead>
@@ -105,7 +106,7 @@
         </div>
 
         <!-- TEAM SEARCH STUB -->
-        <div class="border border-info rounded my-2 usection">
+        <div class="border border-info rounded my-2 p-2 usection">
             <h4>Search for a Super Team</h4>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -124,7 +125,15 @@
             <br />
         </div>
         <div class = "container">
-            <p id="legalScript">BY USING THE WEBSITE OR APP AND THE SERVICES OFFERED ON THE WEBSITE AND APP, YOU AGREE TO FOLLOW AND BE BOUND BY THESE TERMS AND CONDITIONS AND THE AXION INTERNATIONAL PRIVACY POLICY WHICH ARE HEREBY INCORPORATED BY REFERENCE. IF YOU DO NOT WISH TO BE BOUND BY THESE TERMS AND CONDITIONS AND THE PRIVACY POLICY, YOU MAY NOT ACCESS OR USE THIS WEBSITE OR APP AND THE SERVICES OFFERED ON THE WEBSITE OR VIA THE APP.</p>
+            <p id="legalScript">
+                BY USING THE WEBSITE OR APP AND THE SERVICES OFFERED ON THE
+                WEBSITE AND APP, YOU AGREE TO FOLLOW AND BE BOUND BY THESE TERMS
+                AND CONDITIONS AND THE AXION INTERNATIONAL PRIVACY POLICY WHICH
+                ARE HEREBY INCORPORATED BY REFERENCE. IF YOU DO NOT WISH TO BE
+                BOUND BY THESE TERMS AND CONDITIONS AND THE PRIVACY POLICY, YOU
+                MAY NOT ACCESS OR USE THIS WEBSITE OR APP AND THE SERVICES
+                OFFERED ON THE WEBSITE OR VIA THE APP.
+            </p>
         </div>
     </div>
 </div>
