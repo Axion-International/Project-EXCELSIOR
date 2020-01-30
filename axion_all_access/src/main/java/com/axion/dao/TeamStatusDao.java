@@ -7,5 +7,5 @@ import com.axion.model.TeamStatus;
 
 @Repository
 public interface TeamStatusDao extends JpaRepository<TeamStatus, Integer> {
-
+	
 }

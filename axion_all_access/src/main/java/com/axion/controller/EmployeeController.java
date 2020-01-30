@@ -5,9 +5,12 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.axion.model.Location;
+import com.axion.model.PromotionRequest;
 import com.axion.model.User;
 import com.axion.service.EmployeeService;
 
@@ -23,15 +26,22 @@ public class EmployeeController {
 		return service.registerEmployee(users);
 	}
 	
-//	@GetMapping("/employee/{username}")
-//	public User getUserByUsername(@PathVariable("username") String username) {
-//		return service.findByUsername(username);
-//	}
-	
 	@GetMapping("/employee/login")
 	public User authentication(@RequestBody User users) {
 		return service.authenication(users);
 	}
 	
+	//adding location
+	@PostMapping("employee/location")
+	public Location addCity(@RequestBody Location location) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	@PutMapping("emloyee/promotion")
+	public PromotionRequest updatePromotionRequest(@RequestBody PromotionRequest promotionRequest) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

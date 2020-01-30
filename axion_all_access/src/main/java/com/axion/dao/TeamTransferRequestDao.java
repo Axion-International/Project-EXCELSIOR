@@ -7,5 +7,5 @@ import com.axion.model.TeamTransferRequest;
 
 @Repository
 public interface TeamTransferRequestDao extends JpaRepository<TeamTransferRequest, Integer> {
-
+	TeamTransferRequest findByTeam(int teamId);
 }
