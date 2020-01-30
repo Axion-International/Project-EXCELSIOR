@@ -49,8 +49,9 @@
                     <div *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback">Accept Terms & Conditions is required</div>
                 </div>
                 <div class="text-center">
-                    <button class="btn btn-primary mr-1">Register</button>
-                    <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
+                    <button id="btnPad" class="btn btn-outline-info mr-1" rounded="true" mdbWavesEffect mdbBtn>Register</button>
+                    <div class="divider"></div>
+                    <button id="btnPad" class="btn btn-outline-secondary mr-1" rounded="true" mdbWavesEffect mdbBtn type="reset" (click)="onReset()">Cancel</button>
                 </div>
             </form>
         </div>
