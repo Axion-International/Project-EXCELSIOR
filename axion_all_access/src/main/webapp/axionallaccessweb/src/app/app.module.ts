@@ -11,6 +11,8 @@ import { CustServComponent } from './cust-serv/cust-serv.component';
 import { CareersComponent } from './careers/careers.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { UserpageComponent } from './userpage/userpage.component';
+import { UserService } from './user.service';
+import { EmployeeService } from './employee.service';
 
 // TO INSTALL -- npm i moduleName  (ie  npm i @ng-bootstrap/ng-bootstrap)
 // REQUIRED-- npm i tslib
@@ -37,7 +39,7 @@ import { UserpageComponent } from './userpage/userpage.component';
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [UserService,EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
