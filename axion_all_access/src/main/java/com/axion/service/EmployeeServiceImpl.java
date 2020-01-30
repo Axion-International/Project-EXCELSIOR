@@ -48,22 +48,16 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return user;
 	}
 
-//	@Override
-//	public User findByUsername(String username) {
-//		return userDao.findByUsername(username);
-//	}
-	
-
 	@Override
 	public List<SuperBeing> getAllSuperBeings() {	
 		return superBeingDao.findAll();
 	}
 
-//	@Override
-//	public SuperBeing getBySuperName(String superName) {	
-//		return superBeingDao.findbySuperName(superName);
-//	}
-//
+	@Override
+	public SuperBeing getBySuperName(String superName) {	
+		return superBeingDao.findBySuperName(superName);
+	}
+
 	@Override
 	public SuperBeing updateSuperBeing(SuperBeing superBeing) {	
 		return superBeingDao.save(superBeing);
@@ -73,12 +67,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 	public List<Team> getAllTeams() {		
 		return teamDao.findAll();
 	}
-//
-//	@Override
-//	public Team getByTeamName(String teamName) {	
-//		return teamDao.findbyTeamName(teamName);
-//	}
-//
+
+	@Override
+	public Team getByTeamName(String teamName) {	
+		return teamDao.findByName(teamName);
+	}
+
 	@Override
 	public void deleteTransferRequest(TeamTransferRequest teamTransferRequest) {
 		teamTransferRequestDao.delete(teamTransferRequest);
@@ -88,6 +82,5 @@ public class EmployeeServiceImpl implements EmployeeService {
 	public void deletePromotionRequest(PromotionRequest promotionRequest) {
 		promotionRequestDao.delete(promotionRequest);
 	}
-
 
 }
