@@ -42,8 +42,6 @@ export class RegisterComponent implements OnInit {
       if (this.registerForm.invalid) {
           return;
       }else{
-        console.log("Fireing");
-        console.log(this.user.password);
         this.service.registerUser(this.user).subscribe(res=>this.gotoUserList());
       }
   }
@@ -57,5 +55,4 @@ export class RegisterComponent implements OnInit {
       this.submitted = false;
       this.registerForm.reset();
   }
-
 }

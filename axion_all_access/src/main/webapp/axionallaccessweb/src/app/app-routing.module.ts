@@ -22,7 +22,8 @@ const routes: Routes = [
 {path: 'aboutus',component:AboutUsComponent},
 {path: 'careers',component:CareersComponent},
 {path: 'register',component:RegisterComponent},
-{path: 'user',component:User}
+{path: 'user',component:User},
+{path: '/user/login',component:User}//TESTING THIS
 ]
 
 @NgModule({

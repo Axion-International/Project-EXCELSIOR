@@ -10,6 +10,7 @@ public interface UserService {
 
 	public User getUserByUsername(String username);
 
-	public User authentication(User users);
+	public User authentication(User user);
 	
+
 }

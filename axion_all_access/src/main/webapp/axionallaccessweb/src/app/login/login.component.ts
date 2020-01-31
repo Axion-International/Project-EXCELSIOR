@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {NgbModal, ModalDismissReasons, NgbModalOptions} from '@ng-bootstrap/ng-bootstrap';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import { Router } from '@angular/router';
+import { User } from '../user.class';
+import { UserService } from '../user.service';
 
 
 
@@ -11,23 +12,27 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  username : string;
-  modalOptions : NgbModalOptions;
-  closeResult : string;
 
-  constructor(private modalService: NgbModal) {  
+  private user : User;
+
+
+  constructor(private router: Router, private service: UserService) {  
+    this.user = new User();
   }
 
   ngOnInit() {
   }
 
-  // private validUsername(username){
-  //   if(username.match("/^[a-zA-Z]+$/.test(str);")){
-  //     console.log("true");
-  //   }else{
-  //     console.log("false");
-  //   }
-  // }
+
+
+  ////////////////////TESTING BLOCK//////////////////////
+  onSubmit(){
+    console.dir(this.user);
+    this.service.authenticateUser(this.user)
+    // .subscribe(res=>this.gotoUserList());
+  }
+
+
 }
 
 

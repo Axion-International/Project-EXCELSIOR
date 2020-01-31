@@ -22,7 +22,6 @@ public class UserController {
 	@PostMapping("/user")
 	public User registerUser(@RequestBody User user) {
 		// TODO Auto-generated method stub
-		System.out.println("Fire from controller");
 		return service.registerUser(user);
 	}
 	
@@ -39,9 +38,9 @@ public class UserController {
 	}
 	
 	@GetMapping("/user/login")
-	public User authentication(@RequestBody User users) {
+	public User authentication(@RequestBody User user) {
 		// TODO Auto-generated method stub
-		return service.authentication(users);
+		return service.authentication(user);
 	}
 	
 }

@@ -88,13 +88,13 @@
                 <div class="card-body" id ="loginModal">
                     <br />
                     <h5 id="modText"> Username:</h5>
-                    <input type="text" formControlName="username" class="form-control" placeholder="Username"/>
+                    <input type="text" class="form-control" placeholder="Username" [(ngModel)]="user.username"/>
                         <br />
                     <h5 id="modText"> Password:</h5>
-                    <input type="text" formControlName="password" class="form-control" placeholder="Password"/>
+                    <input type="text"  class="form-control" placeholder="Password"[(ngModel)]="user.password"/>
                     <br />
                     <br />
-                    <button id="btnPad" class="btn btn-outline-info my-2 my-sm-0" type="button" mdbBtn color="default" rounded="true" mdbWavesEffect>Submit</button>
+                    <button id="btnPad" class="btn btn-outline-info my-2 my-sm-0" type="button" mdbBtn color="default" rounded="true" mdbWavesEffect (click)="onSubmit()">Submit</button>
                 </div>
                 <br />
             </div>

@@ -15,7 +15,6 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User registerUser(User user) {
 		// TODO Auto-generated method stub
-		System.out.println("From UserServiceIMPL: " + user);
 		return userDao.save(user);
 	}
 
@@ -32,16 +31,19 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public User authentication(User users) {
-		User user = userDao.findByUsername(users.getUsername());
-		if (user == null) {
+	public User authentication(User user) {
+		User userT = userDao.findByUsername(user.getUsername());
+		if (userT == null) {
 			throw new RuntimeException("User does not exist!");
 		}
-		if (!user.getPassword().equals(users.getPassword())) {
-			System.out.println(user.getPassword() + " " + users.getPassword());
+		if (!userT.getPassword().equals(user.getPassword())) {
+			System.out.println(userT.getPassword() + " " + user.getPassword());
 			throw new RuntimeException("Wrong password. Try again");
 		}
 		return user;
+		
+
+		
 	}
 
 }

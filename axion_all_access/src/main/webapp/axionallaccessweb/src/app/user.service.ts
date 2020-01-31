@@ -53,12 +53,10 @@ export class UserService {
 
   public registerUser(user : User){
     const updateUrl = this.url + "/user";
-    console.log("Hitting Service " + updateUrl)
     this.role.roleId = 1;
     this.role.roleName = "";
     user.role = {	"roleId" : 1,
     "roleName" : ""};
-    console.dir(user);
     return this.http.post<User>(updateUrl,user);
 
     // Run in H-2 to populate temporary roles
@@ -68,6 +66,12 @@ export class UserService {
 
     select * from role;
     */
+  }
+  
+/////////////////TESTING BLOCK/////////////////////
+  public authenticateUser(user : User){
+    const updateUrl = this.url+"/user/login";
+    return this.http.post<User>(updateUrl,user);
   }
 
 }
