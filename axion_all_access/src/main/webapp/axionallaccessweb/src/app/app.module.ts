@@ -15,6 +15,7 @@ import { UserService } from './user.service';
 import { EmployeeService } from './employee.service';
 import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from '@angular/common/http';
+import { EregisterComponent } from './eregister/eregister.component';
 
 // TO INSTALL -- npm i moduleName  (ie  npm i @ng-bootstrap/ng-bootstrap)
 // REQUIRED-- npm i tslib
@@ -32,6 +33,7 @@ import { HttpClientModule } from '@angular/common/http';
     PrivacyComponent,
     UserpageComponent,
     RegisterComponent,
+    EregisterComponent,
 
   ],
   imports: [
