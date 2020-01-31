@@ -45,7 +45,6 @@ export class RegisterComponent implements OnInit {
         console.log("Fireing");
         console.log(this.user.password);
         this.service.registerUser(this.user).subscribe(res=>this.gotoUserList());
-
       }
   }
 
