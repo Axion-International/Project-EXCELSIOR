@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MustMatch } from '../Validators/must-match.Validator';
+import { User } from '../user.class';
+import { UserService } from '../user.service';
 
 
 @Component({
@@ -10,11 +12,14 @@ import { MustMatch } from '../Validators/must-match.Validator';
 })
 
 export class RegisterComponent implements OnInit {
-  
+
+  private user : User;
   registerForm: FormGroup;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private service: UserService ) { 
+      this.user = new User();
+  }
 
   ngOnInit() {
       this.registerForm = this.formBuilder.group({
@@ -35,6 +40,12 @@ export class RegisterComponent implements OnInit {
       // stop here if form is invalid
       if (this.registerForm.invalid) {
           return;
+      }else{
+        console.log("Fireing");
+        console.log(this.user.password);
+        console.log(this.service.registerUser(this.user));
+        // .subscribe(res=>this.)
+        // addAnimal(this.animal).subscribe(res=>this.gotoAnimalList());
       }
   }
 

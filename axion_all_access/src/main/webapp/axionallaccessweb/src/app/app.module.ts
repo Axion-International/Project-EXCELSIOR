@@ -14,6 +14,7 @@ import { UserpageComponent } from './userpage/userpage.component';
 import { UserService } from './user.service';
 import { EmployeeService } from './employee.service';
 import { RegisterComponent } from './register/register.component';
+import { HttpClientModule } from '@angular/common/http';
 
 // TO INSTALL -- npm i moduleName  (ie  npm i @ng-bootstrap/ng-bootstrap)
 // REQUIRED-- npm i tslib
@@ -38,9 +39,10 @@ import { RegisterComponent } from './register/register.component';
     FormsModule,
     NgbModule,
     AppRoutingModule,
+    HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [UserService,EmployeeService],
+  providers: [UserService, EmployeeService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

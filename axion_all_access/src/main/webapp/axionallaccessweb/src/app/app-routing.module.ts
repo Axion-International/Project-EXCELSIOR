@@ -8,6 +8,7 @@ import { AboutUsComponent} from './about-us/about-us.component';
 import { CareersComponent } from './careers/careers.component';
 import { UserpageComponent } from './userpage/userpage.component';
 import { RegisterComponent } from './register/register.component';
+import { User } from './user.class';
 
 const routes: Routes = [
 {path: '',  redirectTo: '/login', pathMatch: 'full' },
@@ -18,7 +19,8 @@ const routes: Routes = [
 {path: 'cserve',component:CustServComponent},
 {path: 'aboutus',component:AboutUsComponent},
 {path: 'careers',component:CareersComponent},
-{path: 'register',component:RegisterComponent}
+{path: 'register',component:RegisterComponent},
+{path: 'user',component:User}
 ]
 
 @NgModule({

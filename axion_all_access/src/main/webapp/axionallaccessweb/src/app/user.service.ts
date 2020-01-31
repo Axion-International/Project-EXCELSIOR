@@ -4,11 +4,16 @@ import { Superbeing } from './superbeing.class';
 import { Observable } from 'rxjs';
 import { Team } from './team.class';
 import { RequestStatus } from './request-status.class';
+import { User } from './user.class';
+import { Role } from './role.class';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+
+  role : Role = new Role;
 
   private url:string;
   //change urls in methods they are not set for the spring controller
@@ -44,6 +49,25 @@ export class UserService {
   public updateTransferRequest(requestStatus:RequestStatus): Observable<RequestStatus> {
     const updateUrl = this.url+"/transferRequest/";
     return this.http.put<RequestStatus>(updateUrl,requestStatus);
+  }
+
+  public registerUser(user : User){
+    const updateUrl = this.url+"/user";
+    console.log("Hitting Service "+updateUrl)
+    this.role.roleId = 1;
+    this.role.roleName = "";
+    user.role = {	"roleId" : 1,
+    "roleName" : ""};
+    console.dir(user);
+    return this.http.post<User>(updateUrl,user);
+
+    // Run in H-2 to populate temporary roles
+    /*
+    Insert into role (role_id, role_name) values (1, 'User');
+    Insert into role (role_id, role_name) values (2, 'Employee');
+
+    select * from role;
+    */
   }
 
 }

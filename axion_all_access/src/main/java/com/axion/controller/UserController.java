@@ -20,9 +20,10 @@ public class UserController {
 	private UserService service;
 	
 	@PostMapping("/user")
-	public User registerUser(@RequestBody User users) {
+	public User registerUser(@RequestBody User user) {
 		// TODO Auto-generated method stub
-		return service.registerUser(users);
+		System.out.println("Fire from controller");
+		return service.registerUser(user);
 	}
 	
 	@PutMapping("user")

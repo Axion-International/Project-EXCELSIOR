@@ -19,7 +19,7 @@
             <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
                 <div class="form-group">
                     <label id="modText">Username</label>
-                    <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                    <input type="text" formControlName="username" [(ngModel)]="user.username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
                     <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
                         <div *ngIf="f.username.errors.required">Username is required</div>
                         <div *ngIf="f.username.errors.pattern">Must be a valid username</div>
@@ -36,7 +36,7 @@
                     </div>
                     <div class="form-group col">
                         <label id="modText">Confirm Password</label>
-                        <input type="password" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
+                        <input type="password" [(ngModel)]="user.password" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
                         <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
                             <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
                             <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>

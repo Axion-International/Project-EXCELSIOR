@@ -11,10 +11,12 @@ public class UserServiceImpl implements UserService {
 	
 	@Autowired
 	private UserDao userDao;
+	
 	@Override
-	public User registerUser(User users) {
+	public User registerUser(User user) {
 		// TODO Auto-generated method stub
-		return userDao.save(users);
+		System.out.println("From UserServiceIMPL: " + user);
+		return userDao.save(user);
 	}
 
 	@Override
