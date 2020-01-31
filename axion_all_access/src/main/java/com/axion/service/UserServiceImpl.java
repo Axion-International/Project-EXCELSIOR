@@ -40,10 +40,11 @@ public class UserServiceImpl implements UserService {
 			System.out.println(userT.getPassword() + " " + user.getPassword());
 			throw new RuntimeException("Wrong password. Try again");
 		}
-		return user;
-		
 
-		
+		return user;
 	}
+	
+
+	
 
 }

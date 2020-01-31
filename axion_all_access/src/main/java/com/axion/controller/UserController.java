@@ -37,9 +37,9 @@ public class UserController {
 		return service.getUserByUsername(username);
 	}
 	
-	@GetMapping("/user/login")
+	@PostMapping("/user/login")
 	public User authentication(@RequestBody User user) {
-		// TODO Auto-generated method stub
+		System.out.println("THis is a call");
 		return service.authentication(user);
 	}
 	
