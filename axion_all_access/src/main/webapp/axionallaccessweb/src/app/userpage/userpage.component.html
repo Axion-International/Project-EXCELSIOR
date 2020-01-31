@@ -1,49 +1,74 @@
-<div class = "container" id="spacing">
-    <!--LEFT SIDE OF PAGE-->
-    <div class="mt-10 h-100">
-        <div class="col-sm-6" style="display: inline-block;">
-            <div class="interface-box container h-50">
-                <h1>Welcome, {{User.username}}</h1>
+<body>
+    <div class="container" id="spacing">
+        <!--LEFT SIDE OF PAGE-->
+        <div class="mt-10 h-100">
+            <div class="col-sm-6" style="display: inline-block;">
+                <div class="interface-box container p-3">
+                    <h1>Welcome, {{User.username}}</h1>
+                </div>
             </div>
-        </div>
 
-        <!-- TRANSFER REQUEST -->
-        <div class="border border-info rounded my-2 p-2 usection">
-            <h4>Request to join a Super Team</h4> 
-            <ul>
-                <li>Please remember that all transfer requests to a team must be approved by the team leader.</li>
-                <li>You cannot be an active member of more than one team.</li>
-                <li>Upon approval, your current team membership will be revoked if you have one.</li>
-            </ul>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-default">Transfer Team Id</span>
+            <!-- TRANSFER REQUEST -->
+            <div class="interface-box usection">
+                <div id="Team-card" class="header-card">Team</div>
+                <h4>Request to join a Super Team</h4>
+                <ul>
+                    <li>Please remember that all transfer requests to a team must be approved by the team leader.</li>
+                    <li>You cannot be an active member of more than one team.</li>
+                    <li>Upon approval, your current team membership will be revoked if you have one.</li>
+                </ul>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Transfer Team Id</span>
+                    </div>
+                    <input type="text" class="form-control">
                 </div>
-                <input type="text" class="form-control">
             </div>
-        </div>
 
-        <!-- HERO SEARCH -->
-        <div class="border border-info rounded my-2 p-2 usection">
-            <h4>Search for a Superbeing</h4>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-searchUserById">By Id</span>
+            <!--Headers - #323840-->
+
+            <!-- HERO SEARCH -->
+            <div class="interface-box usection">
+                <div id="Team-card" class="header-card">Search</div>
+                <h4>Search for a Superbeing</h4>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-searchUserById">By Id</span>
+                    </div>
+                    <input type="text" class="form-control">
                 </div>
-                <input type="text" class="form-control">
-            </div>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-searchUserByName">By Name</span>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-searchUserByName">By Name</span>
+                    </div>
+                    <input type="text" class="form-control">
                 </div>
-                <input type="text" class="form-control">
+                <div class="container pb-3 border-bottom border-white">
+                        <div class="row">
+                            <div class="col-sm-9"></div>
+                            <button id="btnPad" class="col-sm-3 btn btn-outline-info" type="button" mdbBtn color="default"
+                                rounded="true" mdbWavesEffect (click)="onSubmit()">Search Teams</button>
+                        </div>
+                    </div>
+                <h4>Search for a Super Team</h4>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-searchTeamByName">By Name</span>
+                    </div>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-9"></div>
+                        <button id="btnPad" class="col-sm-3 btn btn-outline-info" type="button" mdbBtn color="default"
+                            rounded="true" mdbWavesEffect (click)="onSubmit()">Search Teams</button>
+                    </div>
+                </div>
             </div>
-        </div>
-        
-        <!-- HERO SEARCH RESULTS -->
-        <div class="border border-info rounded my-2 p-2 usection">
-            <div id="superBeings" >
-                <h4>Search Results</h4>
+
+            <!-- HERO SEARCH RESULTS -->
+            <div id="SuperBeings" class="interface-box usection">
+                <div id="Team-card" class="header-card">Search Results</div>
                 <table class="table">
                     <thead>
                         <tr>
@@ -78,65 +103,56 @@
                     </tbody>
                 </table>
             </div>
-        </div>
 
-        <!-- AGGREGRATES AND STATS SECTION -->
-        <div class="border border-info rounded my-2 p-2 usection">
-            <div id="averages">
-                <h4>Averages</h4>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Strength</th>
-                            <th scope="col">Constitution</th>
-                            <th scope="col">Intelligence</th>
-                            <th scope="col">Agility</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="col">16</th>
-                            <th scope="col">12</th>
-                            <th scope="col">6</th>
-                            <th scope="col">7</th>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- TEAM SEARCH STUB -->
-        <div class="border border-info rounded my-2 p-2 usection">
-            <h4>Search for a Super Team</h4>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-searchTeamByName">By Name</span>
+            <!-- AGGREGRATES AND STATS SECTION -->
+            <div class="interface-box usection">
+                <div id="Team-card" class="header-card">Statistics</div>
+                <div id="averages">
+                    <h4>Averages</h4>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Strength</th>
+                                <th scope="col">Constitution</th>
+                                <th scope="col">Intelligence</th>
+                                <th scope="col">Agility</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="col">16</th>
+                                <th scope="col">12</th>
+                                <th scope="col">6</th>
+                                <th scope="col">7</th>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-                <input type="text" class="form-control">
             </div>
-        </div>
 
-        <!--- LEGAL -->
-        <div class="container" style="padding-left: 15px;">
-            <h5 style="padding-left: 13em;">Another quality product of</h5>
-        </div>
-        <div class="d-flex justify-content-center  p-5" >
-            <img style=" height: 150px" src="../../assets/images/AxionInt.svg" alt="Full logo">
-            <br />
-        </div>
-        <div class = "container">
-            <p id="legalScript">
-                BY USING THE WEBSITE OR APP AND THE SERVICES OFFERED ON THE
-                WEBSITE AND APP, YOU AGREE TO FOLLOW AND BE BOUND BY THESE TERMS
-                AND CONDITIONS AND THE AXION INTERNATIONAL PRIVACY POLICY WHICH
-                ARE HEREBY INCORPORATED BY REFERENCE. IF YOU DO NOT WISH TO BE
-                BOUND BY THESE TERMS AND CONDITIONS AND THE PRIVACY POLICY, YOU
-                MAY NOT ACCESS OR USE THIS WEBSITE OR APP AND THE SERVICES
-                OFFERED ON THE WEBSITE OR VIA THE APP.
-            </p>
+            <!--- LEGAL -->
+            <div class="container" style="padding-left: 15px;">
+                <h5 style="padding-left: 13em;">Another quality product of</h5>
+            </div>
+            <div class="d-flex justify-content-center  p-5">
+                <img style=" height: 150px" src="../../assets/images/AxionInt.svg" alt="Full logo">
+                <br />
+            </div>
+            <div class="container">
+                <p id="legalScript">
+                    BY USING THE WEBSITE OR APP AND THE SERVICES OFFERED ON THE
+                    WEBSITE AND APP, YOU AGREE TO FOLLOW AND BE BOUND BY THESE TERMS
+                    AND CONDITIONS AND THE AXION INTERNATIONAL PRIVACY POLICY WHICH
+                    ARE HEREBY INCORPORATED BY REFERENCE. IF YOU DO NOT WISH TO BE
+                    BOUND BY THESE TERMS AND CONDITIONS AND THE PRIVACY POLICY, YOU
+                    MAY NOT ACCESS OR USE THIS WEBSITE OR APP AND THE SERVICES
+                    OFFERED ON THE WEBSITE OR VIA THE APP.
+                </p>
+            </div>
         </div>
     </div>
-</div>
+
+</body>
 
 <!-- 
     [~] Make a transfer request

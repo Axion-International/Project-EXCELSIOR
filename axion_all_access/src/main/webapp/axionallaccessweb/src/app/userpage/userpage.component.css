@@ -39,8 +39,37 @@
  }
 
  .interface-box{
-     background-color:cornflowerblue;
+     background-color:#274368;
+     border-radius: 5px;
+     padding-top:0px; 
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    margin: 10px;
  }
+
+ .interface-box > * {
+     padding-right: 10px;
+    color:#9ba8b6;
+ }
+
+ .header-card{
+     padding-top: 8px;
+     padding:4px;
+     margin-bottom: 4px;
+     background-color:#323840;
+     font-size: 20pt;
+ }
+
+ .input-group > * {
+    color:#111111;
+ }
+
+ .input-group-text {
+    color:#111111;
+ }
+
+
  #btnPad{
      padding:  0.5em 5em;
  }
