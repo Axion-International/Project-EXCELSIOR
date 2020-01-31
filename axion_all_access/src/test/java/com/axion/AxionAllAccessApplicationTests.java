@@ -2,12 +2,9 @@ package com.axion;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
-import static org.springframework.test.web.client.match.MockRestRequestMatchers.headerDoesNotExist;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -149,12 +146,9 @@ class AxionAllAccessApplicationTests {
 	}
 	
 	@Test
-	public void registerSuperBeingTest() {
-		SuperBeing superBeing = new SuperBeing("teamTest","lastname");
-		Team team = new Team();
-		team.setTeamId(1);
-		superBeing.setTeam(team);
-		when(teamDao.findById(team.getTeamId())).thenReturn(superBeing);
-		assertEquals(superBeing, teamService.getTeamMember(team.getTeamId()));
+	public void UpdateTeamTest() {
+		Team team = new Team("teamTest");
+		when(teamDao.save(team)).thenReturn(team);
+		assertEquals(team, teamService.UpdateTeam(team));
 	}
 }
