@@ -1,5 +1,7 @@
 package com.axion.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -46,6 +48,11 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Override
 	public Location addCity(Location location) {
 		return locationDao.save(location);
+	}
+
+	@Override
+	public List<PromotionRequest> getAllPromotionRequests() {
+		return promotionRequestDao.findAll();
 	}
 
 //	@Override

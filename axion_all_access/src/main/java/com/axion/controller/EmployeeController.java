@@ -1,5 +1,7 @@
 package com.axion.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,10 +39,15 @@ public class EmployeeController {
 		return service.addCity(location);
 	}
 	
+	@GetMapping("emloyee/promotion")
+	public List<PromotionRequest> getAllPromotionRequests() {
+		return service.getAllPromotionRequests();
+	}
+	
 	@PutMapping("emloyee/promotion")
 	public void updatePromotionRequest(@RequestBody PromotionRequest promotionRequest) {
 		// TODO Auto-generated method stub
-		service.updatePromotionRequest(promotionRequest);;
+		service.updatePromotionRequest(promotionRequest);
 	}
 	
 }

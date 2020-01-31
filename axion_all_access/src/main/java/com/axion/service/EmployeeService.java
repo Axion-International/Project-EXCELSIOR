@@ -1,5 +1,7 @@
 package com.axion.service;
 
+import java.util.List;
+
 import com.axion.model.Location;
 import com.axion.model.PromotionRequest;
 
@@ -12,6 +14,8 @@ public interface EmployeeService {
 	public User authenication(User users);
 
 	public Location addCity(Location location);
+	
+	public List<PromotionRequest> getAllPromotionRequests();
 
 	public void updatePromotionRequest(PromotionRequest promotionRequest);
 //	public List<SuperBeing> getAllSuperBeings();
