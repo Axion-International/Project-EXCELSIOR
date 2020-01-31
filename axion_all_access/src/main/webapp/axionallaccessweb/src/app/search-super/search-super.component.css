@@ -1,0 +1,122 @@
+.container {
+    padding: 40px;
+  }
+  
+  .search-box {
+    display: inline-block;
+    width: 100%;
+    border-radius: 3px;
+    padding: 4px 55px 4px 15px;
+    position: relative;
+    background: #fff;
+    border: 1px solid #ddd;
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+  }
+  .search-box.hovered, .search-box:hover, .search-box:active {
+    border: 1px solid #aaa;
+  }
+  .search-box input[type=text] {
+    border: none;
+    box-shadow: none;
+    display: inline-block;
+    padding: 0;
+    background: transparent;
+  }
+  .search-box input[type=text]:hover, .search-box input[type=text]:focus, .search-box input[type=text]:active {
+    box-shadow: none;
+  }
+  .search-box .search-btn {
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    color: #aaa;
+    border-radius: 3px;
+    font-size: 21px;
+    padding: 5px 10px 1px;
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+  }
+  .search-box .search-btn:hover {
+    color: #fff;
+    background-color: rgb(0, 114, 190);
+  }
+  
+
+  #cNavBar{
+    background-color: #274368; 
+ }
+ .cFoot{
+     position: fixed;
+     left: 0;
+     bottom: 0;
+     width: 100%;
+     height: 60px;
+     background-color: #274368; 
+     color:#9ba8b6;
+     text-align: center;
+     margin: auto;
+ }
+ 
+ .carousel-inner > .carousel-item > img {
+     margin:auto;
+     width:100%;
+ }
+ 
+ #spacing{
+     padding-top: 10em;
+ }
+ 
+ .a3Logo{
+     height: 75px;
+     width: 75px;
+ }
+ .a3Verbage{
+     height: 63px;
+     text-align: center;
+ }
+ 
+ body{
+     background-image: url(../../assets/images/bckgrnd_2.jpg);
+     background-repeat: no-repeat, no-repeat;
+     background-position: top ;
+     background-color: #9ba8b6;
+ }
+
+ .interface-box{
+     background-color:cornflowerblue;
+ }
+ #btnPad{
+     padding:  0.5em 5em;
+ }
+ 
+ .divider{
+     width:3em;
+     height:auto;
+     display:inline-block;
+ }
+ 
+ #loginModal{
+     background-color: #274368; ;
+ }
+ #loginModalBord{
+     background-color: #323840; ;
+ }
+ 
+ .jumbotron{
+     background-color: rgba(133, 133, 147, .4);
+ }
+ 
+ #legalScript{
+     font-size: 10px;
+ }
+ 
+ #modText{
+     color:#9ba8b6;
+ }
+ 
+ td{
+     padding:1.25em;
+ }

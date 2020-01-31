@@ -16,6 +16,9 @@ import { EmployeeService } from './employee.service';
 import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EregisterComponent } from './eregister/eregister.component';
+import { EpageComponent } from './epage/epage.component';
+import { SearchSuperComponent } from './search-super/search-super.component';
+import { SearchTeamComponent } from './search-team/search-team.component';
 
 // TO INSTALL -- npm i moduleName  (ie  npm i @ng-bootstrap/ng-bootstrap)
 // REQUIRED-- npm i tslib
@@ -34,6 +37,9 @@ import { EregisterComponent } from './eregister/eregister.component';
     UserpageComponent,
     RegisterComponent,
     EregisterComponent,
+    EpageComponent,
+    SearchSuperComponent,
+    SearchTeamComponent,
 
   ],
   imports: [
