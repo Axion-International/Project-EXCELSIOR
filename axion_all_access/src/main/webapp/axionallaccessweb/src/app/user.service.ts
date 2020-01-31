@@ -52,8 +52,8 @@ export class UserService {
   }
 
   public registerUser(user : User){
-    const updateUrl = this.url+"/user";
-    console.log("Hitting Service "+updateUrl)
+    const updateUrl = this.url + "/user";
+    console.log("Hitting Service " + updateUrl)
     this.role.roleId = 1;
     this.role.roleName = "";
     user.role = {	"roleId" : 1,

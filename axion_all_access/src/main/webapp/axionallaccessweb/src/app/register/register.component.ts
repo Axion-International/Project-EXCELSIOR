@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MustMatch } from '../Validators/must-match.Validator';
 import { User } from '../user.class';
 import { UserService } from '../user.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder, private service: UserService ) { 
+  constructor(private formBuilder: FormBuilder, private service: UserService, private router: Router ) { 
       this.user = new User();
   }
 
@@ -43,10 +44,14 @@ export class RegisterComponent implements OnInit {
       }else{
         console.log("Fireing");
         console.log(this.user.password);
-        console.log(this.service.registerUser(this.user));
-        // .subscribe(res=>this.)
-        // addAnimal(this.animal).subscribe(res=>this.gotoAnimalList());
+        this.service.registerUser(this.user).subscribe(res=>this.gotoUserList());
+
       }
+  }
+
+  gotoUserList(): void{
+    this.user=new User();
+    this.router.navigate(['/user']);
   }
 
   onReset() {
