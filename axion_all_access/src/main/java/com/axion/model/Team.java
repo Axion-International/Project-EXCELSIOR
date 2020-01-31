@@ -23,8 +23,8 @@ public class Team {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int teamId;
 	
-	@OneToOne
-	SuperBeing teamLeader;
+//	@OneToOne
+//	SuperBeing teamLeader;
 	
 	String name;
 	
