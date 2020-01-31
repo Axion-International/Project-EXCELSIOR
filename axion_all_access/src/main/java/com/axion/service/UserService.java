@@ -1,5 +1,6 @@
 package com.axion.service;
 
+import com.axion.exception.AxionException;
 import com.axion.model.User;
 
 public interface UserService {
@@ -10,7 +11,7 @@ public interface UserService {
 
 	public User getUserByUsername(String username);
 
-	public User authentication(User user);
+	public User authentication(User user) throws AxionException;
 	
 
 }

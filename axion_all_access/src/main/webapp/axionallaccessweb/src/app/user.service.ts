@@ -68,13 +68,7 @@ export class UserService {
     */
   }
   
-/////////////////TESTING BLOCK/////////////////////
   public authenticateUser(user : User){
-    // this.role.roleId = 1;
-    // this.role.roleName = "";
-    // user.role = {	"roleId" : 1,
-    // "roleName" : ""};
-    console.dir(user);
     const updateUrl = this.url+"/user/login";
     return this.http.post<User>(updateUrl, user);
   }

@@ -16,40 +16,20 @@ export class EloginComponent implements OnInit {
   eloginFrom : FormGroup;
   submitted = false;
 
-  constructor(
-    private modalService: NgbModal,
-    private formBuilder: FormBuilder, 
-    private service:EmployeeService,
-    private router: Router
-    ) { 
-      
+  constructor(private service:EmployeeService,private router: Router) { 
       this.user = new User();
-      
-    }
-
-  ngOnInit() {
-    this.eloginFrom = this.formBuilder.group ({
-      username: ['', Validators.required],
-      password: ['', Validators.required]
-    });
   }
 
-  get f() { return this.eloginFrom.controls;}
+  ngOnInit() {
+  }
 
-  onSubmit() {
-    this.submitted=true;
-  
-    if (this.eloginFrom.invalid){
-      return;
-    }
-    this.user.username=this.f.username.value;
-    this.user.password=this.f.password.value;
-    this.service.authenication(this.user)
-    .subscribe(data =>{
-      this.router.navigate(['/'])
-    });
-    
-    
+  onSubmit(){
+    this.service.authenication(this.user).subscribe(res=>this.goToValidate());
+  }
+
+  goToValidate(): void{
+    this.user=new User();
+    this.router.navigate(['user/login']);
   }
 }
 

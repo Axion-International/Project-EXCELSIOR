@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.axion.dao.UserDao;
+import com.axion.exception.AxionException;
 import com.axion.model.User;
 
 @Service
@@ -31,17 +32,19 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public User authentication(User user) {
+	public User authentication(User user) throws AxionException {
 		User userT = userDao.findByUsername(user.getUsername());
+		
 		if (userT == null) {
-			throw new RuntimeException("User does not exist!");
+			throw new AxionException("User: " +userT+ " does not exist!");
 		}
 		if (!userT.getPassword().equals(user.getPassword())) {
 			System.out.println(userT.getPassword() + " " + user.getPassword());
-			throw new RuntimeException("Wrong password. Try again");
+			throw new AxionException("Incorrect login credentials.");
 		}
 
 		return user;
+		
 	}
 	
 

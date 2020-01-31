@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.axion.exception.AxionException;
 import com.axion.model.User;
 import com.axion.service.UserService;
 
@@ -38,8 +39,7 @@ public class UserController {
 	}
 	
 	@PostMapping("/user/login")
-	public User authentication(@RequestBody User user) {
-		System.out.println("THis is a call");
+	public User authentication(@RequestBody User user) throws AxionException {
 		return service.authentication(user);
 	}
 	

@@ -23,15 +23,8 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-
-
-  ////////////////////TESTING BLOCK//////////////////////
   onSubmit(){
-    console.dir(this.user);
     this.service.authenticateUser(this.user).subscribe(res=>this.goToValidate());
-
-    //this.router.navigate([this.returnUrl]);
-    // .subscribe(res=>this.gotoUserList());
   }
 
   goToValidate(): void{
