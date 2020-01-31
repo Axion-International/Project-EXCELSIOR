@@ -15,4 +15,9 @@ public class Alignment {
 	@Id
 	int alignment_id;
 	String alignment;
+	public Alignment(String alignment) {
+		this.alignment = alignment;
+	}
+	
+	
 }

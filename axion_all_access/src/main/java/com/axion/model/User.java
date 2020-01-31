@@ -23,5 +23,10 @@ public class User {
 	String password;
 	@OneToOne
 	Role role;
+	public User(String username, String password) {
+		this.username = username;
+		this.password = password;
+	}
+	
 	
 }

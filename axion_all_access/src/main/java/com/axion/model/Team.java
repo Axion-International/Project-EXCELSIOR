@@ -29,4 +29,10 @@ public class Team {
 	
 	@OneToOne
 	TeamStatus teamStatus;
+
+	public Team(String name) {
+		this.name = name;
+	}
+	
+	
 }
