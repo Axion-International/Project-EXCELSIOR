@@ -39,4 +39,12 @@ public class SuperBeing {
 	Team team;
 	
 	String abilities;
+
+	public SuperBeing(String firstName, String lastName) {
+		
+		this.firstName = firstName;
+		this.lastName = lastName;
+		
+	}
+	
 }

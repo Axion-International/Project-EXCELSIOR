@@ -19,4 +19,9 @@ public class Location {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int location_id;
 	String city;
+	public Location(String city) {
+		this.city = city;
+	}
+	
+	
 }
