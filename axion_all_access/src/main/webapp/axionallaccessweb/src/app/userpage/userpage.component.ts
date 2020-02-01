@@ -57,11 +57,14 @@ export class UserpageComponent implements OnInit {
       //Successful Gather
       var element = document.getElementById("SuperBeings");
       this.searchError("");
-      //element.classList.remove("d-none");
+      element.classList.remove("d-none");
     } else {
       //Whoops
       var element = document.getElementById("SuperBeings");
-      //element.classList.add("d-none");
+
+      //hide the window
+      element.classList.remove("d-none");
+      element.classList.add("d-none");
       this.searchError("No results.");
       return;
     }
