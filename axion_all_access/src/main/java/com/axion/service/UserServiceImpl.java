@@ -54,6 +54,7 @@ public class UserServiceImpl implements UserService {
 		session.setAttribute("username" , userT.getUsername());
 		session.setAttribute("role" , userT.getRole());
 		System.out.println(userT.getRole());
+		System.out.println(session.getId());
 		return userT;
 		
 	}

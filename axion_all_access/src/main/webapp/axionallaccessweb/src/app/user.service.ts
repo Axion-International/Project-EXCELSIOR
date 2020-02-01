@@ -71,7 +71,8 @@ export class UserService {
 
   /*Returns the current session user so that pages that require a login can use it.
   Currently only returns dummy user. */
-  
+
+
   public getUserSession(): User{
     let sessionUser = new User();
     sessionUser.username = localStorage.getItem('curUsername');;
@@ -84,5 +85,12 @@ export class UserService {
     const updateUrl = this.url+"/user/login";
     return this.http.post<User>(updateUrl, user);
     
+  }
+
+  public getRole(): number{
+  
+    let curRoleId = parseInt(localStorage.getItem('curRoleId'));
+
+    return curRoleId;
   }
 }
