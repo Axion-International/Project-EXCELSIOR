@@ -43,10 +43,5 @@ public class SuperBeingServiceImpl implements SuperBeingService {
 		// TODO Auto-generated method stub
 		return superBeingDao.findBySuperName(supername);
 	}
-	
-	@Override
-	public boolean isLeader() {
-		return superBeingDao.isLeader();
-	}
 
 }

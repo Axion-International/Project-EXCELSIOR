@@ -15,7 +15,5 @@ public interface SuperBeingService {
 	public SuperBeing getByUserId(int userid);
 
 	public SuperBeing getBySupername(String supername);
-	
-	public boolean isLeader();
 
 }
