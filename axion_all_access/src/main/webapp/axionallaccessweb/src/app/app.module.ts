@@ -21,6 +21,7 @@ import { SearchSuperComponent } from './search-super/search-super.component';
 import { SearchTeamComponent } from './search-team/search-team.component';
 import { HttpInterceptor } from './http-interceptor';
 
+
 // TO INSTALL -- npm i moduleName  (ie  npm i @ng-bootstrap/ng-bootstrap)
 // REQUIRED-- npm i tslib
 
@@ -49,8 +50,8 @@ import { HttpInterceptor } from './http-interceptor';
     NgbModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
-  ],
+    ReactiveFormsModule,
+   ],
   providers: [
     UserService, 
     EmployeeService, 
