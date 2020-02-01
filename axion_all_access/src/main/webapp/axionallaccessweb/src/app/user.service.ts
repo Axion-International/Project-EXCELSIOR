@@ -12,6 +12,7 @@ import { Role } from './role.class';
   providedIn: 'root'
 })
 export class UserService {
+  currentUser: User = new User;
 
   role : Role = new Role;
 
@@ -66,6 +67,22 @@ export class UserService {
 
     select * from role;
     */
+  }
+
+  /*Returns the current session user so that pages that require a login can use it.
+  Currently only returns dummy user. */
+  public getUserSession(): User{
+    let sessionUser = new User();
+
+    sessionUser.username = "Dumbass";
+    sessionUser.userId = 69;
+
+
+
+
+
+
+    return sessionUser;
   }
   
   public authenticateUser(user : User):Observable <User>{
