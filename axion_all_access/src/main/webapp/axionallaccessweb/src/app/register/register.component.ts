@@ -44,11 +44,15 @@ export class RegisterComponent implements OnInit {
       if (this.registerForm.invalid) {
           return;
       }else{
-        this.service.registerUser(this.user).subscribe(res=>this.gotoUserList(),error=>this.errors = error.error);
+        this.service.registerUser(this.user).subscribe(res=>this.gotoUserList(res),error=>this.errors = error.error);
+
       }
   }
 
-  gotoUserList(): void{
+  gotoUserList(res): void{
+    localStorage.setItem('curUserId', JSON.stringify(res.userId));
+    localStorage.setItem('curUsername', res.username);
+    localStorage.setItem('curRoleId',JSON.stringify(res.role.roleId));
     this.user=new User();
     this.router.navigate(['/user']);
   }
