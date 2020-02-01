@@ -23,10 +23,4 @@ public class AxionExceptionHandler extends ResponseEntityExceptionHandler{
                 .body(new AxionExceptionResponse(new Date(), exception.getMessage(), request.getDescription(false)));
     }
     
-    @ExceptionHandler(NotFoundException.class)
-    public final ResponseEntity<AxionExceptionResponse> handleUserNotFoundException(NotFoundException exception, WebRequest request) {
-    	AxionExceptionResponse exceptionResponse = new AxionExceptionResponse(new Date(), exception.getMessage(),
-    			request.getDescription(false));
-      return new ResponseEntity<>(exceptionResponse, HttpStatus.NOT_FOUND);
-    }
 }

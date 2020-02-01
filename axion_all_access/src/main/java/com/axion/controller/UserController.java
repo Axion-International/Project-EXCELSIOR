@@ -46,7 +46,7 @@ public class UserController {
 	}
 	
 	@PostMapping("/employee/login")
-	public User authenticateEmp(@RequestBody User user, HttpSession session) throws AxionException{		
+	public User authenticateEmp(@RequestBody User user, HttpSession session) throws AxionException{
 		return service.authenticatEmp(user, session);
 	}
 	
