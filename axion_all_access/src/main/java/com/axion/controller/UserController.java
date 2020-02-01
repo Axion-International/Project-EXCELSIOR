@@ -1,5 +1,7 @@
 package com.axion.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -39,13 +41,13 @@ public class UserController {
 	}
 	
 	@PostMapping("/user/login")
-	public User authentication(@RequestBody User user) throws AxionException {
-		return service.authentication(user);
+	public User authentication(@RequestBody User user, HttpSession session) throws AxionException {
+		return service.authentication(user, session);
 	}
 	
 	@PostMapping("/employee/login")
-	public User authenticateEmp(@RequestBody User user) throws AxionException{
-		return service.authenticatEmp(user);
+	public User authenticateEmp(@RequestBody User user, HttpSession session) throws AxionException{
+		return service.authenticatEmp(user, session);
 	}
 	
 }
