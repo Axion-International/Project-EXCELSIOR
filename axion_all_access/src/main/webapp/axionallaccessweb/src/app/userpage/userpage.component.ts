@@ -14,18 +14,19 @@ export class UserpageComponent implements OnInit {
   heroQuery;
   Hero: Superbeing;
 
-  private user : User;
+  private User : User;
   submitted = false;
 
   constructor(private service: UserService, private router: Router ) { 
     this.teamQuery = "";
     this.heroQuery="";
+    this.User = new User();
+
     
-    this.user = new User();
-    this.user.username= "user";
   }
 
   ngOnInit() {
+this.User = this.service.getUserSession();
   }
 
   searchHeroes()  {
