@@ -12,36 +12,41 @@ import com.axion.model.SuperBeing;
 public class SuperBeingServiceImpl implements SuperBeingService {
 	
 	@Autowired
-	private SuperBeingDao superDao;
+	private SuperBeingDao superBeingDao;
 	
 	@Override
 	public SuperBeing registerSuperBeing(SuperBeing being) {
 		// TODO Auto-generated method stub
-		return superDao.save(being);
+		return superBeingDao.save(being);
 	}
 
 	@Override
 	public SuperBeing updateSuperBeing(SuperBeing being) {
 		// TODO Auto-generated method stub
-		return superDao.save(being);
+		return superBeingDao.save(being);
 	}
 
 	@Override
 	public List<SuperBeing> getAllSuperBeing() {
 		// TODO Auto-generated method stub
-		return superDao.findAll();
+		return superBeingDao.findAll();
 	}
 
 	@Override
 	public SuperBeing getByUserId(int userid) {
 		// TODO Auto-generated method stub
-		return superDao.findByUser(userid);
+		return superBeingDao.findByUser(userid);
 	}
 
 	@Override
 	public SuperBeing getBySupername(String supername) {
 		// TODO Auto-generated method stub
-		return superDao.findBySuperName(supername);
+		return superBeingDao.findBySuperName(supername);
+	}
+	
+	@Override
+	public boolean isLeader() {
+		return superBeingDao.isLeader();
 	}
 
 }

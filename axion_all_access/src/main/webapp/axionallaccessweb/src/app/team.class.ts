@@ -5,7 +5,7 @@ import { TeamStatus } from './team-status.class';
 export class Team {
    teamId: number;
    teamStatus: TeamStatus;
-   teamLeader: Superbeing;
+  //  teamLeader: Superbeing;
    location: Location;
    name: string;
  }

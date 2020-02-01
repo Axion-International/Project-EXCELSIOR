@@ -22,6 +22,7 @@ public class SuperBeing {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int superBeingId;
+
 	
 	@OneToOne
 	User user;
@@ -29,6 +30,7 @@ public class SuperBeing {
 	String firstName;
 	String lastName;
 	String superName;
+	boolean isLeader;
 	int strength;
 	int constitution;
 	int agility;
