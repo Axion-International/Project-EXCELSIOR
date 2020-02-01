@@ -30,44 +30,38 @@
             <!-- HERO SEARCH -->
             <div class="interface-box usection">
                 <div id="Team-card" class="header-card">Search</div>
-                <h4>Search for a Superbeing</h4>
+                <h4>Search for Superbeings</h4>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-searchUserById">By Id</span>
+                        <span class="input-group-text" id="inputGroup-searchUser">Name</span>
                     </div>
-                    <input type="text" class="form-control">
-                </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-searchUserByName">By Name</span>
-                    </div>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" [(ngModel)]="heroQuery">
                 </div>
                 <div class="container pb-3 border-bottom border-white">
                         <div class="row">
                             <div class="col-sm-9"></div>
                             <button id="btnPad" class="col-sm-3 btn btn-outline-info" type="button" mdbBtn color="default"
-                                rounded="true" mdbWavesEffect (click)="onSubmit()">Search Teams</button>
+                                rounded="true" mdbWavesEffect (click)="searchHeroes()">Search Beings</button>
                         </div>
                     </div>
-                <h4>Search for a Super Team</h4>
+                <h4>Search for Super Teams</h4>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="inputGroup-searchTeamByName">By Name</span>
                     </div>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" [(ngModel)]="teamQuery">
                 </div>
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-9"></div>
                         <button id="btnPad" class="col-sm-3 btn btn-outline-info" type="button" mdbBtn color="default"
-                            rounded="true" mdbWavesEffect (click)="onSubmit()">Search Teams</button>
+                            rounded="true" mdbWavesEffect (click)="searchTeams()">Search Teams</button>
                     </div>
                 </div>
             </div>
 
             <!-- HERO SEARCH RESULTS -->
-            <div id="SuperBeings" class="interface-box usection">
+            <div id="SuperBeings" class="interface-box usection d-none">
                 <div id="Team-card" class="header-card">Search Results</div>
                 <table class="table">
                     <thead>
@@ -82,30 +76,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="col">Encino Dude</th>
-                            <th scope="col">16</th>
-                            <th scope="col">12</th>
-                            <th scope="col">6</th>
-                            <th scope="col">7</th>
-                            <th scope="col">Anchorage</th>
-                            <th scope="col">Neutral</th>
-                        </tr>
-                        <tr>
-                            <th scope="col">Dead Horse</th>
-                            <th scope="col">3</th>
-                            <th scope="col">25</th>
-                            <th scope="col">2</th>
-                            <th scope="col">3</th>
-                            <th scope="col">Pittsburg</th>
-                            <th scope="col">Neutral</th>
+                        <tr *ngFor="let Hero of Heroes">
+                            <th scope="col">{{Hero.Name}}</th>
+                            <th scope="col">{{Hero.Strength}}</th>
+                            <th scope="col">{{Hero.Constitution}}</th>
+                            <th scope="col">{{Hero.Intelligence}}</th>
+                            <th scope="col">{{Hero.Agility}}</th>
+                            <th scope="col">{{Hero.Location}}</th>
+                            <th scope="col">{{Hero.Alignment}}</th>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
             <!-- AGGREGRATES AND STATS SECTION -->
-            <div class="interface-box usection">
+            <div class="interface-box usection d-none">
                 <div id="Team-card" class="header-card">Statistics</div>
                 <div id="averages">
                     <h4>Averages</h4>
