@@ -1,44 +1,48 @@
-<body>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
+
+<section>
+  <div classs="container">
+    <h1>Hello World</h1>
     <br>
-    <br>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <div>
-        <a routerLink="/admin/super">Super</a>
-        <br>
-        <a routerLink="/admin/team">Team Management</a>
+    <div class="row">
+      <div class="card col-sm-2">
+        <div  style="margin-top: 5%;align-self: center;">
+          <h2>Welcome</h2>
+        </div>
+        <div style="margin-top: 5%;">
+          <p>Link1</p>
+          <p>Link1</p>
+          <p>Link1</p>
+          <p>Link1</p>
+          <p>Link1</p>
+        </div>
       </div>
-      <br>
-      <br>
-      <br>
-      <li *ngFor="let promo of promotions">{{promo.promId}}</li>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-    </body>
+      <div class="card col-sm-9" style="margin-left: 40px;">
+        <ul class="nav nav-tabs" style="align-content: right;">
+          <li class="active"><a data-toggle="tab" href="#home">News</a></li>
+          <li><a data-toggle="tab" href="#menu1">Promotion</a></li>
+          <li><a data-toggle="tab" href="#menu2">Team</a></li>
+          <li><a data-toggle="tab" href="#menu3">Search</a></li>
+        </ul>
+        <div class="tab-content">
+          <div id="home" class="tab-pane fade in active">
+            <h3>HOME</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+          <div id="menu1" class="tab-pane fade">
+            
+          </div>
+          <div id="menu2" class="tab-pane fade">
+            
+          </div>
+          <div id="menu3" class="tab-pane fade">
+           
+          </div>
+
+        </div>
+        <app-promotion></app-promotion>
+      </div>
+    </div>
+  </div>
+</section>
     
     

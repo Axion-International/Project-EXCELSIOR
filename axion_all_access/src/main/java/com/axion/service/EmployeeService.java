@@ -17,7 +17,7 @@ public interface EmployeeService {
 	
 	public List<PromotionRequest> getAllPromotionRequests();
 
-	public void updatePromotionRequest(PromotionRequest promotionRequest);
+	public void deletePromotionRequest(int promid);
 //	public List<SuperBeing> getAllSuperBeings();
 //	public SuperBeing getBySuperName(String superName);
 //	public SuperBeing updateSuperBeing(SuperBeing superBeing);

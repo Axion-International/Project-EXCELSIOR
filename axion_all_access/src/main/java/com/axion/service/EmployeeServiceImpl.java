@@ -10,6 +10,7 @@ import com.axion.dao.PromotionRequestDao;
 import com.axion.dao.UserDao;
 import com.axion.model.Location;
 import com.axion.model.PromotionRequest;
+import com.axion.model.RequestStatus;
 import com.axion.model.User;
 
 @Service
@@ -41,19 +42,25 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public void updatePromotionRequest(PromotionRequest promotionRequest) {
-		promotionRequestDao.save(promotionRequest);
-	}
-
-	@Override
 	public Location addCity(Location location) {
 		return locationDao.save(location);
 	}
 
 	@Override
 	public List<PromotionRequest> getAllPromotionRequests() {
-		return promotionRequestDao.findAll();
+		RequestStatus pending = new RequestStatus();
+		pending.setStatus_id(1);
+		pending.setStatus_name("pending");
+		return  promotionRequestDao.findByRequestStatus(pending);
 	}
+
+	@Override
+	public void deletePromotionRequest(int promid) {
+		// TODO Auto-generated method stub
+		promotionRequestDao.deleteById(promid);
+	}
+
+
 
 //	@Override
 //	public List<SuperBeing> getAllSuperBeings() {	
