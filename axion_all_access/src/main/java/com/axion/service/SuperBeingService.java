@@ -14,6 +14,6 @@ public interface SuperBeingService {
 
 	public SuperBeing getByUserId(int userid);
 
-	public SuperBeing getBySupername(String supername);
+	public List<SuperBeing> getBySupername(String supername);
 
 }

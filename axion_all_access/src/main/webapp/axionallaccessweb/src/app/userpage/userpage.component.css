@@ -30,6 +30,11 @@
      height: 63px;
      text-align: center;
  }
+
+ .errorText{
+     text-align: center;
+     color:red;
+ }
  
  body{
      background-image: url(../../assets/images/bckgrnd_1.jpg);

@@ -39,12 +39,12 @@ public class EmployeeController {
 		return service.addCity(location);
 	}
 	
-	@GetMapping("emloyee/promotion")
+	@GetMapping("employee/promotion")
 	public List<PromotionRequest> getAllPromotionRequests() {
 		return service.getAllPromotionRequests();
 	}
 	
-	@PutMapping("emloyee/promotion")
+	@PutMapping("employee/promotion")
 	public void updatePromotionRequest(@RequestBody PromotionRequest promotionRequest) {
 		// TODO Auto-generated method stub
 		service.updatePromotionRequest(promotionRequest);

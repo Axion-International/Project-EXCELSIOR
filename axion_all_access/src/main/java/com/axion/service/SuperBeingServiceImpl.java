@@ -39,8 +39,8 @@ public class SuperBeingServiceImpl implements SuperBeingService {
 	}
 
 	@Override
-	public SuperBeing getBySupername(String supername) {
-		// TODO Auto-generated method stub
+	public List<SuperBeing> getBySupername(String supername) {
+		
 		return superBeingDao.findBySuperName(supername);
 	}
 

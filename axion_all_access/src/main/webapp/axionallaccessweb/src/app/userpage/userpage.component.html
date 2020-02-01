@@ -1,4 +1,5 @@
 <body>
+
     <div class="container" id="spacing">
         <!--LEFT SIDE OF PAGE-->
         <div class="mt-10 h-100">
@@ -33,7 +34,7 @@
                 <h4>Search for Superbeings</h4>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-searchUser">Name</span>
+                        <span class="input-group-text" id="inputGroup-searchUser">By Name</span>
                     </div>
                     <input type="text" class="form-control" [(ngModel)]="heroQuery">
                 </div>
@@ -58,10 +59,12 @@
                             rounded="true" mdbWavesEffect (click)="searchTeams()">Search Teams</button>
                     </div>
                 </div>
+                <div id="searchError" class="d-none"><p id="searchErrorText" class="errorText">Test</p></div>
+
             </div>
 
             <!-- HERO SEARCH RESULTS -->
-            <div id="SuperBeings" class="interface-box usection d-none">
+            <div id="SuperBeings" class="interface-box usection">
                 <div id="Team-card" class="header-card">Search Results</div>
                 <table class="table">
                     <thead>
@@ -76,7 +79,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr *ngFor="let Hero of Heroes">
                             <th scope="col">{{Hero.Name}}</th>
                             <th scope="col">{{Hero.Strength}}</th>
                             <th scope="col">{{Hero.Constitution}}</th>

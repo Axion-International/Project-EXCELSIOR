@@ -40,14 +40,14 @@ public class SuperBeingController {
 		return service.getAllSuperBeing();
 	}
 	
-	@GetMapping("user/superbeing/{userid}")
+	@GetMapping("user/superbeing/id/{userid}")
 	public SuperBeing getByUserId(@PathVariable("userid") int userid) {
 		// TODO Auto-generated method stub
 		return service.getByUserId(userid);
 	}
 	
-	@GetMapping("user/superbeing/{supername}")
-	public SuperBeing getBySupername(@PathVariable("supername") String supername) {
+	@GetMapping("user/superbeing/name/{supername}")
+	public List<SuperBeing> getBySupername(@PathVariable("supername") String supername) {
 		// TODO Auto-generated method stub
 		return service.getBySupername(supername);
 	}
