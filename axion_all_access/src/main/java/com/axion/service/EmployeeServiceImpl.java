@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.axion.dao.LocationDao;
 import com.axion.dao.PromotionRequestDao;
 import com.axion.dao.UserDao;
+import com.axion.exception.AxionException;
 import com.axion.model.Location;
 import com.axion.model.PromotionRequest;
 import com.axion.model.RequestStatus;
@@ -24,8 +25,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 	private PromotionRequestDao promotionRequestDao;
 
 	@Override
-	public User registerEmployee(User users) {
-		return userDao.save(users);
+	public User registerEmployee(User users) throws AxionException{
+		User userCanRegister = userDao.save(users);
+		if (userCanRegister != null) {
+			throw new AxionException("User "+users.getUsername()+" is already registered");
+		}
+		return userCanRegister;
 	}
 
 	@Override
@@ -42,7 +47,11 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public Location addCity(Location location) {
+	public Location addCity(Location location) throws AxionException {
+		Location locationCan = locationDao.save(location);
+		if(locationCan == null) {
+			throw new AxionException("Internal error has occured please call customer service for support");
+		}
 		return locationDao.save(location);
 	}
 
@@ -55,10 +64,13 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public void deletePromotionRequest(int promid) {
+	public void deletePromotionRequest(int promid) throws AxionException {
 		// TODO Auto-generated method stub
 		promotionRequestDao.deleteById(promid);
+		
 	}
+
+
 
 
 

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.axion.exception.AxionException;
 import com.axion.model.Location;
 import com.axion.model.PromotionRequest;
 import com.axion.model.User;
@@ -25,30 +26,30 @@ public class EmployeeController {
 	private EmployeeService service;
 	
 	@PostMapping("/employee")
-	public User registerEmployee(@RequestBody User users) {
+	public User registerEmployee(@RequestBody User users) throws AxionException {
 		return service.registerEmployee(users);
 	}
 	
-	@GetMapping("/employee/login")
-	public User authentication(@RequestBody User users) {
-		return service.authenication(users);
-	}
+//	@GetMapping("/employee/login")
+//	public User authentication(@RequestBody User users) throws AxionException{
+//		return service.authenication(users);
+//	}
 	
 	//adding location
 	@PostMapping("employee/location")
-	public Location addCity(@RequestBody Location location) {
+	public Location addCity(@RequestBody Location location) throws AxionException {
 		// TODO Auto-generated method stub
 		return service.addCity(location);
 	}
 	
 	@GetMapping("employee/promotion")
-	public List<PromotionRequest> getAllPromotionRequests() {
+	public List<PromotionRequest> getAllPromotionRequests()  throws AxionException{
 		return service.getAllPromotionRequests();
 	}
-	
+
 	@DeleteMapping("employee/promotion/{id}")
-	public void deletePromotionRequest(@PathVariable("id") int promid) {
-		// TODO Auto-generated method stub
+	public void deletePromotionRequest(@PathVariable("id") int promid) throws AxionException {
+
 		service.deletePromotionRequest(promid);
 	}
 	
