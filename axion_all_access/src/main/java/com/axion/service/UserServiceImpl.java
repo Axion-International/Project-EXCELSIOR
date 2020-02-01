@@ -19,9 +19,11 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public User registerUser(User user) throws AxionException {
-		User userCanRegister = userDao.save(user);
+		User userCanRegister = userDao.findByUsername(user.getUsername());
 		if (userCanRegister != null) {
 			throw new AxionException("User "+user.getUsername()+" is already registered");
+		}else {
+			userCanRegister= userDao.save(user);
 		}
 		return userCanRegister;
 	}
