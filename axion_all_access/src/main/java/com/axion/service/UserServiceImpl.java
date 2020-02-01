@@ -18,9 +18,14 @@ public class UserServiceImpl implements UserService {
 	private UserDao userDao;
 	
 	@Override
-	public User registerUser(User user) {
-		// TODO Auto-generated method stub
-		return userDao.save(user);
+	public User registerUser(User user) throws AxionException {
+		User userCanRegister = userDao.findByUsername(user.getUsername());
+		if (userCanRegister != null) {
+			throw new AxionException("User "+user.getUsername()+" is already registered");
+		}else {
+			userCanRegister= userDao.save(user);
+		}
+		return userCanRegister;
 	}
 
 	@Override

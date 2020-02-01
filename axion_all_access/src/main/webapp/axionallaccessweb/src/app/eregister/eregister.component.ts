@@ -5,6 +5,8 @@ import { EmployeeService } from '../employee.service';
 import { MustMatch } from '../Validators/must-match.Validator';
 import { Router } from '@angular/router';
 import { Role } from '../role.class';
+import { Errors } from '../errors';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-eregister',
@@ -17,8 +19,9 @@ export class EregisterComponent implements OnInit {
   private role: Role;
   registerForm: FormGroup;
   submitted = false;
+  private errors:Errors;
   
-  constructor(private formBuilder: FormBuilder, private service: EmployeeService, private router:Router) { 
+  constructor(private formBuilder: FormBuilder, private service: UserService, private router:Router) { 
     this.user = new User();
   }
 
@@ -37,20 +40,20 @@ export class EregisterComponent implements OnInit {
 
   onSubmit() {
       this.submitted = true;
-      // stop here if form is invalid
       if (this.registerForm.invalid) {
           return;
       }else{
         this.role.roleId=3;
         this.role.roleName="";
         this.user.role=this.role;
-        this.service.addEmployee(this.user).subscribe(res=>this.gotoUserList());
+        this.service.registerUser(this.user).subscribe(res=>this.reset(), error=>this.errors = error.error);
+        
       }
+      
   }
 
-  gotoUserList(): void{
+  reset(): void{
     this.user=new User();
-    this.router.navigate(['/employee']);
   }
 
   onReset() {

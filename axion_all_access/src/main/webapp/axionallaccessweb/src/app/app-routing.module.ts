@@ -25,7 +25,8 @@ const routes: Routes = [
 {path: 'register',component:RegisterComponent},
 {path: 'user',component:User},
 {path: 'user/login',component:UserpageComponent},
-{path: 'employee/login',component:EpageComponent}
+{path: 'employee/login',component:EpageComponent},
+
 ]
 
 @NgModule({

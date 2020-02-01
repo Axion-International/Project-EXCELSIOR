@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { PromotionRequest } from './promotion-request.class';
 import { User } from './user.class';
+import { Superbeing } from './superbeing.class';
 
 @Injectable({
   providedIn: 'root'
@@ -24,8 +25,21 @@ export class EmployeeService {
     return this.http.post<User>(this.url,user);
   }
 
-  public deletePromotionRequest(id:number): void {
-    const deleteUrl = this.url+"/promotionRequest/"+id;
-    this.http.delete<PromotionRequest>(deleteUrl);
+  //add on side
+  public promotionList(): Observable<PromotionRequest[]> {
+    const promoUrl = this.url + "/promotion"
+    return this.http.get<PromotionRequest[]>(promoUrl);
+  }
+  
+  public deletePromotionRequest(promId:number) :Observable<any>{
+    const deleteUrl = this.url +'/promotion';
+    console.log(deleteUrl)
+    console.log(promId)
+    return this.http.delete(`${deleteUrl}/${promId}`);
+  }
+
+  public promoteLeader(superbeing:Superbeing) {
+    const promoLeader ="http://localhost:9000/user/superbeing";
+    return this.http.put<Superbeing>(promoLeader,superbeing);
   }
 }

@@ -1,18 +1,4 @@
 <body>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
     <div class=" container card"id ="loginModalBord">
         <h4 class="card-header" id ="loginModal">Registration</h4>
         <div class="card-body"id ="loginModalBord">
@@ -22,7 +8,7 @@
                     <input type="text" formControlName="username" [(ngModel)]="user.username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
                     <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
                         <div *ngIf="f.username.errors.required">Username is required</div>
-                        <div *ngIf="f.username.errors.pattern">Must be a valid username</div>
+                        <div *ngIf="f.username.errors.pattern">Must be a valid username</div>                        
                     </div>
                 </div>
                 <div class="form-row">
@@ -50,20 +36,13 @@
                 </div>
                 <div class="text-center">
                     <button id="btnPad" class="btn btn-outline-info mr-1" rounded="true" mdbWavesEffect mdbBtn>Register</button>
+                    <div *ngIf="errors != null || errors != undefined">
+                        <p style="color:red;">{{errors.message}}</p>
+                    </div>
                     <div class="divider"></div>
                     <button id="btnPad" class="btn btn-outline-secondary mr-1" rounded="true" mdbWavesEffect mdbBtn type="reset" (click)="onReset()">Cancel</button>
                 </div>
             </form>
         </div>
     </div>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
 </body>

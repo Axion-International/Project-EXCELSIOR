@@ -21,12 +21,13 @@ export class UserpageComponent implements OnInit {
     this.teamQuery = "";
     this.heroQuery = "";
     this.User = new User();
-    //////////////////////TESTING THIS///////////////////////////////
-    console.log(localStorage.getItem('currentUser'));
+
   }
 
   ngOnInit() {
-    this.User = this.service.getUserSession();
+
+    this.User.username = localStorage.getItem('curUsername')
+    this.User.userId = parseInt(localStorage.getItem('curUserId'));
   }
 
   searchHeroes() {
@@ -44,9 +45,9 @@ export class UserpageComponent implements OnInit {
 
 
       this.service.getBySuperName(this.heroQuery).subscribe(data => {
-        // this.Heroes = data;
+        this.Heroes = data;this.updateHeroes();
       });
-      this.updateHeroes();
+      
       return;
     } else {
       //Search by ID
@@ -55,15 +56,18 @@ export class UserpageComponent implements OnInit {
   }
 
   updateHeroes() {
-    if (this.Heroes != null && this.Heroes.length < 0) {
+    if (this.Heroes != null && this.Heroes.length > 0) {
       //Successful Gather
       var element = document.getElementById("SuperBeings");
       this.searchError("");
-      //element.classList.remove("d-none");
+      element.classList.remove("d-none");
     } else {
       //Whoops
       var element = document.getElementById("SuperBeings");
-      //element.classList.add("d-none");
+
+      //hide the window
+      element.classList.remove("d-none");
+      element.classList.add("d-none");
       this.searchError("No results.");
       return;
     }
@@ -74,7 +78,6 @@ export class UserpageComponent implements OnInit {
   }
 
   updateStats(Heroes: Superbeing[]) {
-
   }
 
   searchError(ErrorText: string) {

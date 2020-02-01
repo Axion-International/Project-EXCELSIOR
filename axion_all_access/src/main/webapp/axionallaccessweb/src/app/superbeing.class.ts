@@ -11,7 +11,7 @@ export class Superbeing {
    supername : string;
    firstname: string;
    lastname: string;
-   isLeader: boolean;
+   leader: boolean;
    strength: number;
    constitution: number;
    agility: number;
