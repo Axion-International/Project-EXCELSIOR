@@ -1,5 +1,7 @@
 package com.axion.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -15,7 +17,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity
 @Table
-public class Role {
+public class Role implements Serializable {
 	@Id
 	int roleId;
 	

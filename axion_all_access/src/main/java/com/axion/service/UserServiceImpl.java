@@ -1,5 +1,7 @@
 package com.axion.service;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,6 +11,8 @@ import com.axion.model.User;
 
 @Service
 public class UserServiceImpl implements UserService {
+	
+
 	
 	@Autowired
 	private UserDao userDao;
@@ -32,7 +36,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public User authentication(User user) throws AxionException {
+	public User authentication(User user, HttpSession session) throws AxionException {
 		User userT = userDao.findByUsername(user.getUsername());
 		
 		if (userT == null) {
@@ -41,13 +45,16 @@ public class UserServiceImpl implements UserService {
 		if (!userT.getPassword().equals(user.getPassword())) {
 			throw new AxionException("Incorrect login credentials.");
 		}
-
+		session.setAttribute("uid" , userT.getUserId());
+		session.setAttribute("username" , userT.getUsername());
+		session.setAttribute("role" , userT.getRole());
+		System.out.println(session);
 		return user;
 		
 	}
 
 	@Override
-	public User authenticatEmp(User user) throws AxionException {
+	public User authenticatEmp(User user, HttpSession session) throws AxionException {
 		User userT = userDao.findByUsername(user.getUsername());
 		
 		if (userT == null) {
@@ -62,11 +69,11 @@ public class UserServiceImpl implements UserService {
 		if (!userT.getPassword().equals(user.getPassword())) {
 			throw new AxionException("Incorrect login credentials.");
 		}
-		
+		session.setAttribute("uid" , userT.getUserId());
+		session.setAttribute("username" , userT.getUsername());
+		session.setAttribute("role" , userT.getRole());
+		System.out.println(session);
 		return user;
 	}
-	
-
-	
 
 }
