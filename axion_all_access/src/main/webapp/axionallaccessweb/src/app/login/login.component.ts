@@ -25,16 +25,15 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
-    this.service.authenticateUser(this.user).subscribe(
-      res=>this.goToValidate(),
+    this.service.authenticateUser(this.user).subscribe(res=>this.goToValidate(res),
       error=>{ this.errors = error.error;
     });
  
   }
  // localStorage.setItem('currentUser', JSON.stringify(this.user));
   
-  goToValidate(): void{
-    localStorage.setItem('currentUser', JSON.stringify(this.user));
+  goToValidate(res): void{
+    localStorage.setItem('currentUser', JSON.stringify(res));
     this.user=new User();
     
     this.router.navigate(['user/login']);
