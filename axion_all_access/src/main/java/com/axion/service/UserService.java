@@ -13,5 +13,5 @@ public interface UserService {
 
 	public User authentication(User user) throws AxionException;
 	
-
+	public User authenticatEmp(User user) throws AxionException;
 }

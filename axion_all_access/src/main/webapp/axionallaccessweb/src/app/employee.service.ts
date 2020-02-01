@@ -17,7 +17,7 @@ export class EmployeeService {
 
    public authenication(user:User): Observable<User> {
     const readUrl = this.url+"/login";
-    return this.http.get<User>(readUrl);
+    return this.http.post<User>(readUrl,user);
   }
 
   public addEmployee(user:User): Observable<User> {

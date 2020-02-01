@@ -10,6 +10,7 @@ import { CareersComponent } from './careers/careers.component';
 import { UserpageComponent } from './userpage/userpage.component';
 import { RegisterComponent } from './register/register.component';
 import { User } from './user.class';
+import { EpageComponent } from './epage/epage.component';
 
 
 const routes: Routes = [
@@ -23,7 +24,8 @@ const routes: Routes = [
 {path: 'careers',component:CareersComponent},
 {path: 'register',component:RegisterComponent},
 {path: 'user',component:User},
-{path: 'user/login',component:UserpageComponent}
+{path: 'user/login',component:UserpageComponent},
+{path: 'employee/login',component:EpageComponent}
 ]
 
 @NgModule({

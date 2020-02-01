@@ -68,7 +68,7 @@ export class UserService {
     */
   }
   
-  public authenticateUser(user : User){
+  public authenticateUser(user : User):Observable <User>{
     const updateUrl = this.url+"/user/login";
     return this.http.post<User>(updateUrl, user);
   }

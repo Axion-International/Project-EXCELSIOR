@@ -87,28 +87,23 @@
                 <h4 class="card-header" id ="loginModal" ><br />Employee Login</h4>
               
                     <div class="card-body" id ="loginModalBord">
-                        <form [formGroup]="eloginFrom" (ngSubmit)="onSubmit()">
-                        <br />
-                        <br />
-                        <div class="form-group">
-                            <h5 id="modText" for="username"> Username:</h5>
-                            <input type="text" class="form-control" placeholder="Username" [(ngModel)]="user.username"/>
-                        </div>
-                      
-                        <br />
-                        <div class="form-group">
-                            <h5 id="modText" for="password"> Password:</h5>
-                            <input type="password"  class="form-control" placeholder="Password"[(ngModel)]="user.password"/>
-                        </div>
-                      
-                        <br />
-                        <br />
-                        <div class="form-group">
-                            <button id="btnPad" class="btn btn-outline-info my-2 my-sm-0" mdbBtn color="default" rounded="true" mdbWavesEffect>Submit</button>
-                        </div>
                         
                         <br />
-                        </form>
+                        <br />
+                        <h5 id="modText" for="username"> Username:</h5>
+                        <input type="text" class="form-control" placeholder="Username" [(ngModel)]="user.username"/>
+                        
+                        <br />
+                        <h5 id="modText" for="password"> Password:</h5>
+                        <input type="password"  class="form-control" placeholder="Password"[(ngModel)]="user.password"/>
+                      
+                        <br />
+                        <br />
+                       
+                        <button id="btnPad" class="btn btn-outline-info my-2 my-sm-0" mdbBtn color="default" rounded="true" mdbWavesEffect (click)="onSubmit()">Submit</button>
+               
+                        <br />
+                        
                     </div>
                 
                 

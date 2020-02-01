@@ -36,15 +36,34 @@ public class UserServiceImpl implements UserService {
 		User userT = userDao.findByUsername(user.getUsername());
 		
 		if (userT == null) {
-			throw new AxionException("User: " +userT+ " does not exist!");
+			throw new AxionException("User: " +user.getUsername()+ " does not exist!");
 		}
 		if (!userT.getPassword().equals(user.getPassword())) {
-			System.out.println(userT.getPassword() + " " + user.getPassword());
 			throw new AxionException("Incorrect login credentials.");
 		}
 
 		return user;
 		
+	}
+
+	@Override
+	public User authenticatEmp(User user) throws AxionException {
+		User userT = userDao.findByUsername(user.getUsername());
+		
+		if (userT == null) {
+			throw new AxionException("User: " +user.getUsername()+ " does not exist!");
+		}
+		
+		if(userT.getRole().getRoleId() != 3) {
+			System.out.println(userT.getRole().getRoleId());
+			throw new AxionException("User: " +userT+ " is not a registered employee");
+		}
+
+		if (!userT.getPassword().equals(user.getPassword())) {
+			throw new AxionException("Incorrect login credentials.");
+		}
+		
+		return user;
 	}
 	
 
