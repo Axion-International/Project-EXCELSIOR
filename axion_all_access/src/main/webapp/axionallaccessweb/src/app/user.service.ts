@@ -27,13 +27,13 @@ export class UserService {
     return this.http.get<Superbeing[]>(readUrl);
   }
 
-   public getBySuperName(superName:string): Observable<Superbeing[]> {
-     const readUrl = this.url+"/user/superbeing/name/"+superName;
-     return this.http.get<Superbeing[]>(readUrl);
+   public getBySuperName(superName:string): Observable<Superbeing> {
+     const readUrl = this.url+"/superbeing/"+superName;
+     return this.http.get<Superbeing>(readUrl);
    }
 
    public updateSuperbeing(superbeing:Superbeing): Observable<Superbeing> {
-    const updateUrl = this.url+"/user/superbeing/";
+    const updateUrl = this.url+"/superbeing";
     return this.http.put<Superbeing>(updateUrl,superbeing);
   }
   
@@ -71,16 +71,12 @@ export class UserService {
 
   /*Returns the current session user so that pages that require a login can use it.
   Currently only returns dummy user. */
+  
   public getUserSession(): User{
     let sessionUser = new User();
 
-    sessionUser.username = "xXxSmokeLeaf420xXx";
+    sessionUser.username = "Dumbass";
     sessionUser.userId = 69;
-
-
-
-
-
 
     return sessionUser;
   }
@@ -88,5 +84,6 @@ export class UserService {
   public authenticateUser(user : User):Observable <User>{
     const updateUrl = this.url+"/user/login";
     return this.http.post<User>(updateUrl, user);
+    
   }
 }

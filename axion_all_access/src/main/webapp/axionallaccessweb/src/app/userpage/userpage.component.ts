@@ -21,6 +21,8 @@ export class UserpageComponent implements OnInit {
     this.teamQuery = "";
     this.heroQuery = "";
     this.User = new User();
+    //////////////////////TESTING THIS///////////////////////////////
+    console.log(localStorage.getItem('currentUser'));
   }
 
   ngOnInit() {
@@ -42,7 +44,7 @@ export class UserpageComponent implements OnInit {
 
 
       this.service.getBySuperName(this.heroQuery).subscribe(data => {
-        this.Heroes = data;
+        // this.Heroes = data;
       });
       this.updateHeroes();
       return;

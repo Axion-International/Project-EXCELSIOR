@@ -96,7 +96,9 @@
                     <br />
                     <button id="btnPad" class="btn btn-outline-info my-2 my-sm-0" type="button" mdbBtn color="default" rounded="true" mdbWavesEffect (click)="onSubmit()">Submit</button>
                     <br>
-                    <p style="color:red;">{{errors.message}}</p>
+                    <div *ngIf="errors != null || errors != undefined">
+                        <p style="color:red;">{{errors.message}}</p>
+                    </div>
                 </div>
                 <br />
             </div>
