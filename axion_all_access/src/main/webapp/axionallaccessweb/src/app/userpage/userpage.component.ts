@@ -21,12 +21,13 @@ export class UserpageComponent implements OnInit {
     this.teamQuery = "";
     this.heroQuery = "";
     this.User = new User();
-    //////////////////////TESTING THIS///////////////////////////////
-    console.log(localStorage.getItem('currentUser'));
+
   }
 
   ngOnInit() {
-    this.User = this.service.getUserSession();
+
+    this.User.username = localStorage.getItem('curUsername')
+    this.User.userId = parseInt(localStorage.getItem('curUserId'));
   }
 
   searchHeroes() {

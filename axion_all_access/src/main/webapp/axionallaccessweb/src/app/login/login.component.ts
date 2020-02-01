@@ -30,10 +30,12 @@ export class LoginComponent implements OnInit {
     });
  
   }
- // localStorage.setItem('currentUser', JSON.stringify(this.user));
-  
+
   goToValidate(res): void{
-    localStorage.setItem('currentUser', JSON.stringify(res));
+    //adding res to local storage
+    localStorage.setItem('curUserId', JSON.stringify(res.userId));
+    localStorage.setItem('curUsername', res.username);
+    localStorage.setItem('curRoleId',JSON.stringify(res.role.roleId));
     this.user=new User();
     
     this.router.navigate(['user/login']);
