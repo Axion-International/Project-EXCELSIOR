@@ -1,20 +1,32 @@
 package com.axion.exception;
 
+import java.util.Date;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.request.WebRequest;
+import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 @ControllerAdvice
-public class AxionExceptionHandler {
+@RestController
+public class AxionExceptionHandler extends ResponseEntityExceptionHandler{
 
-    @ExceptionHandler(AxionException.class)
-    @ResponseBody
-    public ResponseEntity<Object> handleAllOtherErrors(Exception exception) {
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<AxionExceptionResponse> handleAllOtherErrors(Exception exception, WebRequest request) {
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .contentType(MediaType.APPLICATION_JSON)
-                .body(new AxionExceptionResponse(exception.getMessage()));
+                .body(new AxionExceptionResponse(new Date(), exception.getMessage(), request.getDescription(false)));
+    }
+    
+    @ExceptionHandler(NotFoundException.class)
+    public final ResponseEntity<AxionExceptionResponse> handleUserNotFoundException(NotFoundException exception, WebRequest request) {
+    	AxionExceptionResponse exceptionResponse = new AxionExceptionResponse(new Date(), exception.getMessage(),
+    			request.getDescription(false));
+      return new ResponseEntity<>(exceptionResponse, HttpStatus.NOT_FOUND);
     }
 }
