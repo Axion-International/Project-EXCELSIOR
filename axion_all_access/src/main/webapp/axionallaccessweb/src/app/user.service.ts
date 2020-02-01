@@ -23,17 +23,17 @@ export class UserService {
    }
 
    public getAllSuperbeings(): Observable<Superbeing[]> {
-    const readUrl = this.url+"/superbeing";
+    const readUrl = this.url+"/user/superbeing";
     return this.http.get<Superbeing[]>(readUrl);
   }
 
-   public getBySuperName(superName:string): Observable<Superbeing> {
-     const readUrl = this.url+"/superbeing/"+superName;
-     return this.http.get<Superbeing>(readUrl);
+   public getBySuperName(superName:string): Observable<Superbeing[]> {
+     const readUrl = this.url+"/user/superbeing/name/"+superName;
+     return this.http.get<Superbeing[]>(readUrl);
    }
 
    public updateSuperbeing(superbeing:Superbeing): Observable<Superbeing> {
-    const updateUrl = this.url+"/superbeing";
+    const updateUrl = this.url+"/user/superbeing";
     return this.http.put<Superbeing>(updateUrl,superbeing);
   }
   

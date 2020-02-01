@@ -44,9 +44,9 @@ export class UserpageComponent implements OnInit {
 
 
       this.service.getBySuperName(this.heroQuery).subscribe(data => {
-        // this.Heroes = data;
+        this.Heroes = data;this.updateHeroes();
       });
-      this.updateHeroes();
+      
       return;
     } else {
       //Search by ID
@@ -55,7 +55,7 @@ export class UserpageComponent implements OnInit {
   }
 
   updateHeroes() {
-    if (this.Heroes != null && this.Heroes.length < 0) {
+    if (this.Heroes != null && this.Heroes.length > 0) {
       //Successful Gather
       var element = document.getElementById("SuperBeings");
       this.searchError("");
@@ -77,7 +77,6 @@ export class UserpageComponent implements OnInit {
   }
 
   updateStats(Heroes: Superbeing[]) {
-
   }
 
   searchError(ErrorText: string) {
