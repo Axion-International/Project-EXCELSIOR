@@ -3,8 +3,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import { Router } from '@angular/router';
 import { User } from '../user.class';
 import { UserService } from '../user.service';
-
-
+import { Errors } from '../errors';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +13,7 @@ import { UserService } from '../user.service';
 export class LoginComponent implements OnInit {
 
   private user : User;
-
+  private errors:Errors;
 
   constructor(private router: Router, private service: UserService) {  
     this.user = new User();
@@ -24,7 +23,10 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
-    this.service.authenticateUser(this.user).subscribe(res=>this.goToValidate());
+    this.service.authenticateUser(this.user).subscribe(res=>this.goToValidate(),
+    error=>{ 
+      this.errors = error.error;
+    });
   }
 
   goToValidate(): void{

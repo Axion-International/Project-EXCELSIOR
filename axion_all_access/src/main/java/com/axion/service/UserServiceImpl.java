@@ -63,7 +63,7 @@ public class UserServiceImpl implements UserService {
 		
 		if(userT.getRole().getRoleId() != 3) {
 			System.out.println(userT.getRole().getRoleId());
-			throw new AxionException("User: " +userT+ " is not a registered employee");
+			throw new AxionException("User: " +user.getUsername()+ " is not a registered employee");
 		}
 
 		if (!userT.getPassword().equals(user.getPassword())) {

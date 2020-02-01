@@ -14,11 +14,12 @@ import { UserpageComponent } from './userpage/userpage.component';
 import { UserService } from './user.service';
 import { EmployeeService } from './employee.service';
 import { RegisterComponent } from './register/register.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import { EregisterComponent } from './eregister/eregister.component';
 import { EpageComponent } from './epage/epage.component';
 import { SearchSuperComponent } from './search-super/search-super.component';
 import { SearchTeamComponent } from './search-team/search-team.component';
+import { HttpInterceptor } from './http-interceptor';
 
 // TO INSTALL -- npm i moduleName  (ie  npm i @ng-bootstrap/ng-bootstrap)
 // REQUIRED-- npm i tslib
@@ -50,7 +51,11 @@ import { SearchTeamComponent } from './search-team/search-team.component';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [UserService, EmployeeService ],
+  providers: [
+    UserService, 
+    EmployeeService, 
+    {provide: HTTP_INTERCEPTORS,useClass: HttpInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
