@@ -74,9 +74,8 @@ export class UserService {
   
   public getUserSession(): User{
     let sessionUser = new User();
-
-    sessionUser.username = "Dumbass";
-    sessionUser.userId = 69;
+    sessionUser.username = localStorage.getItem('curUsername');;
+    sessionUser.userId =  parseInt(localStorage.getItem('curUserId'));
 
     return sessionUser;
   }
