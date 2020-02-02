@@ -81,8 +81,8 @@
                                 </div>
                                 <input type="text" formControlName="supername" [(ngModel)]="newSuper.supername" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.supername.errors }" />
                                 <div *ngIf="submitted && f.supername.errors" class="invalid-feedback">
-                                    <div *ngIf="f.supername.errors.required">Supername is required</div>
-                                    <div *ngIf="f.supername.errors.pattern">Must be a valid supername</div>
+                                    <div *ngIf="f.supername.errors.required" style="color:red">Supername is required</div>
+                                    <div *ngIf="f.supername.errors.pattern" style="color:red">Must be a valid supername</div>
                                 </div>
                             </div>
                             <!--BaseLocation-->
@@ -92,8 +92,8 @@
                                 </div>
                                 <input type="text" formControlName="baseloc"  class="form-control" [(ngModel)]="newLoc.city"[ngClass]="{ 'is-invalid': submitted && f.baseloc.errors }" />
                                 <div *ngIf="submitted && f.baseloc.errors" class="invalid-feedback">
-                                    <div *ngIf="f.baseloc.errors.required">Location is required</div>
-                                    <div *ngIf="f.baseloc.errors.pattern">Must be a valid location</div>
+                                    <div *ngIf="f.baseloc.errors.required" style="color:red">Location is required</div>
+                                    <div *ngIf="f.baseloc.errors.pattern" style="color:red">Must be a valid location</div>
                                 </div>
                             </div>
                         </div> 
@@ -107,8 +107,8 @@
                                 </div>
                                 <input type="text" formControlName="firstname" [(ngModel)]="newSuper.firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }" />
                                 <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
-                                    <div *ngIf="f.firstname.errors.required">First name is required</div>
-                                    <div *ngIf="f.firstname.errors.pattern">Must be a valid name</div>
+                                    <div *ngIf="f.firstname.errors.required" style="color:red">First name is required</div>
+                                    <div *ngIf="f.firstname.errors.pattern" style="color:red">Must be a valid name</div>
                                 </div>
                             </div>
                             <!--Last Name-->
@@ -118,8 +118,8 @@
                                 </div>
                                 <input type="text" formControlName="lastname"  [(ngModel)]="newSuper.lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }" />
                                 <div *ngIf="submitted && f.lastname.errors" class="invalid-feedback">
-                                    <div *ngIf="f.lastname.errors.required">Last name is required</div>
-                                    <div *ngIf="f.lastname.errors.pattern">Must be a valid name</div>
+                                    <div *ngIf="f.lastname.errors.required" style="color:red">Last name is required</div>
+                                    <div *ngIf="f.lastname.errors.pattern" style="color:red">Must be a valid name</div>
                                 </div>
                             </div>
                         </div> 
@@ -132,8 +132,8 @@
                                 </div>
                                 <input type="number" formControlName="strength" [(ngModel)]="newSuper.strength" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.strength.errors }" />
                                 <div *ngIf="submitted && f.strength.errors" class="invalid-feedback">
-                                    <div *ngIf="f.strength.errors.required">Strength is required</div>
-                                    <div *ngIf="f.strength.errors.pattern">Must be a valid strength</div>
+                                    <div *ngIf="f.strength.errors.required" style="color:red">Strength is required</div>
+                                    <div *ngIf="f.strength.errors.pattern" style="color:red">Must be a valid strength</div>
                                 </div>
                             </div>
                             <!--Agility-->
@@ -143,8 +143,8 @@
                                 </div>
                                 <input type="number" formControlName="agility"  [(ngModel)]="newSuper.agility" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.agility.errors }" />
                                 <div *ngIf="submitted && f.lastname.errors" class="invalid-feedback">
-                                    <div *ngIf="f.agility.errors.required">Agility is required</div>
-                                    <div *ngIf="f.agility.errors.pattern">Must be a valid agility</div>
+                                    <div *ngIf="f.agility.errors.required" style="color:red">Agility is required</div>
+                                    <div *ngIf="f.agility.errors.pattern" style="color:red">Must be a valid agility</div>
                                 </div>
                             </div>
                         </div>
@@ -153,23 +153,23 @@
                             <!-- Constitution -->
                             <div class="input-group col-md-6">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="inputGroup-addSuper" >Strength</span>
+                                    <span class="input-group-text" id="inputGroup-addSuper" >Constitution</span>
                                 </div>
                                 <input type="number" formControlName="constitution" [(ngModel)]="newSuper.constitution" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.constitution.errors }" />
                                 <div *ngIf="submitted && f.constitution.errors" class="invalid-feedback">
-                                    <div *ngIf="f.constitution.errors.required">Constitution is required</div>
-                                    <div *ngIf="f.constitution.errors.pattern">Must be a valid constitution</div>
+                                    <div *ngIf="f.constitution.errors.required" style="color:red">Constitution is required</div>
+                                    <div *ngIf="f.constitution.errors.pattern" style="color:red">Must be a valid constitution</div>
                                 </div>
                             </div>
                             <!--Intelligence-->
                             <div class="input-group col-md-6">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="inputGroup-addSuper" >Agility</span>
+                                    <span class="input-group-text" id="inputGroup-addSuper" >Intelligence</span>
                                 </div>
                                 <input type="number" formControlName="intelligence"  [(ngModel)]="newSuper.intelligence" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.intelligence.errors }" />
                                 <div *ngIf="submitted && f.intelligence.errors" class="invalid-feedback">
-                                    <div *ngIf="f.intelligence.errors.required">Intelligence is required</div>
-                                    <div *ngIf="f.intelligence.errors.pattern">Must be a valid intelligence</div>
+                                    <div *ngIf="f.intelligence.errors.required" style="color:red">Intelligence is required</div>
+                                    <div *ngIf="f.intelligence.errors.pattern" style="color:red">Must be a valid intelligence</div>
                                 </div>
                             </div> 
                         </div>

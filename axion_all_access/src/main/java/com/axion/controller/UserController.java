@@ -34,11 +34,11 @@ public class UserController {
 		return service.registerUser(user);
 	}
 	
-	@PutMapping("user")
-	public User updateUser(@RequestBody User users) {
-		// TODO Auto-generated method stub
-		return service.updateUser(users);
-	}
+	@PutMapping("/user")
+    public User updateUser(@RequestBody User user) {
+        // TODO Auto-generated method stub
+        return service.updateUser(user);
+    }
 	
 	@GetMapping("user/{username}")
 	public User getUserByUsername(@PathVariable String username) {
