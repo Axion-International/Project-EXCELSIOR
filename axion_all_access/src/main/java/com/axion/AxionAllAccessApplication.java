@@ -147,7 +147,7 @@ public class AxionAllAccessApplication {
 			sb2.setAbilities("Divination");
 			sb2.setAlignment(alignment1);
 			sb2.setLocation(location1);
-			sb2.setLeader(false);
+			sb2.setLeader(true);
 			superBeingService.registerSuperBeing(sb2);
 
 			SuperBeing sb3 = new SuperBeing();
