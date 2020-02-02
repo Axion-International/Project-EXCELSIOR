@@ -3,6 +3,7 @@ import { Superbeing } from '../superbeing.class';
 import { User } from '../user.class';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
+import { Location } from '../location.class';
 
 @Component({
   selector: 'app-userpage',

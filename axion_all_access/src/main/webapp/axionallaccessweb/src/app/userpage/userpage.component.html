@@ -3,13 +3,46 @@
     <div class="container" id="spacing">
         <!--LEFT SIDE OF PAGE-->
         <div class="mt-10 h-100">
-            <div class="col-sm-6" style="display: inline-block;">
+            <div class="col-sm-8" style="display: inline-block;">
                 <div class="interface-box container p-3">
-                    <h1>Welcome, {{User.username}}</h1>
+                    <div *ngIf="User.superbeing == null || User.superbeing == undefined; else elseBlock">
+                        <h1>Welcome, {{User.username}}</h1>
+                    </div>
+                    <ng-template #elseBlock><h1>Welcome, {{User.superbeing.superName}}</h1></ng-template>
                 </div>
             </div>
+        <!--CURRENT STATS-->
         <div *ngIf="User.superbeing != null || User.superbeing != undefined">
-            <!-- TRANSFER REQUEST -->
+            <div class="interface-box usection">
+                <div id="Team-card" class="header-card">{{User.superbeing.superName}} statistics</div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Alignment</th>
+                            <th scope="col">Strength</th>
+                            <th scope="col">Constitution</th>
+                            <th scope="col">Intelligence</th>
+                            <th scope="col">Agility</th>
+                            <th scope="col">Team</th>
+                            <th scope="col">Abilities</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td >{{User.superbeing.alignment.alignment}}</td>
+                            <td >{{User.superbeing.strength}}</td>
+                            <td >{{User.superbeing.constitution}}</td>
+                            <td >{{User.superbeing.intelligence}}</td>
+                            <td >{{User.superbeing.agility}}</td>
+                            <td >{{User.superbeing.team.name}}</td>
+                            <td >{{User.superbeing.abilities}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- TRANSFER REQUEST -->
+        <div *ngIf="User.superbeing != null || User.superbeing != undefined">
             <div class="interface-box usection">
                 <div id="Team-card" class="header-card">Team</div>
                 <h4>Request to join a Super Team</h4>
@@ -27,7 +60,84 @@
             </div>
             
             <!-- ADD SUPERBEING TO DATABASE -->
-            
+            <div class="interface-box usection">
+                <div id="Team-card" class="header-card">Add a Super</div>
+                <h4>Add a Superbeing!</h4>
+                <ul>
+                    <li>Are you aware of a superhero or a supervillain that has yet to be entered into our database? Contribute here!</li>
+                </ul>                
+                <div class="form-check py-4 ml-4">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Is a Team Leader
+                    </label>
+                </div>
+                <div class="form-row my-4">
+                    <div class="input-group col-md-6">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-addSuper">Super Name</span>
+                        </div>
+                      <input type="text" class="form-control" id="supername">
+                    </div>
+                    <div class="input-group col-md-6">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-addSuper">Base Location</span>
+                        </div>
+                        <input type="text" class="form-control" id="location">
+                    </div>
+                </div>
+                <div class="form-row my-4">
+                    <div class="input-group col-md-6">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-addSuper">First Name</span>
+                        </div>
+                      <input type="number" class="form-control" id="strength">
+                    </div>
+                    <div class="input-group col-md-6">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-addSuper">Last Name</span>
+                        </div>
+                        <input type="number" class="form-control" id="agility">
+                    </div>
+                </div>
+                <div class="form-row my-4">
+                    <div class="input-group col-md-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-addSuper">Strength</span>
+                        </div>
+                      <input type="number" class="form-control" id="strength">
+                    </div>
+                    <div class="input-group col-md-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-addSuper">Agility</span>
+                        </div>
+                        <input type="number" class="form-control" id="agility">
+                    </div>
+                    <div class="input-group col-md-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-addSuper">Intelligence</span>
+                        </div>
+                      <input type="number" class="form-control" id="intelligence">
+                    </div>
+                    <div class="input-group col-md-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-addSuper">Constitution</span>
+                        </div>
+                        <input type="number" class="form-control" id="constitution">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="abilities">Description of abilities</label>
+                    <input type="text" class="form-control" id="abilities">
+                </div>
+                <div class="container pb-3 border-white">
+                    <div class="row">
+                        <div class="col-sm-8"></div>
+                        <button id="btnPad" class="col-sm-4 btn btn-outline-info" type="button" mdbBtn color="default"
+                            rounded="true" mdbWavesEffect (click)="addHero()">Add Superbeing</button>
+                    </div>
+                </div>
+            </div>
             <div class="interface-box usection">
                 <div id="Team-card" class="header-card">Team</div>
                 <h4>Add a Superbeing!</h4>

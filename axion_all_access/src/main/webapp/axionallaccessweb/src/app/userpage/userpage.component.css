@@ -107,3 +107,9 @@
  td{
      padding:1.25em;
  }
+
+.tabHeading{
+    text-decoration: underline;
+    font-weight: bold;
+
+}
