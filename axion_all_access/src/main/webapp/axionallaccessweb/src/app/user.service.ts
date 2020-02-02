@@ -89,6 +89,7 @@ export class UserService {
 
   public userLogout(){
     const updateUrl = this.url+"/logoff";
+    localStorage.clear();
     return this.http.get(updateUrl);
   }
 
