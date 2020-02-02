@@ -23,7 +23,7 @@ export class SuperDetailComponent implements OnInit {
   constructor(private user:UserService) { }
 
   ngOnInit() {
-    this.user.getSuperbeing(1).subscribe(data=>{
+    this.user.getSuperbeing(this.id).subscribe(data=>{
       this.superbeing=data;
       this.chartData=[
         {data: [this.superbeing.strength,this.superbeing.constitution,this.superbeing.agility,this.superbeing.intelligence],label:'Stats'}

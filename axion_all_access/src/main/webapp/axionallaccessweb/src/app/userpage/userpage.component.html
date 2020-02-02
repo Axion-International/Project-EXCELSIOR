@@ -42,10 +42,13 @@
                 </table>
             </div>
         </div>
-<!-- Process Transfer Requests -->
-       <app-team-lead></app-team-lead>
+
 <!-- TRANSFER REQUEST -->
-        <div *ngIf="User.superbeing != null || User.superbeing != undefined">
+        <div *ngIf="User.superbeing != null || User.superbeing != undefined">  
+    <!-- Process Transfer Requests -->
+    <div *ngIf="User.superbeing.leader"> 
+       <app-team-lead></app-team-lead>
+    </div>
             <div class="interface-box usection">
                 <div id="Team-card" class="header-card">Team</div>
                 <h4>Request to join a Super Team</h4>
@@ -79,7 +82,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="inputGroup-addSuper" >Super Name</span>
                                 </div>
-                                <input type="text" formControlName="supername" [(ngModel)]="newSuper.supername" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.supername.errors }" />
+                                <input type="text" formControlName="supername" [(ngModel)]="newSuper.superName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.supername.errors }" />
                                 <div *ngIf="submitted && f.supername.errors" class="invalid-feedback">
                                     <div *ngIf="f.supername.errors.required" style="color:red">Supername is required</div>
                                     <div *ngIf="f.supername.errors.pattern" style="color:red">Must be a valid supername</div>
@@ -172,6 +175,21 @@
                                     <div *ngIf="f.intelligence.errors.pattern" style="color:red">Must be a valid intelligence</div>
                                 </div>
                             </div> 
+                        </div>
+                        <br />
+                        <div class="form-row container" style="padding-left: 20em;">
+                            <div class="form-check col-md-3" >
+                                <input class="form-check-input" type="radio" name="alignment" id="exampleRadios1" value="hero" checked>
+                                <label class="form-check-label" for="exampleRadios1"><strong>HERO</strong></label>
+                              </div>
+                              <div class="form-check col-md-3">
+                                <input class="form-check-input" type="radio" name="alignment" id="exampleRadios2" value="neutral">
+                                <label class="form-check-label" for="exampleRadios2"><strong>NEUTRAL</strong></label>
+                              </div>
+                              <div class="form-check col-md-3">
+                                <input class="form-check-input" type="radio" name="alignment" id="exampleRadios3" value="villain">
+                                <label class="form-check-label" for="exampleRadios3"><strong>VILLAIN</strong></label>
+                              </div>
                         </div>
                         <div class="form-group">
                             <label for="abilities">Description of abilities</label>

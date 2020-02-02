@@ -57,6 +57,7 @@ export class UserpageComponent implements OnInit {
       agility: ['', [Validators.required, Validators.pattern("^([1-9][0-9]{0,2}|1000)$")]], //number 1 - 1000
       constitution: ['', [Validators.required, Validators.pattern("^([1-9][0-9]{0,2}|1000)$")]], //number 1 - 1000
       intelligence: ['', [Validators.required, Validators.pattern("^([1-9][0-9]{0,2}|1000)$")]], //number 1 - 1000
+      alignment: ['', Validators.required],
       abilities: ['', Validators.required],
       teamlead: [''],
     });
