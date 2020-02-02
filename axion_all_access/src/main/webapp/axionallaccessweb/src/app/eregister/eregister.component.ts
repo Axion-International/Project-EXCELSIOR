@@ -43,9 +43,6 @@ export class EregisterComponent implements OnInit {
       if (this.registerForm.invalid) {
           return;
       }else{
-        this.role.roleId=3;
-        this.role.roleName="";
-        this.user.role=this.role;
         this.service.registerUser(this.user).subscribe(res=>this.reset(), error=>this.errors = error.error);
         
       }
