@@ -16,7 +16,7 @@ public class SuperBeingServiceImpl implements SuperBeingService {
 	
 	@Override
 	public SuperBeing registerSuperBeing(SuperBeing being) {
-		// TODO Auto-generated method stub
+		System.out.println("Adding hero from Service");
 		return superBeingDao.save(being);
 	}
 

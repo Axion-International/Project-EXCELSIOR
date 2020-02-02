@@ -27,6 +27,7 @@ public class SuperBeingController {
 	@PostMapping("user/superbeing")
 	public SuperBeing registerSuperBeing(@RequestBody SuperBeing being) {
 		// TODO Auto-generated method stub
+		System.out.println("Adding hero from Controller");
 		return service.registerSuperBeing(being);
 	}
 	

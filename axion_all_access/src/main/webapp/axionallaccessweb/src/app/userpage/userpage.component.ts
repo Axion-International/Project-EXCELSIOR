@@ -73,7 +73,6 @@ export class UserpageComponent implements OnInit {
   get f() { return this.registerForm.controls; }
 
   onSubmit() {
-    console.log(this.newSuper.alignment);
     this.submitted = true;
     // stop here if form is invalid
     if (this.registerForm.invalid) {
@@ -89,10 +88,9 @@ export class UserpageComponent implements OnInit {
       if(this.cityId == null || this.cityId == undefined){
         this.service.addLocation(this.newLoc).subscribe(res=>{
           this.newSetLoc = res;
-          this.newSuper.location = this.newSetLoc;
+          this.newSuper.location = res;  // setting location
         });
       }
-      console.dir(this.newSuper);
 
       if(this.newAlign.alignment_id == 1){
         this.newAlign.alignment = "Hero";
@@ -101,7 +99,11 @@ export class UserpageComponent implements OnInit {
       }else if(this.newAlign.alignment_id == 3){
         this.newAlign.alignment = "Villain";
       }
-      this.newSuper.alignment = this.newAlign;
+
+      
+      this.newSuper.alignment = this.newAlign;  // setting alignment
+
+      console.dir(this.newSuper);
 
       this.service.addSuperbeing(this.newSuper).subscribe(res=>this.toUser());
     }
