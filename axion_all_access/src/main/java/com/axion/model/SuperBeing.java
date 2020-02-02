@@ -32,6 +32,9 @@ public class SuperBeing {
 	int intelligence;
 	
 	@OneToOne
+	Location location;
+	
+	@OneToOne
 	Alignment alignment;
 	
 	@OneToOne

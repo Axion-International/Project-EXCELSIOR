@@ -131,6 +131,7 @@ public class AxionAllAccessApplication {
 			sb1.setIntelligence(14);
 			sb1.setAbilities("Psychometry");
 			sb1.setAlignment(alignment1);
+			sb1.setLocation(location0);
 			sb1.setLeader(false);
 			superBeingService.registerSuperBeing(sb1);
 
@@ -145,6 +146,7 @@ public class AxionAllAccessApplication {
 			sb2.setIntelligence(22);
 			sb2.setAbilities("Divination");
 			sb2.setAlignment(alignment1);
+			sb2.setLocation(location1);
 			sb2.setLeader(false);
 			superBeingService.registerSuperBeing(sb2);
 
@@ -159,6 +161,7 @@ public class AxionAllAccessApplication {
 			sb3.setIntelligence(11);
 			sb3.setAbilities("Animal Communication");
 			sb3.setAlignment(alignment1);
+			sb3.setLocation(location2);
 			sb3.setLeader(false);
 			superBeingService.registerSuperBeing(sb3);
 
@@ -173,6 +176,7 @@ public class AxionAllAccessApplication {
 			sb4.setIntelligence(34);
 			sb4.setAbilities("Takes Thunder on walks");
 			sb4.setAlignment(alignment1);
+			sb4.setLocation(location1);
 			sb4.setLeader(false);
 			superBeingService.registerSuperBeing(sb3);
 
@@ -187,6 +191,7 @@ public class AxionAllAccessApplication {
 			sb5.setIntelligence(2);
 			sb5.setAbilities("He's Rick James");
 			sb5.setAlignment(alignment1);
+			sb5.setLocation(location1);
 			sb5.setLeader(false);
 			superBeingService.registerSuperBeing(sb5);		
 
