@@ -4,6 +4,7 @@ import { User } from '../user.class';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { Location } from '../location.class';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-userpage',
@@ -14,17 +15,20 @@ export class UserpageComponent implements OnInit {
   teamQuery;
   heroQuery;
   Heroes: Superbeing[];
-
+  registerForm: FormGroup;
   private User: User;
 
   newSuper : Superbeing;
+  newLoc : Location;
   submitted = false;
 
-  constructor(private service: UserService, private router: Router) {
+  constructor(private service: UserService, private router: Router,private formBuilder: FormBuilder) {
     this.teamQuery = "";
     this.heroQuery = "";
     this.User = new User();
     this.newSuper = new Superbeing();
+    this.newLoc = new Location();
+
     
   }
 
@@ -36,8 +40,40 @@ export class UserpageComponent implements OnInit {
     this.User.userId = parseInt(localStorage.getItem('curUserId'));
     this.User.role = JSON.parse(localStorage.getItem('curRole'));
     this.User.superbeing = JSON.parse(localStorage.getItem('curSuperbeing'));
+    this.registerForm = this.formBuilder.group({
+      supername: ['', [Validators.required, Validators.pattern("[A-Za-z0-9- ]{3,20}")]],//supername must be Min 3 char max of 20 all char numbers and space valid
+      baseloc: ['', [Validators.required, Validators.pattern("[A-Za-z- ]{3,20}")]], //base location min 3 character max of 20 only letters
+      firstname: ['', [Validators.required, Validators.pattern("[A-Za-z]{3,20}")]], //base location min 3 character max of 20 only letters
+      lastname: ['', [Validators.required, Validators.pattern("[A-Za-z]{3,20}")]], //base location min 3 character max of 20 only letters
+      strength: ['', [Validators.required, Validators.pattern("^([1-9][0-9]{0,2}|1000)$")]], //number 1 - 1000
+      agility: ['', [Validators.required, Validators.pattern("^([1-9][0-9]{0,2}|1000)$")]], //number 1 - 1000
+      constitution: ['', [Validators.required, Validators.pattern("^([1-9][0-9]{0,2}|1000)$")]], //number 1 - 1000
+      intelligence: ['', [Validators.required, Validators.pattern("^([1-9][0-9]{0,2}|1000)$")]], //number 1 - 1000
+      abilities: ['', Validators.required],
+      teamlead: ['', Validators.required],
+    });
 
   }
+
+  // convenience getter for easy access to form fields
+  get f() { return this.registerForm.controls; }
+
+  onSubmit() {
+    this.submitted = true;
+    // stop here if form is invalid
+    if (this.registerForm.invalid) {
+        return;
+    }else{
+      //this.service.registerUser(this.user).subscribe(res=>this.gotoUserList(res),error=>this.errors = error.error);
+
+    }
+  }
+
+  onReset() {
+    this.submitted = false;
+    this.registerForm.reset();
+}
+
 
   searchHeroes() {
 
@@ -108,8 +144,13 @@ export class UserpageComponent implements OnInit {
 
   populateTeams() {
     //Search for a team
+  }
 
-
+  connectUserToSuperbeing(currentSuperbeing: Superbeing) {
+    this.User.superbeing = currentSuperbeing;
+    this.service.updateUser(this.User).subscribe(res=>{
+      this.User = res;
+    })
   }
 
 }

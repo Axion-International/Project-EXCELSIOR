@@ -113,3 +113,6 @@
     font-weight: bold;
 
 }
+.invalid-feedback{
+    color: red;
+}

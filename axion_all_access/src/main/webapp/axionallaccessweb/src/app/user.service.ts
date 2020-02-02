@@ -72,7 +72,12 @@ export class UserService {
 
   /*Returns the current session user so that pages that require a login can use it.
   Currently only returns dummy user. */
-
+  
+  public updateUser(user:User): Observable<User> {
+    const updateUrl = this.url+"/user";
+    
+    return this.http.put<User>(updateUrl,user);
+  }
 
   public getUserSession(): User{
     let sessionUser = new User();
