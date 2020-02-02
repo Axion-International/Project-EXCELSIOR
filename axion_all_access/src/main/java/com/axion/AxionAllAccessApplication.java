@@ -84,29 +84,6 @@ public class AxionAllAccessApplication {
 			role3.setRoleName("Employee");
 			roleService.addRole(role3);
 			
-			// User stub data
-			System.out.println("Generating the User info.................................................");
-			User user1 = new User();
-			user1.setRole(role2);
-			user1.setUserId(1);
-			user1.setUsername("lululuvely");
-			user1.setPassword("hubbawubba");
-			userService.registerUser(user1);
-
-			User user2 = new User();
-			user2.setRole(role1);
-			user2.setUserId(2);
-			user2.setUsername("samiam");
-			user2.setPassword("ilovegreeneggsandham");
-			userService.registerUser(user2);
-			
-			User user3 = new User();
-			user3.setRole(role3);
-			user3.setUserId(3);
-			user3.setUsername("admin");
-			user3.setPassword("admin");
-			userService.registerUser(user3);
-			
 			// Location stub data
 			System.out.println("Generating the Location info.................................................");
 			Location location0 = new Location();
@@ -316,6 +293,55 @@ public class AxionAllAccessApplication {
 			ttr0.setSuperBeing(sb3);
 			ttr0.setRequestStatus(rq1);
 			teamTransferRequestService.addTeamTransferRequest(ttr0);
+			
+			// User stub data
+			System.out.println("Generating the User info.................................................");
+			User user1 = new User();
+			user1.setRole(role2);
+			user1.setUserId(1);
+			user1.setUsername("lululuvely");
+			user1.setPassword("hubbawubba");
+			user1.setSuperbeing(sb1);
+			userService.registerUser(user1);
+
+			User user2 = new User();
+			user2.setRole(role1);
+			user2.setUserId(2);
+			user2.setUsername("samiam");
+			user2.setPassword("ilovegreeneggsandham");
+			user2.setSuperbeing(sb2);
+			userService.registerUser(user2);
+			
+			User user3 = new User();
+			user3.setRole(role3);
+			user3.setUserId(3);
+			user3.setUsername("admin");
+			user3.setPassword("admin");
+			userService.registerUser(user3);
+			
+			User user4 = new User();
+			user4.setRole(role1);
+			user4.setUserId(4);
+			user4.setUsername("sufyan");
+			user4.setPassword("sufyan");
+			user4.setSuperbeing(sb3);
+			userService.registerUser(user4);
+
+			User user5 = new User();
+			user5.setRole(role1);
+			user5.setUserId(5);
+			user5.setUsername("adminisnothere");
+			user5.setPassword("onceaday");
+			user5.setSuperbeing(sb4);
+			userService.registerUser(user5);
+			
+			User user6 = new User();
+			user6.setRole(role1);
+			user6.setUserId(6);
+			user6.setUsername("checkthisout");
+			user6.setPassword("blahblah");
+			user6.setSuperbeing(sb5);
+			userService.registerUser(user6);
 			
 		};
 	}
