@@ -16,8 +16,8 @@
                 </tr>
             </thead>
            <tbody>
-            <tr *ngFor="let superbeing of superbeings; let i = index">
-                <th>{{i}}</th>
+            <tr *ngFor="let superbeing of superbeings; index as i">
+                <th>{{i + 1}}</th>
                 <th>{{superbeing.superName}}</th>
                 <th>{{superbeing.strength}}</th>
                 <th>{{superbeing.constitution}}</th>
@@ -29,5 +29,6 @@
         </table>
     </div>
 </div>
+
 
 

@@ -1,7 +1,7 @@
 <br>
 <div class=container>
     <form [formGroup]="areaForm" (ngSubmit)="onSubmit()">
-        <div class="row">
+        <div class="row" >
             <div class="col-sm-4">
                 <div class="form-group">
                     <input type="text" formControlName="city" class="form-control"  placeholder="City" [ngClass]="{ 'is-invalid': submitted && f.city.errors }"/>
@@ -18,7 +18,7 @@
             </div>
         </div>
     </form>
-</div>
+
 <div class="row">
     <table class="table table-striped">
         <thead>
@@ -29,11 +29,12 @@
             </tr>
         </thead>
        <tbody>
-        <tr *ngFor="let location of locations; let i = index">
-            <th>{{i}}</th>
+        <tr *ngFor="let location of locations; index as i">
+            <th>{{i + 1 }}</th>
             <th>{{location.city}}</th>
            
         </tr>
        </tbody>
     </table>
+</div>
 </div>

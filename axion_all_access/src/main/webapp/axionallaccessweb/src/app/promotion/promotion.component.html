@@ -14,8 +14,8 @@
                 </tr>
             </thead>
            <tbody>
-            <tr *ngFor="let promotion of promotions; let i = index">
-                <th>{{i}}</th>
+            <tr *ngFor="let promotion of promotions; index as i">
+                <th>{{i + 1}}</th>
                 <th>{{promotion.superbeing.superName}}</th>
                 <th>{{promotion.superbeing.firstName}}</th>
                 <th>{{promotion.superbeing.lastName}}</th>
