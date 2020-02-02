@@ -324,7 +324,7 @@ public class AxionAllAccessApplication {
 			user4.setUserId(4);
 			user4.setUsername("sufyan");
 			user4.setPassword("sufyan");
-			user4.setSuperbeing(sb3);
+			user4.setSuperbeing(sb4);
 			userService.registerUser(user4);
 
 			User user5 = new User();
@@ -332,7 +332,7 @@ public class AxionAllAccessApplication {
 			user5.setUserId(5);
 			user5.setUsername("adminisnothere");
 			user5.setPassword("onceaday");
-			user5.setSuperbeing(sb4);
+			user5.setSuperbeing(sb3);
 			userService.registerUser(user5);
 			
 			User user6 = new User();
