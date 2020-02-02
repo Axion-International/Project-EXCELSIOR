@@ -5,6 +5,7 @@
         <table class="table table-striped">
             <thead>
                 <tr>
+                    <th></th>
                     <th>#</th>
                     <th>SuperName</th>
                     <th>Str</th>
@@ -17,6 +18,7 @@
             </thead>
            <tbody>
             <tr *ngFor="let superbeing of superbeings; index as i">
+                <th><button class="btn btn-md btn-outline-info" (click)="open(content,superbeing.superBeingId)">!</button></th>
                 <th>{{i + 1}}</th>
                 <th>{{superbeing.superName}}</th>
                 <th>{{superbeing.strength}}</th>
@@ -30,5 +32,16 @@
     </div>
 </div>
 
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Superbeing Detail</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <app-super-detail [id]="id"></app-super-detail>
+      </div>
+</ng-template>
 
 
