@@ -48,13 +48,13 @@ public class TeamController {
 	}
 	
 	//get all member for the team
-	@GetMapping("/team/{teamid}")
-	public List<SuperBeing> getTeamMember(@PathVariable("teamid") int teamId) {
+	@GetMapping("/team/member")
+	public List<SuperBeing> getTeamMember(@RequestBody Team team) {
 		// TODO Auto-generated method stub
-		return service.getTeamMember(teamId);
+		return service.getTeamMember(team);
 	}
 	
-	@GetMapping("/team/{teamName}")
+	@GetMapping("/team/name/{teamName}")
 	public Team getTeamMember(@PathVariable("teamName") String teamName) {
 		// TODO Auto-generated method stub
 		return service.getByTeamName(teamName);

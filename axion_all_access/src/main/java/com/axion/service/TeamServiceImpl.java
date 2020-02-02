@@ -47,9 +47,9 @@ public class TeamServiceImpl implements TeamService {
 	}
 
 	@Override
-	public List<SuperBeing> getTeamMember(int teamId) {
+	public List<SuperBeing> getTeamMember(Team team) {
 		// TODO Auto-generated method stub
-		return superDao.findByTeam(teamId);
+		return superDao.findByTeam(team);
 	}
 
 	@Override

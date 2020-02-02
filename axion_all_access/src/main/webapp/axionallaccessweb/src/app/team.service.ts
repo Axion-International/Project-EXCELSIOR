@@ -16,12 +16,12 @@ export class TeamService {
   }
 
   public getByTeamName(teamName:string): Observable<Team>{
-    const readUrl = this.url+"/team/"+teamName;
+    const readUrl = this.url+"/team/name/"+teamName;
     return this.http.get<Team>(readUrl);
   }
 
-  public getTeamMembers(id:number): Observable<Superbeing>{
-    const readUrl = this.url+"/team/"+id;
+  public getTeamMembers(team:Team): Observable<Superbeing>{
+    const readUrl = this.url+"/team/member";
     return this.http.get<Superbeing>(readUrl);
   }
 }
