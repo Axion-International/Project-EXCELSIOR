@@ -53,8 +53,6 @@ public class UserServiceImpl implements UserService {
 		session.setAttribute("uid" , userT.getUserId());
 		session.setAttribute("username" , userT.getUsername());
 		session.setAttribute("role" , userT.getRole());
-		System.out.println(userT.getRole());
-		System.out.println(session.getId());
 		return userT;
 		
 	}
@@ -79,8 +77,13 @@ public class UserServiceImpl implements UserService {
 		session.setAttribute("uid" , userT.getUserId());
 		session.setAttribute("username" , userT.getUsername());
 		session.setAttribute("role" , userT.getRole());
-		System.out.println(session);
 		return user;
+	}
+
+	@Override
+	public void userLogoff(HttpSession session) {
+		session.invalidate();
+		
 	}
 
 }

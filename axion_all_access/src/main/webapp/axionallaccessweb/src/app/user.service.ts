@@ -87,6 +87,12 @@ export class UserService {
     
   }
 
+  public userLogout(){
+    const updateUrl = this.url+"/logoff";
+    return this.http.get(updateUrl);
+  }
+
+
   public getRole(): number{
   
     let curRoleId = parseInt(localStorage.getItem('curRoleId'));

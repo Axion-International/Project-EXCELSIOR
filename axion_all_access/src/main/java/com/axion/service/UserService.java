@@ -16,4 +16,6 @@ public interface UserService {
 	public User authentication(User user, HttpSession session) throws AxionException;
 	
 	public User authenticatEmp(User user, HttpSession session) throws AxionException;
+	
+	public void userLogoff(HttpSession session);
 }

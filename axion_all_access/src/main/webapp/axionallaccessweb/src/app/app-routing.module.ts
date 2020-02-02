@@ -26,6 +26,7 @@ const routes: Routes = [
 {path: 'user',component:User},
 {path: 'user/login',component:UserpageComponent},
 {path: 'employee/login',component:EpageComponent},
+{path: 'logout', component:LoginComponent}
 
 ]
 

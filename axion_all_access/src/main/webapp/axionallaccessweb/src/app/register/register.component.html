@@ -16,7 +16,7 @@
     <div class=" container card"id ="loginModalBord">
         <h4 class="card-header" id ="loginModal">Registration</h4>
         <div class="card-body"id ="loginModalBord">
-            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
                 <div class="form-group">
                     <label id="modText">Username</label>
                     <input type="text" formControlName="username" [(ngModel)]="user.username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />

@@ -22,8 +22,12 @@ export class AppComponent implements OnInit{
     ////////////////TESTING//////////////////////
     //service.getRole();
   }
+
   ngOnInit() {
   }
 
-  
+  public logout(){
+    localStorage.clear();
+    this.service.userLogout();
+  }
 }

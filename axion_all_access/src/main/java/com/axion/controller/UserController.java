@@ -51,4 +51,9 @@ public class UserController {
 	
 	}
 	
+	@GetMapping("/logoff")
+	public void userLogoff(HttpSession session) {
+		service.userLogoff(session);
+	}
+	
 }
