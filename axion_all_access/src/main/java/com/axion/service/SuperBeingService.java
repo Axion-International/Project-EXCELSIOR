@@ -13,7 +13,8 @@ public interface SuperBeingService {
 	public List<SuperBeing> getAllSuperBeing();
 
 //	public SuperBeing getByUserId(int userid);
-
+	public SuperBeing getSuperById(int id);
+	
 	public List<SuperBeing> getBySupername(String supername);
 
 }

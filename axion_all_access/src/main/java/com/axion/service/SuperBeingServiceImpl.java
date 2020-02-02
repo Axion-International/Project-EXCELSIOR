@@ -44,4 +44,10 @@ public class SuperBeingServiceImpl implements SuperBeingService {
 		return superBeingDao.findBySuperName(supername);
 	}
 
+	@Override
+	public SuperBeing getSuperById(int id) {
+		// TODO Auto-generated method stub
+		return superBeingDao.findBySuperBeingId(id);
+	}
+
 }

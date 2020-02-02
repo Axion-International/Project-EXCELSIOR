@@ -24,6 +24,7 @@ import { PromotionComponent } from './promotion/promotion.component';
 import { LocationComponent } from './location/location.component';
 import { TeamInfoComponent } from './team-info/team-info.component';
 import { TeamLeadComponent } from './team-lead/team-lead.component';
+import { SuperDetailComponent } from './super-detail/super-detail.component';
 
 
 // TO INSTALL -- npm i moduleName  (ie  npm i @ng-bootstrap/ng-bootstrap)
@@ -50,6 +51,7 @@ import { TeamLeadComponent } from './team-lead/team-lead.component';
     LocationComponent,
     TeamInfoComponent,
     TeamLeadComponent,
+    SuperDetailComponent,
 
   ],
   imports: [

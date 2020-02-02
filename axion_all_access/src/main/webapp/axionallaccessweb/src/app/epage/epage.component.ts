@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./epage.component.css']
 })
 export class EpageComponent implements OnInit {
-
+  active = 1;
   constructor() { }
 
   ngOnInit() {

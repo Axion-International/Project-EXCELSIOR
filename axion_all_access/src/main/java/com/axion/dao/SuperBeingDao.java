@@ -14,4 +14,5 @@ public interface SuperBeingDao extends JpaRepository<SuperBeing, Integer> {
 	List<SuperBeing> findBySuperName(String superName);
 //	SuperBeing findByUser(int userid);
 	List<SuperBeing> findByTeam(Team team);
+	SuperBeing findBySuperBeingId(int id);
 }

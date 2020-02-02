@@ -41,6 +41,10 @@ public class SuperBeingController {
 		// TODO Auto-generated method stub
 		return service.getAllSuperBeing();
 	}
+	@GetMapping("user/superbeing/{id}")
+	public SuperBeing getBeingById(@PathVariable("id") int id) {
+		return service.getSuperById(id);
+	}
 	
 //	@GetMapping("user/superbeing/id/{userid}")
 //	public SuperBeing getByUserId(@PathVariable("userid") int userid) {
