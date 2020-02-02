@@ -13,7 +13,6 @@
 	<artifactId>axion_all_access</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>axion_all_access</name>
-	<packaging>war</packaging>
 	<description>Axion All Access</description>
 	<properties>
 		<java.version>1.8</java.version>
