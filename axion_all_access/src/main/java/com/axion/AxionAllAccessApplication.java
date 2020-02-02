@@ -297,6 +297,18 @@ public class AxionAllAccessApplication {
 			team0.setTeamStatus(ts1);
 			teamService.createTeam(team0);
 			
+			
+			sb1.setTeam(team0);
+			sb2.setTeam(team0);
+			sb3.setTeam(team1);
+			sb4.setTeam(team2);
+			sb5.setTeam(team1);
+			superBeingService.updateSuperBeing(sb1);
+			superBeingService.updateSuperBeing(sb2);
+			superBeingService.updateSuperBeing(sb3);
+			superBeingService.updateSuperBeing(sb4);
+			superBeingService.updateSuperBeing(sb5);
+			
 			// TeamTransferRequest stub data
 			TeamTransferRequest ttr0 = new TeamTransferRequest();
 			ttr0.setTeamTransferId(1);

@@ -9,7 +9,7 @@
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Ability</th>
-                    <!-- <th>Team</th> -->
+                    <th>Team</th>
                     <th></th>
                 </tr>
             </thead>
@@ -20,7 +20,7 @@
                 <th>{{promotion.superbeing.firstName}}</th>
                 <th>{{promotion.superbeing.lastName}}</th>
                 <th>{{promotion.superbeing.abilities}}</th>
-                <!-- <th>{{promotion.superbeing.team.name}}</th> -->
+                <th>{{promotion.superbeing.team.name}}</th>
                 <th><button class="btn btn-primary" (click)="pocessPromo(promotion.promId,1,promotion.superbeing)" type="button" >Approved</button>
                     <button class="btn btn-primary" (click)="pocessPromo(promotion.promId,2,promotion.superbeing)" type="button" style="margin-left: 5px;" >Rejected</button></th>
             </tr>
