@@ -5,7 +5,7 @@ export class User {
    userId: number;
    username: string;
    password: string;
-   superbing: Superbeing;
+   superbeing: Superbeing;
    role: Role;
  }
  

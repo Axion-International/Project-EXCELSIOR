@@ -21,13 +21,23 @@ export class UserpageComponent implements OnInit {
     this.teamQuery = "";
     this.heroQuery = "";
     this.User = new User();
-
+    
   }
 
-  ngOnInit() {
+  // roleId: number;
+  // roleName: string;
 
+  ngOnInit() {
     this.User.username = localStorage.getItem('curUsername')
     this.User.userId = parseInt(localStorage.getItem('curUserId'));
+    
+    //let test = {roleId : parseInt(localStorage.getItem('curRoleId')), roleName : (roleId == 1 ?("user"))}
+    this.User.role = JSON.parse(localStorage.getItem('curRole'));
+    console.log(localStorage.getItem('curRole'));
+    console.dir(this.User);
+    //this.User.role.roleId = parseInt(localStorage.getItem('curRoleId'));
+    this.User.superbeing.superbeingId = parseInt(localStorage.getItem('currSuperbeing'));
+    //console.dir(this.User);
   }
 
   searchHeroes() {

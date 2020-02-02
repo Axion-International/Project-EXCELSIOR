@@ -33,9 +33,14 @@ export class LoginComponent implements OnInit {
 
   goToValidate(res): void{
     //adding res to local storage
+    console.log("this is a call "+JSON.stringify(res));
+    
     localStorage.setItem('curUserId', JSON.stringify(res.userId));
     localStorage.setItem('curUsername', res.username);
-    localStorage.setItem('curRoleId',JSON.stringify(res.role.roleId));
+    localStorage.setItem('currRole',JSON.stringify(res.role));
+    console.log("checking role: "+typeof(localStorage.getItem('currRole')) );
+    //localStorage.setItem('curRoleId',JSON.stringify(res.role.roleId));
+    localStorage.setItem('currSuperbeing', res.superbeing.superbeingId)
     this.user=new User();
     
     this.router.navigate(['user/login']);
@@ -43,7 +48,11 @@ export class LoginComponent implements OnInit {
   
 }
 
-
+// userId: number;
+// username: string;
+// password: string;
+// superbeing: Superbeing;
+// role: Role;
 
 
 

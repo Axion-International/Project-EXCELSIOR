@@ -8,7 +8,7 @@
                     <h1>Welcome, {{User.username}}</h1>
                 </div>
             </div>
-
+    <div *ngIf="User.superbeing != null || User.superbeing != undefined">
             <!-- TRANSFER REQUEST -->
             <div class="interface-box usection">
                 <div id="Team-card" class="header-card">Team</div>
@@ -25,7 +25,7 @@
                     <input type="text" class="form-control">
                 </div>
             </div>
-
+    </div>
             <!--Headers - #323840-->
 
             <!-- HERO SEARCH -->
