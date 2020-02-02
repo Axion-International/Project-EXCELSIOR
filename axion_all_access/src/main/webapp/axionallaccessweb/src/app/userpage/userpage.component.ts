@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 import { Location } from '../location.class';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { subscribeOn } from 'rxjs/operators';
+import { invalid } from '@angular/compiler/src/render3/view/util';
+import { Alignment } from '../alignment.class';
 
 
 @Component({
@@ -20,6 +22,7 @@ export class UserpageComponent implements OnInit {
   Heroes: Superbeing[];
   registerForm: FormGroup;
   private User: User;
+
   
   cityId : number;
 
@@ -27,6 +30,7 @@ export class UserpageComponent implements OnInit {
   newLoc : Location;
   submitted = false;
   newSetLoc : Location;
+  newAlign : Alignment;
 
   constructor(private service: UserService, private router: Router,private formBuilder: FormBuilder) {
     this.teamQuery = "";
@@ -35,6 +39,7 @@ export class UserpageComponent implements OnInit {
     this.newSuper = new Superbeing();
     this.newLoc = new Location();
     this.newSetLoc = new Location();
+    this.newAlign = new Alignment();
     
 
   }
@@ -68,9 +73,11 @@ export class UserpageComponent implements OnInit {
   get f() { return this.registerForm.controls; }
 
   onSubmit() {
+    console.log(this.newSuper.alignment);
     this.submitted = true;
     // stop here if form is invalid
     if (this.registerForm.invalid) {
+      console.log("invalid")
         return;
     }else{
       for(let loc of this.locations){
@@ -80,18 +87,24 @@ export class UserpageComponent implements OnInit {
         }
       }
       if(this.cityId == null || this.cityId == undefined){
-        console.log("is undefined");
         this.service.addLocation(this.newLoc).subscribe(res=>{
           this.newSetLoc = res;
-          this.newSuper.location = this.newLoc;
+          this.newSuper.location = this.newSetLoc;
         });
       }
+      console.dir(this.newSuper);
+
+      if(this.newAlign.alignment_id == 1){
+        this.newAlign.alignment = "Hero";
+      }else if(this.newAlign.alignment_id == 2){
+        this.newAlign.alignment = "Neutral";
+      }else if(this.newAlign.alignment_id == 3){
+        this.newAlign.alignment = "Villain";
+      }
+      this.newSuper.alignment = this.newAlign;
+
       this.service.addSuperbeing(this.newSuper).subscribe(res=>this.toUser());
     }
-    
-        //this.locations = data;
-      //this.service.registerUser(this.user).subscribe(res=>this.gotoUserList(res),error=>this.errors = error.error);
-      //this.service.addSuperbeing(this.newSuper);
     
   }
   toUser(){

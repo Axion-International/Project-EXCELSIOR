@@ -179,15 +179,15 @@
                         <br />
                         <div class="form-row container" style="padding-left: 20em;">
                             <div class="form-check col-md-3" >
-                                <input class="form-check-input" type="radio" name="alignment" id="exampleRadios1" value="hero" checked>
+                                <input class="form-check-input" type="radio" formControlName="alignment"[(ngModel)]="newAlign.alignment_id" name="alignment" id="exampleRadios1" value="1" checked>
                                 <label class="form-check-label" for="exampleRadios1"><strong>HERO</strong></label>
                               </div>
                               <div class="form-check col-md-3">
-                                <input class="form-check-input" type="radio" name="alignment" id="exampleRadios2" value="neutral">
+                                <input class="form-check-input" type="radio" formControlName="alignment"[(ngModel)]="newAlign.alignment_id" name="alignment" id="exampleRadios2" value="2">
                                 <label class="form-check-label" for="exampleRadios2"><strong>NEUTRAL</strong></label>
                               </div>
                               <div class="form-check col-md-3">
-                                <input class="form-check-input" type="radio" name="alignment" id="exampleRadios3" value="villain">
+                                <input class="form-check-input" type="radio" formControlName="alignment"[(ngModel)]="newAlign.alignment_id" name="alignment" id="exampleRadios3" value="3">
                                 <label class="form-check-label" for="exampleRadios3"><strong>VILLAIN</strong></label>
                               </div>
                         </div>
