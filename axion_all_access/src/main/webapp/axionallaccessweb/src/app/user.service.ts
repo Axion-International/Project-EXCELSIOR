@@ -132,5 +132,9 @@ export class UserService {
     return this.http.post<Location>(this.url+"/employee/location",location);
   }
 
+  public getSuperbeing(id:number):Observable<Superbeing> {
+    const beingUrl = this.url+"/user/superbeing/" + id;
+    return this.http.get<Superbeing>(beingUrl);
+  }
 
 }

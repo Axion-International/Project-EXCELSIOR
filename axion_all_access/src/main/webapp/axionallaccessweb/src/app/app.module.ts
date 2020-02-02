@@ -25,6 +25,7 @@ import { LocationComponent } from './location/location.component';
 import { TeamInfoComponent } from './team-info/team-info.component';
 import { TeamLeadComponent } from './team-lead/team-lead.component';
 import { SuperDetailComponent } from './super-detail/super-detail.component';
+import { ChartsModule } from 'ng2-charts';
 
 
 // TO INSTALL -- npm i moduleName  (ie  npm i @ng-bootstrap/ng-bootstrap)
@@ -51,7 +52,7 @@ import { SuperDetailComponent } from './super-detail/super-detail.component';
     LocationComponent,
     TeamInfoComponent,
     TeamLeadComponent,
-    SuperDetailComponent,
+    SuperDetailComponent
 
   ],
   imports: [
@@ -61,6 +62,7 @@ import { SuperDetailComponent } from './super-detail/super-detail.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    ChartsModule
    ],
   providers: [
     UserService, 

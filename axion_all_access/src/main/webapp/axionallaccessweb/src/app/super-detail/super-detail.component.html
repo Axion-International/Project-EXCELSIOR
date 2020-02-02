@@ -1,1 +1,48 @@
-<p>super-detail works!</p>
+<div class="container" *ngIf="loading">
+    <div class="row">
+     
+        <div class="col-sm-4">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+               <tbody>
+                <tr>
+                  <th>SuperName: </th>
+                  <th>{{superbeing.superName}}</th>
+                </tr>
+                <tr>
+                    <th>Name: </th>
+                    <th>{{superbeing.firstName}} {{superbeing.lastName}} </th>
+                  </tr>
+                  <tr>
+                    <th>Team: </th>
+                    <th>{{superbeing.team.name}}</th>
+                  </tr>
+                  <tr>
+                    <th>Location: </th>
+                    <th>{{superbeing.location.city}}</th>
+                  </tr>
+                  <tr>
+                    <th>Alignment: </th>
+                    <th>{{superbeing.alignment.alignment}}</th>
+                  </tr>
+               </tbody>
+            </table>
+        </div>
+        <div class="col-sm-8">
+            <br>
+            <div style="display: block">
+                <canvas baseChart
+                  [datasets]="chartData"
+                  [options]="chartOptions"
+                  [labels]="chartLabels"
+                  [chartType]="chartType">
+                </canvas>
+              </div>
+        </div>
+    </div>
+  </div>
