@@ -22,6 +22,7 @@ import { SearchTeamComponent } from './search-team/search-team.component';
 import { HttpInterceptor } from './http-interceptor';
 import { PromotionComponent } from './promotion/promotion.component';
 import { LocationComponent } from './location/location.component';
+import { TeamInfoComponent } from './team-info/team-info.component';
 
 
 // TO INSTALL -- npm i moduleName  (ie  npm i @ng-bootstrap/ng-bootstrap)
@@ -46,6 +47,7 @@ import { LocationComponent } from './location/location.component';
     SearchTeamComponent,
     PromotionComponent,
     LocationComponent,
+    TeamInfoComponent,
 
   ],
   imports: [
