@@ -1,0 +1,35 @@
+<p>location works!</p>
+
+<div class="row">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Location</th>
+              
+            </tr>
+        </thead>
+       <tbody>
+        <tr *ngFor="let location of locations; let i = index">
+            <th>{{i}}</th>
+            <th>{{location.city}}</th>
+           
+        </tr>
+       </tbody>
+    </table>
+</div>
+
+<div class=container>
+    <form [formGroup]="areaForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label id="modeTest">New City</label>
+            <input type="text" formControlName="city" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.city.errors }"/>
+            <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+                <div *ngIf="f.city.errors.required">Location is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <button id="btnPad" class="btn btn-outline-info mr-1" rounded="true" mdbWavesEffect mdbBtn>Register</button>
+        </div>
+    </form>
+</div>

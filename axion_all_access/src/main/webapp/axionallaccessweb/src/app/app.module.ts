@@ -21,6 +21,7 @@ import { SearchSuperComponent } from './search-super/search-super.component';
 import { SearchTeamComponent } from './search-team/search-team.component';
 import { HttpInterceptor } from './http-interceptor';
 import { PromotionComponent } from './promotion/promotion.component';
+import { LocationComponent } from './location/location.component';
 
 
 // TO INSTALL -- npm i moduleName  (ie  npm i @ng-bootstrap/ng-bootstrap)
@@ -44,6 +45,7 @@ import { PromotionComponent } from './promotion/promotion.component';
     SearchSuperComponent,
     SearchTeamComponent,
     PromotionComponent,
+    LocationComponent,
 
   ],
   imports: [

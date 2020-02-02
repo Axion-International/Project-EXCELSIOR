@@ -17,6 +17,7 @@ import com.axion.model.Location;
 import com.axion.model.PromotionRequest;
 import com.axion.model.User;
 import com.axion.service.EmployeeService;
+import com.axion.service.ReferenceService;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
@@ -24,6 +25,8 @@ public class EmployeeController {
 	
 	@Autowired
 	private EmployeeService service;
+	@Autowired
+	private ReferenceService refService;
 	
 	@PostMapping("/employee")
 	public User registerEmployee(@RequestBody User users) throws AxionException {
@@ -40,6 +43,11 @@ public class EmployeeController {
 	public Location addCity(@RequestBody Location location) throws AxionException {
 		// TODO Auto-generated method stub
 		return service.addCity(location);
+	}
+	
+	@GetMapping("employee/location")
+	public List<Location> getLocation() {
+		return refService.getAllLocation();
 	}
 	
 	@GetMapping("employee/promotion")
