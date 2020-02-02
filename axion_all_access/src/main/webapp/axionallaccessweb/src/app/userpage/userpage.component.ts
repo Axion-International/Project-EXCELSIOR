@@ -26,6 +26,7 @@ export class UserpageComponent implements OnInit {
   newSuper : Superbeing;
   newLoc : Location;
   submitted = false;
+  newSetLoc : Location;
 
   constructor(private service: UserService, private router: Router,private formBuilder: FormBuilder) {
     this.teamQuery = "";
@@ -33,6 +34,8 @@ export class UserpageComponent implements OnInit {
     this.User = new User();
     this.newSuper = new Superbeing();
     this.newLoc = new Location();
+    this.newSetLoc = new Location();
+    
 
   }
 
@@ -71,15 +74,18 @@ export class UserpageComponent implements OnInit {
     }else{
       for(let loc of this.locations){
         if(this.newLoc.city == loc.city){
-            //this.cityId = loc.locationId;
-            console.dir(loc);
-            console.log("MATCHES!!!! "+loc.locationId);
-        }else{
-          console.log("NO MATCHES!!!!");
+            this.cityId = loc.locationId;
+            this.newSuper.location = loc;
         }
       }
-      console.log(this.cityId);
-
+      if(this.cityId == null || this.cityId == undefined){
+        console.log("is undefined");
+        this.service.addLocation(this.newLoc).subscribe(res=>{
+          this.newSetLoc = res;
+          this.newSuper.location = this.newLoc;
+        });
+      }
+      this.service.addSuperbeing(this.newSuper).subscribe(res=>this.toUser());
     }
     
         //this.locations = data;
@@ -87,6 +93,10 @@ export class UserpageComponent implements OnInit {
       //this.service.addSuperbeing(this.newSuper);
     
   }
+  toUser(){
+    this.User=new User();
+    this.router.navigate(['/user']);
+}
 
   onReset() {
     this.submitted = false;
@@ -120,15 +130,14 @@ export class UserpageComponent implements OnInit {
   }
 
   updateHeroes() {
+    var element = document.getElementById("SuperBeings");
     if (this.Heroes != null && this.Heroes.length > 0) {
       //Successful Gather
-      var element = document.getElementById("SuperBeings");
+      
       this.searchError("");
       element.classList.remove("d-none");
     } else {
-      //Whoops
-      var element = document.getElementById("SuperBeings");
-
+      
       //hide the window
       element.classList.remove("d-none");
       element.classList.add("d-none");
@@ -171,6 +180,13 @@ export class UserpageComponent implements OnInit {
     })
   }
 
-
+  kickSuperHeroFromTeam(currentSuperbeing: Superbeing) {
+    currentSuperbeing.team = null;
+    console.dir(currentSuperbeing);
+    this.service.updateSuperbeing(currentSuperbeing).subscribe(res=>{
+      // this.heroQuery = res[0].name;
+      // this.searchHeroes();
+    })
+  }
 
 }

@@ -244,8 +244,8 @@
                             <th scope="col">Agility</th>
                             <th scope="col">Location</th>
                             <th scope="col">Alignment</th>
-                            <th *ngIf="User.superbeing == null || User.superbeing == undefined">Connect</th>
-                            <th *ngIf="User.superbeing != null && User.superbeing.isLeader == true && Hero.team == User.superbeing.team">Expunge</th>
+                            <th *ngIf="User.superbeing">Connect</th>
+                            <th *ngIf="User.superbeing != null && User.superbeing.leader == true">Expunge</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -255,13 +255,13 @@
                             <th scope="col">{{Hero.constitution}}</th>
                             <th scope="col">{{Hero.intelligence}}</th>
                             <th scope="col">{{Hero.agility}}</th>
-                            <th scope="col">{{Hero.team.location.city}}</th>
+                            <th scope="col">{{Hero.location.city}}</th>
                             <th scope="col">{{Hero.alignment.alignment}}</th>
                             <th *ngIf="User.superbeing == null || User.superbeing == undefined">
                                 <button type="button" (click)="connectUserToSuperbeing(Hero)">Connect</button>
                             </th>
-                            <th *ngIf="User.superbeing != null && User.superbeing.isLeader == true && Hero.team == User.superbeing.team">
-                                <button type="button">Expunge</button>
+                            <th *ngIf="User.superbeing != null && User.superbeing.leader == true && Hero.team && Hero.team.teamId == User.superbeing.team.teamId">
+                                <button type="button" (click)="kickSuperHeroFromTeam(Hero)">Expunge</button>
                             </th>
                         </tr>
                     </tbody>

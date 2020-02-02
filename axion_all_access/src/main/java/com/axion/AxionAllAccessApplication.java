@@ -87,17 +87,17 @@ public class AxionAllAccessApplication {
 			// Location stub data
 			System.out.println("Generating the Location info.................................................");
 			Location location0 = new Location();
-			location0.setLocation_id(1);
+			location0.setLocationId(1);
 			location0.setCity("Austin");
 			locationService.addLocation(location0);
 
 			Location location1 = new Location();
-			location1.setLocation_id(2);
+			location1.setLocationId(2);
 			location1.setCity("Pittsburgh");
 			locationService.addLocation(location1);
 
 			Location location2 = new Location();
-			location2.setLocation_id(3);
+			location2.setLocationId(3);
 			location2.setCity("Detroit");
 			locationService.addLocation(location2);
 			
