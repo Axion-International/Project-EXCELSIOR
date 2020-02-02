@@ -16,12 +16,15 @@ export class UserpageComponent implements OnInit {
   Heroes: Superbeing[];
 
   private User: User;
+
+  newSuper : Superbeing;
   submitted = false;
 
   constructor(private service: UserService, private router: Router) {
     this.teamQuery = "";
     this.heroQuery = "";
     this.User = new User();
+    this.newSuper = new Superbeing();
     
   }
 

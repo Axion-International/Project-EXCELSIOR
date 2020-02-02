@@ -11,7 +11,7 @@
                     <ng-template #elseBlock><h1>Welcome, {{User.superbeing.superName}}</h1></ng-template>
                 </div>
             </div>
-        <!--CURRENT STATS-->
+<!--CURRENT STATS-->
         <div *ngIf="User.superbeing != null || User.superbeing != undefined">
             <div class="interface-box usection">
                 <div id="Team-card" class="header-card">{{User.superbeing.superName}} statistics</div>
@@ -41,7 +41,7 @@
                 </table>
             </div>
         </div>
-        <!-- TRANSFER REQUEST -->
+<!-- TRANSFER REQUEST -->
         <div *ngIf="User.superbeing != null || User.superbeing != undefined">
             <div class="interface-box usection">
                 <div id="Team-card" class="header-card">Team</div>
@@ -59,7 +59,7 @@
                 </div>
             </div>
             
-            <!-- ADD SUPERBEING TO DATABASE -->
+<!-- ADD SUPERBEING TO DATABASE -->
             <div class="interface-box usection">
                 <div id="Team-card" class="header-card">Add a Super</div>
                 <h4>Add a Superbeing!</h4>
@@ -75,7 +75,7 @@
                 <div class="form-row my-4">
                     <div class="input-group col-md-6">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroup-addSuper">Super Name</span>
+                            <span class="input-group-text" id="inputGroup-addSuper" formControlName="testing"[(ngModel)]="newSuper.superName">Super Name</span>
                         </div>
                       <input type="text" class="form-control" id="supername">
                     </div>
@@ -138,73 +138,6 @@
                     </div>
                 </div>
             </div>
-            <div class="interface-box usection">
-                <div id="Team-card" class="header-card">Team</div>
-                <h4>Add a Superbeing!</h4>
-                <ul>
-                    <li>Are you aware of a superhero or a supervillain that has yet to be entered into our database? Contribute here!</li>
-                </ul>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Supername</span>
-                    </div>
-                    <input type="text" class="form-control">
-                </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Location</span>
-                    </div>
-                    <input type="text" class="form-control">
-                </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Secret Identity First Name</span>
-                    </div>
-                    <input type="text" class="form-control">
-                </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Secret Identity Last Name</span>
-                    </div>
-                    <input type="text" class="form-control">
-                </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Is Team Leader</span>
-                    </div>
-                    <input type="text" class="form-control">
-                </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Strength</span>
-                    </div>
-                    <input type="text" class="form-control">
-                </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Intelligence</span>
-                    </div>
-                    <input type="text" class="form-control">
-                </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Constitution</span>
-                    </div>
-                    <input type="text" class="form-control">
-                </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Agility</span>
-                    </div>
-                    <input type="text" class="form-control">
-                </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Abilities</span>
-                    </div>
-                    <input type="text" class="form-control">
-                </div>
-            </div>
         </div>
             <!--Headers - #323840-->
 
@@ -256,6 +189,8 @@
                             <th scope="col">Agility</th>
                             <th scope="col">Location</th>
                             <th scope="col">Alignment</th>
+                            <th *ngIf="User.superbeing == null || User.superbeing == undefined">Connect</th>
+                            <th *ngIf="User.superbeing != null && User.superbeing.isLeader == true && Hero.team == User.superbeing.team">Expunge</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -267,6 +202,12 @@
                             <th scope="col">{{Hero.agility}}</th>
                             <th scope="col">{{Hero.team.location.city}}</th>
                             <th scope="col">{{Hero.alignment.alignment}}</th>
+                            <th *ngIf="User.superbeing == null || User.superbeing == undefined">
+                                <button type="button">Connect</button>
+                            </th>
+                            <th *ngIf="User.superbeing != null && User.superbeing.isLeader == true && Hero.team == User.superbeing.team">
+                                <button type="button">Expunge</button>
+                            </th>
                         </tr>
                     </tbody>
                 </table>
