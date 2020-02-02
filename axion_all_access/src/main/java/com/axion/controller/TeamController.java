@@ -48,21 +48,24 @@ public class TeamController {
 	}
 	
 	//get all member for the team
-	@GetMapping("/team/member")
-	public List<SuperBeing> getTeamMember(@RequestBody Team team) {
+	@GetMapping("/team/member/{teamName}")
+	public List<SuperBeing> getTeamMember(@PathVariable("teamName") String teamName) {
 		// TODO Auto-generated method stub
+		Team team = service.getByTeamName(teamName);
+		//return null;
 		return service.getTeamMember(team);
 	}
 	
-	@GetMapping("/team/name/{teamName}")
-	public Team getTeamMember(@PathVariable("teamName") String teamName) {
+	@GetMapping("/team/{teamName}")
+	public Team getTeamName(@PathVariable("teamName") String teamName) {
 		// TODO Auto-generated method stub
+		
 		return service.getByTeamName(teamName);
 	}
 	
 	//adding team member
 	@PutMapping("/team/add")
-	public SuperBeing addTeamMember(SuperBeing superbeing) {
+	public SuperBeing addTeamMember(@RequestBody SuperBeing superbeing) {
 		// TODO Auto-generated method stub
 		return service.addTeamMember(superbeing);
 	}

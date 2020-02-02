@@ -1,0 +1,27 @@
+
+<div class=container>
+  <form [formGroup]="teamForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-4">
+            
+            <input type="text" formControlName="teamName" class="form-control" placeholder="Team Name" [ngClass]="{ 'is-invalid': submitted && f.teamName.errors }"/>
+            <div *ngIf="submitted && f.teamName.errors" class="invalid-feedback">
+                <div *ngIf="f.teamName.errors.required">Location is required</div>
+            </div>
+          </div>
+            <div class="col-sm-2">
+              <div class="form-group">
+                <button id="btnPad" class="btn btn-outline-info mr-1" rounded="true" mdbWavesEffect mdbBtn>Search</button>
+            </div>
+
+            </div>
+        </div> 
+      
+        </div>
+  </form>
+</div>
+<app-team-info *ngIf="loading" [team]="team"></app-team-info>
+
+
+

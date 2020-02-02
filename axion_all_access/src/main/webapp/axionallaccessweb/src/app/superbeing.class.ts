@@ -3,13 +3,13 @@ import { Team } from './team.class';
 import { Location } from './location.class';
 
 export class Superbeing {
-   superbeingId: number;
+   superBeingId: number;
    team: Team;
    location: Location;
    alignment: Alignment;
-   supername : string;
-   firstname: string;
-   lastname: string;
+   superName : string;
+   firstName: string;
+   lastName: string;
    leader: boolean;
    strength: number;
    constitution: number;

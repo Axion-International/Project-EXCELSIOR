@@ -1,5 +1,4 @@
 import { Location } from './location.class';
-import { Superbeing } from './superbeing.class';
 import { TeamStatus } from './team-status.class';
 
 export class Team {

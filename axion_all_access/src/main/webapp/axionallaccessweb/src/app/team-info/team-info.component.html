@@ -1,18 +1,33 @@
-<p>team-info works!</p>
+
 <div class="container"> 
-    <h3 style="margin-top: 20px;">TeamInfo</h3>
+    <h3 style="margin-top: 20px;">{{team.name}} Team Member</h3>
     <div class="row">
         <table class="table table-striped">
             <thead>
                 <tr>
-               
+                    <th>#</th>
+                    <th>SuperName</th>
+                    <th>Str</th>
+                    <th>Con</th>
+                    <th>Agi</th>
+                    <th>Int</th>
+                    <th>Ability</th>
+                 
                 </tr>
             </thead>
            <tbody>
-            <tr *ngFor="let promotion of promotions; let i = index">
-        
+            <tr *ngFor="let superbeing of superbeings; let i = index">
+                <th>{{i}}</th>
+                <th>{{superbeing.superName}}</th>
+                <th>{{superbeing.strength}}</th>
+                <th>{{superbeing.constitution}}</th>
+                <th>{{superbeing.agility}}</th>
+                <th>{{superbeing.intelligence}}</th>
+                <th>{{superbeing.abilities}}</th>
             </tr>
            </tbody>
         </table>
     </div>
 </div>
+
+
