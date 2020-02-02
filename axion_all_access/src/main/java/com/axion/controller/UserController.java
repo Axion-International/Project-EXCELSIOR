@@ -1,5 +1,7 @@
 package com.axion.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.axion.exception.AxionException;
+import com.axion.model.TeamTransferRequest;
 import com.axion.model.User;
+import com.axion.service.TeamTransferRequestService;
 import com.axion.service.UserService;
 
 @RestController
@@ -21,6 +25,8 @@ public class UserController {
 	
 	@Autowired
 	private UserService service;
+	@Autowired
+	private TeamTransferRequestService teamTransferRequestService;
 	
 	@PostMapping("/user")
 	public User registerUser(@RequestBody User user) {
@@ -54,6 +60,18 @@ public class UserController {
 	@GetMapping("/logoff")
 	public void userLogoff(HttpSession session) {
 		service.userLogoff(session);
+	}
+	
+	@GetMapping("/transfer")
+	public List<TeamTransferRequest> getAllRequests() {
+		// TODO Auto-generated method stub
+		return teamTransferRequestService.getAllRequests();
+	}
+	
+	@PutMapping("/transfer")
+	public TeamTransferRequest updateTransfer(TeamTransferRequest teamTransferRequest) {
+		// TODO Auto-generated method stub
+		return teamTransferRequestService.updateTransfer(teamTransferRequest);
 	}
 	
 }

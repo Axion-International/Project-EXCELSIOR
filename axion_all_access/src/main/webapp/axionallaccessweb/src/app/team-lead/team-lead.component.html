@@ -1,0 +1,35 @@
+
+<div class="container"> 
+    <div class="interface-box usection">
+        <div id="Team-card" class="header-card">
+    <h3 style="margin-top: 20px;">Team Transfer Request</h3>
+</div>
+    <div class="row">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Supername</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Ability</th>
+                    <th>Team</th>
+                    <th></th>
+                </tr>
+            </thead>
+           <tbody>
+            <tr *ngFor="let transfer of transfers; let i = index">
+                <th>{{i}}</th>
+                <th>{{transfer.superBeing.superName}}</th>
+                <th>{{transfer.superBeing.firstName}}</th>
+                <th>{{transfer.superBeing.lastName}}</th>
+                <th>{{transfer.superBeing.abilities}}</th>
+                <th>{{transfer.superBeing.team.name}}</th>
+                <th><button class="btn btn-primary" (click)="process(transfer.teamTransferId,1,transfer.superbeing,transfer)" type="button" >Approved</button>
+                    <button class="btn btn-primary" (click)="process(transfer.teamTransferId,2,transfer.superbeing,transfer)" type="button" style="margin-left: 5px;" >Rejected</button></th>
+            </tr>
+           </tbody>
+        </table>
+    </div>
+</div>
+</div>

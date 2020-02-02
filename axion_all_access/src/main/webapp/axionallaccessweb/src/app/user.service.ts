@@ -6,6 +6,7 @@ import { Team } from './team.class';
 import { RequestStatus } from './request-status.class';
 import { User } from './user.class';
 import { Role } from './role.class';
+import { TeamTransferRequest } from './team-transfer-request.class';
 
 
 @Injectable({
@@ -99,5 +100,15 @@ export class UserService {
     let curRoleId = parseInt(localStorage.getItem('curRoleId'));
 
     return curRoleId;
+  }
+
+  public getTeamTransfers(): Observable<TeamTransferRequest[]>{
+    const readUrl = this.url+"/transfer";
+    return this.http.get<TeamTransferRequest[]>(readUrl);
+  }
+
+  public updateTeamTransfers(transfer:TeamTransferRequest): Observable<TeamTransferRequest>{
+    const readUrl = this.url+"/transfer";
+    return this.http.put<TeamTransferRequest>(readUrl,transfer);
   }
 }

@@ -5,6 +5,6 @@ import { RequestStatus } from './request-status.class';
 export class TeamTransferRequest {
    teamTransferId: number;
    requestStatus: RequestStatus;
-   superbeing: Superbeing;
+   superBeing: Superbeing;
    team: Team;
  }
