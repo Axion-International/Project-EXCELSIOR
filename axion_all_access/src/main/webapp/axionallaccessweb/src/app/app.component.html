@@ -29,8 +29,39 @@
 
 
 <!---->
-<!--USER SIDE-->
+<!--EMPLOYEE SIDE-->
 <!---->
+
+<div *ngIf="router.url === '/employee'">
+    <!--NAV BAR-->
+    <header>
+        <nav class="navbar fixed-top"id="cNavBarE">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                <img class="a3Logo" style="padding-left: 3px;" src="../../assets/images/A3.svg" alt="A3 logo">
+                <img class="a3Verbage" style="padding-left: 35em; padding-top:7px" src="../../assets/images/AxionAllAccess.svg" alt="A3 verbage">
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <router-outlet></router-outlet>
+
+    <!--FOOTER-->
+    <!--CHANGE SPAN TO BUTTONS-->
+    <footer class="cFootE">
+        <div class="container"style="padding-top:13px">
+            <span ><h5><a [routerLink]="'/aboutus'">about us</a>    |    <a [routerLink]="'/cserve'">customer service</a>    |    <a [routerLink]="'/careers'">careers</a>     |    <a [routerLink]="'/login'">login</a>    |   <a [routerLink]="'/privacy'">privacy</a></h5></span>
+        </div>
+    </footer>
+</div>
+
+<!---->
+<!--USER SIDE P-->
+<!---->
+<!-- parseInt(localStorage.getItem('curUserId')) -->
+
 <div *ngIf="router.url !== '/login' && router.url !== '/employee'">
     <!--NAV BAR-->
     <header>
@@ -60,31 +91,4 @@
 </div>
 
 
-<!---->
-<!--EMPLOYEE SIDE-->
-<!---->
 
-<div *ngIf="router.url === '/employee'">
-    <!--NAV BAR-->
-    <header>
-        <nav class="navbar fixed-top"id="cNavBarE">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                <img class="a3Logo" style="padding-left: 3px;" src="../../assets/images/A3.svg" alt="A3 logo">
-                <img class="a3Verbage" style="padding-left: 35em; padding-top:7px" src="../../assets/images/AxionAllAccess.svg" alt="A3 verbage">
-                </div>
-
-            </div>
-        </nav>
-    </header>
-
-    <router-outlet></router-outlet>
-
-    <!--FOOTER-->
-    <!--CHANGE SPAN TO BUTTONS-->
-    <footer class="cFootE">
-        <div class="container"style="padding-top:13px">
-            <span ><h5><a [routerLink]="'/aboutus'">about us</a>    |    <a [routerLink]="'/cserve'">customer service</a>    |    <a [routerLink]="'/careers'">careers</a>     |    <a [routerLink]="'/login'">login</a>    |   <a [routerLink]="'/privacy'">privacy</a></h5></span>
-        </div>
-    </footer>
-</div>

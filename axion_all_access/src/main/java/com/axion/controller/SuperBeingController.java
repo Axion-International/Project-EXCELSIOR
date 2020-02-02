@@ -2,6 +2,8 @@ package com.axion.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -40,11 +42,11 @@ public class SuperBeingController {
 		return service.getAllSuperBeing();
 	}
 	
-	@GetMapping("user/superbeing/id/{userid}")
-	public SuperBeing getByUserId(@PathVariable("userid") int userid) {
-		// TODO Auto-generated method stub
-		return service.getByUserId(userid);
-	}
+//	@GetMapping("user/superbeing/id/{userid}")
+//	public SuperBeing getByUserId(@PathVariable("userid") int userid) {
+//		// TODO Auto-generated method stub
+//		return service.getByUserId(userid);
+//	}
 	
 	@GetMapping("user/superbeing/name/{supername}")
 	public List<SuperBeing> getBySupername(@PathVariable("supername") String supername) {

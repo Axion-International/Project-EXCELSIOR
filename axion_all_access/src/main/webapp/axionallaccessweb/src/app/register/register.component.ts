@@ -4,6 +4,7 @@ import { MustMatch } from '../Validators/must-match.Validator';
 import { User } from '../user.class';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
+import { Errors } from '../errors';
 
 
 @Component({
@@ -17,6 +18,7 @@ export class RegisterComponent implements OnInit {
   private user : User;
   registerForm: FormGroup;
   submitted = false;
+  private errors:Errors;
 
   constructor(private formBuilder: FormBuilder, private service: UserService, private router: Router ) { 
       this.user = new User();
@@ -42,11 +44,15 @@ export class RegisterComponent implements OnInit {
       if (this.registerForm.invalid) {
           return;
       }else{
-        this.service.registerUser(this.user).subscribe(res=>this.gotoUserList());
+        this.service.registerUser(this.user).subscribe(res=>this.gotoUserList(res),error=>this.errors = error.error);
+
       }
   }
 
-  gotoUserList(): void{
+  gotoUserList(res): void{
+    localStorage.setItem('curUserId', JSON.stringify(res.userId));
+    localStorage.setItem('curUsername', res.username);
+    localStorage.setItem('curRoleId',JSON.stringify(res.role.roleId));
     this.user=new User();
     this.router.navigate(['/user']);
   }

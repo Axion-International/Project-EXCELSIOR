@@ -32,11 +32,11 @@ public class SuperBeingServiceImpl implements SuperBeingService {
 		return superBeingDao.findAll();
 	}
 
-	@Override
-	public SuperBeing getByUserId(int userid) {
-		// TODO Auto-generated method stub
-		return superBeingDao.findByUser(userid);
-	}
+//	@Override
+//	public SuperBeing getByUserId(int userid) {
+//		// TODO Auto-generated method stub
+//		return superBeingDao.findByUser(userid);
+//	}
 
 	@Override
 	public List<SuperBeing> getBySupername(String supername) {

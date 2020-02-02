@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { PromotionRequest } from './promotion-request.class';
 import { User } from './user.class';
 import { Superbeing } from './superbeing.class';
+import { Location } from './location.class';
 
 @Injectable({
   providedIn: 'root'
@@ -41,5 +42,12 @@ export class EmployeeService {
   public promoteLeader(superbeing:Superbeing) {
     const promoLeader ="http://localhost:9000/user/superbeing";
     return this.http.put<Superbeing>(promoLeader,superbeing);
+  }
+  public locationList(): Observable<Location[]> {
+    return this.http.get<Location[]>(this.url+"/location");
+  }
+  
+  public addLocation(location: Location): Observable<Location>{
+    return this.http.post<Location>(this.url+"/location",location);
   }
 }

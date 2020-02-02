@@ -23,6 +23,9 @@
                     <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
                         <div *ngIf="f.username.errors.required">Username is required</div>
                         <div *ngIf="f.username.errors.pattern">Must be a valid username</div>
+                        <div *ngIf="errors != null || errors != undefined">
+                            <p style="color:red;">{{errors.message}}</p>
+                        </div>
                     </div>
                 </div>
                 <div class="form-row">
@@ -54,6 +57,9 @@
                     <button id="btnPad" class="btn btn-outline-secondary mr-1" rounded="true" mdbWavesEffect mdbBtn type="reset" (click)="onReset()">Cancel</button>
                 </div>
             </form>
+            <div *ngIf="errors != null || errors != undefined">
+                <p style="color:red;">{{errors.message}}</p>
+            </div>
         </div>
     </div>
     <br/>

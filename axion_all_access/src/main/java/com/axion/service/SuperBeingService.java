@@ -12,7 +12,7 @@ public interface SuperBeingService {
 
 	public List<SuperBeing> getAllSuperBeing();
 
-	public SuperBeing getByUserId(int userid);
+//	public SuperBeing getByUserId(int userid);
 
 	public List<SuperBeing> getBySupername(String supername);
 

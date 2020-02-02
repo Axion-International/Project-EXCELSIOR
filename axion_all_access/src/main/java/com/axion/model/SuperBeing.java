@@ -21,12 +21,7 @@ import lombok.Setter;
 public class SuperBeing {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	int superBeingId;
-
-	
-	@OneToOne
-	User user;
-	
+	int superBeingId;	
 	String firstName;
 	String lastName;
 	String superName;
