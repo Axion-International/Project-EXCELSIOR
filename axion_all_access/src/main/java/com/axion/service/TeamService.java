@@ -17,6 +17,8 @@ public interface TeamService {
 	public List<TeamTransferRequest> getRequest(int teamId);
 
 	public List<SuperBeing> getTeamMember(int teamId);
+	
+	public Team getByTeamName(String teamName);
 
 	public SuperBeing addTeamMember(SuperBeing superbeing);
 

@@ -53,6 +53,13 @@ public class TeamController {
 		// TODO Auto-generated method stub
 		return service.getTeamMember(teamId);
 	}
+	
+	@GetMapping("/team/{teamName}")
+	public Team getTeamMember(@PathVariable("teamName") String teamName) {
+		// TODO Auto-generated method stub
+		return service.getByTeamName(teamName);
+	}
+	
 	//adding team member
 	@PutMapping("/team/add")
 	public SuperBeing addTeamMember(SuperBeing superbeing) {

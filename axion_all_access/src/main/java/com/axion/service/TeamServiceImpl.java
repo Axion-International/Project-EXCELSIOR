@@ -64,4 +64,10 @@ public class TeamServiceImpl implements TeamService {
 		return transferDao.save(teamTransferRequest);
 	}
 
+	@Override
+	public Team getByTeamName(String teamName) {
+		// TODO Auto-generated method stub
+		return teamDao.findByName(teamName);
+	}
+
 }
