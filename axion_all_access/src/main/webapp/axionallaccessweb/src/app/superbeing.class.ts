@@ -4,7 +4,6 @@ import { Location } from './location.class';
 
 export class Superbeing {
    superbeingId: number;
-   user: number;
    team: Team;
    location: Location;
    alignment: Alignment;
@@ -16,6 +15,6 @@ export class Superbeing {
    constitution: number;
    agility: number;
    intelligence: number;
-   abilities: string;  
+   abilities: string; 
  }
  

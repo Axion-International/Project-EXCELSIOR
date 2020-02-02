@@ -27,6 +27,9 @@ public class User {
 	String username;
 	String password;
 	@OneToOne
+	SuperBeing superbeing;
+	
+	@OneToOne
 	Role role;
 	public User(String username, String password) {
 		this.username = username;

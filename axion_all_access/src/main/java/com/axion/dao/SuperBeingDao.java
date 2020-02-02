@@ -11,6 +11,6 @@ import com.axion.model.User;
 @Repository
 public interface SuperBeingDao extends JpaRepository<SuperBeing, Integer> {
 	List<SuperBeing> findBySuperName(String superName);
-	SuperBeing findByUser(int userid);
+//	SuperBeing findByUser(int userid);
 	List<SuperBeing> findByTeam(int teamId);
 }

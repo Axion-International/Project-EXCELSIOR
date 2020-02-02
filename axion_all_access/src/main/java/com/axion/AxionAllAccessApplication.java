@@ -86,13 +86,6 @@ public class AxionAllAccessApplication {
 			
 			// User stub data
 			System.out.println("Generating the User info.................................................");
-			User user0 = new User();
-			user0.setRole(role3);
-			user0.setUserId(0);
-			user0.setUsername("simpleJack");
-			user0.setPassword("imaleadfarmer");
-			userService.registerUser(user0);
-
 			User user1 = new User();
 			user1.setRole(role2);
 			user1.setUserId(1);
@@ -106,6 +99,13 @@ public class AxionAllAccessApplication {
 			user2.setUsername("samiam");
 			user2.setPassword("ilovegreeneggsandham");
 			userService.registerUser(user2);
+			
+			User user3 = new User();
+			user3.setRole(role3);
+			user3.setUserId(3);
+			user3.setUsername("admin");
+			user3.setPassword("admin");
+			userService.registerUser(user3);
 			
 			// Location stub data
 			System.out.println("Generating the Location info.................................................");
