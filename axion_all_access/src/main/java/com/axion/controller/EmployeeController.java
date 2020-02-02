@@ -42,6 +42,7 @@ public class EmployeeController {
 	@PostMapping("employee/location")
 	public Location addCity(@RequestBody Location location) throws AxionException {
 		// TODO Auto-generated method stub
+		
 		return service.addCity(location);
 	}
 	

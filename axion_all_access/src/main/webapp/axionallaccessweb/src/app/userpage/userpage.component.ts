@@ -5,6 +5,8 @@ import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { Location } from '../location.class';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { subscribeOn } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-userpage',
@@ -12,11 +14,14 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./userpage.component.css']
 })
 export class UserpageComponent implements OnInit {
+  private locations: Location[];
   teamQuery;
   heroQuery;
   Heroes: Superbeing[];
   registerForm: FormGroup;
   private User: User;
+  
+  cityId : number;
 
   newSuper : Superbeing;
   newLoc : Location;
@@ -29,13 +34,13 @@ export class UserpageComponent implements OnInit {
     this.newSuper = new Superbeing();
     this.newLoc = new Location();
 
-    
   }
 
   // roleId: number;
   // roleName: string;
 
   ngOnInit() {
+    this.service.locationList().subscribe(data=>{this.locations = data;});
     this.User.username = localStorage.getItem('curUsername')
     this.User.userId = parseInt(localStorage.getItem('curUserId'));
     this.User.role = JSON.parse(localStorage.getItem('curRole'));
@@ -50,7 +55,7 @@ export class UserpageComponent implements OnInit {
       constitution: ['', [Validators.required, Validators.pattern("^([1-9][0-9]{0,2}|1000)$")]], //number 1 - 1000
       intelligence: ['', [Validators.required, Validators.pattern("^([1-9][0-9]{0,2}|1000)$")]], //number 1 - 1000
       abilities: ['', Validators.required],
-      teamlead: ['', Validators.required],
+      teamlead: [''],
     });
 
   }
@@ -64,9 +69,23 @@ export class UserpageComponent implements OnInit {
     if (this.registerForm.invalid) {
         return;
     }else{
-      //this.service.registerUser(this.user).subscribe(res=>this.gotoUserList(res),error=>this.errors = error.error);
+      for(let loc of this.locations){
+        if(this.newLoc.city == loc.city){
+            //this.cityId = loc.locationId;
+            console.dir(loc);
+            console.log("MATCHES!!!! "+loc.locationId);
+        }else{
+          console.log("NO MATCHES!!!!");
+        }
+      }
+      console.log(this.cityId);
 
     }
+    
+        //this.locations = data;
+      //this.service.registerUser(this.user).subscribe(res=>this.gotoUserList(res),error=>this.errors = error.error);
+      //this.service.addSuperbeing(this.newSuper);
+    
   }
 
   onReset() {
@@ -139,7 +158,6 @@ export class UserpageComponent implements OnInit {
       errorZone.classList.remove("d-none");
       return;
     }
-
   }
 
   populateTeams() {
@@ -152,5 +170,7 @@ export class UserpageComponent implements OnInit {
       this.User = res;
     })
   }
+
+
 
 }

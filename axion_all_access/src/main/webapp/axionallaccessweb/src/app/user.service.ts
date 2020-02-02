@@ -7,6 +7,7 @@ import { RequestStatus } from './request-status.class';
 import { User } from './user.class';
 import { Role } from './role.class';
 import { TeamTransferRequest } from './team-transfer-request.class';
+import { Location } from './location.class';
 
 
 @Injectable({
@@ -37,6 +38,7 @@ export class UserService {
     const updateUrl = this.url+"/user/superbeing";
     return this.http.put<Superbeing>(updateUrl,superbeing);
   }
+
   
   public getAllTeams(): Observable<Team[]> {
     const readUrl = this.url+"/team";
@@ -72,7 +74,7 @@ export class UserService {
 
   /*Returns the current session user so that pages that require a login can use it.
   Currently only returns dummy user. */
-  
+
   public updateUser(user:User): Observable<User> {
     const updateUrl = this.url+"/user";
     
@@ -101,9 +103,7 @@ export class UserService {
 
 
   public getRole(): number{
-  
     let curRoleId = parseInt(localStorage.getItem('curRoleId'));
-
     return curRoleId;
   }
 
@@ -116,4 +116,21 @@ export class UserService {
     const readUrl = this.url+"/transfer";
     return this.http.put<TeamTransferRequest>(readUrl,transfer);
   }
+
+  ///////////////TESTING///////////////////
+  public addSuperbeing(superbeing:Superbeing): Observable<Superbeing> {
+    const updateURL = this.url+"/user/superbeing";
+    return this.http.post<Superbeing>(updateURL,superbeing);
+  }
+
+  public locationList(): Observable<Location[]> {
+    const updateURL = this.url+"/employee/location";
+    return this.http.get<Location[]>(updateURL);
+  }
+  
+  public addLocation(location: Location): Observable<Location>{
+    return this.http.post<Location>(this.url+"/employee/location",location);
+  }
+
+
 }
