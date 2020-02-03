@@ -1,4 +1,5 @@
-<body>
+<br>
+<br>
     <div class=" container card"id ="loginModalBord">
         <h4 class="card-header" id ="loginModal">Registration</h4>
         <div class="card-body"id ="loginModalBord">
@@ -36,13 +37,16 @@
                 </div>
                 <div class="text-center">
                     <button id="btnPad" class="btn btn-outline-info mr-1" rounded="true" mdbWavesEffect mdbBtn>Register</button>
-                    <div *ngIf="errors != null || errors != undefined">
-                        <p style="color:red;">{{errors.message}}</p>
-                    </div>
+                   
                     <div class="divider"></div>
                     <button id="btnPad" class="btn btn-outline-secondary mr-1" rounded="true" mdbWavesEffect mdbBtn type="reset" (click)="onReset()">Cancel</button>
                 </div>
             </form>
+            <br>
+            <div *ngIf="errors != null || errors != undefined">
+                <p style="color:red;">{{errors.message}}</p>
+            </div>
         </div>
     </div>
-</body>
+    <br>
+    <br>

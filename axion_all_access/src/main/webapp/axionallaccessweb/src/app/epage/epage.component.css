@@ -69,13 +69,22 @@
      height: 63px;
      text-align: center;
  }
- 
+
  body{
-     background-image: url(../../assets/images/bckgrnd_2.jpg);
+     background-image: url(../../assets/images/world.jpg);
      background-repeat: no-repeat, no-repeat;
+     background-size: cover;
      background-position: top ;
-     background-color: #9ba8b6;
+     
+     height: 100%;
  }
+ .auth-container {
+    height: 100vh;
+    width: 100vw;
+  }
+  .color{
+    background-color: #9dc5f0d2;
+  }
 
  .interface-box{
      background-color:cornflowerblue;
@@ -113,7 +122,7 @@
      padding:1.25em;
  }
  section{
-    margin-top: 10%;
+    margin-top: 4%;
     margin-left: 5%;
     margin-right: 2%;
    

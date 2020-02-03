@@ -1,27 +1,34 @@
+<body>
 
-<section>
+
+<section  >
   <div classs="container">
-    <h1>Hello World</h1>
+    <br>
+    <br>
+    <br>
+    <br>
     <br>
     <div class="row">
-      <div class="card col-sm-2">
-        <div  style="margin-top: 5%;align-self: center;">
-          <h2>Welcome</h2>
-        </div>
-        <div style="margin-top: 5%;">
-          <p>Link1</p>
-          <p>Link1</p>
-          <p>Link1</p>
-          <p>Link1</p>
-          <p>Link1</p>
-        </div>
-      </div>
-      <div class="card col-sm-9" style="margin-left: 40px;">
+      
+      <div class="card col-sm-10 color" style="margin-left: 5%;">
         <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
           <li [ngbNavItem]="1">
             <a ngbNavLink>News</a>
             <ng-template ngbNavContent>
-              <p>hello</p>
+              <br>
+              <div class="container">
+                <h2>The Return of Doctor Destructo</h2>
+                <p>Doctor Destructo strikes again as the city plunges into madness.  
+                  Local hero Kickapoo states “It ain't all bad…” This reporter has nothing to say.  
+                  When questioned citizens were appalled saying Kickapoo, fresh on the heels of his most recent DUI fiasco, 
+                  “May as well join the malevolent doctor.”
+                </p>
+                <br>
+                <p> In other news, tornados continue to frighten this reporter. Its something about their ability to BLOW STUFF AWAY.  Seriously, that is terrifying.</p>
+
+                </div>
+                <br>
+
             </ng-template>
           </li>
           <li [ngbNavItem]="2">
@@ -53,6 +60,23 @@
       </div>
     </div>
   </div>
- 
-</section>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+<!--- LEGAL -->
+<div class="d-flex justify-content-center  p-5">
+    <img style=" height: 150px" src="../../assets/images/AxionInt.svg" alt="Full logo">
+    <br />
+</div>
+
+
+
+</section >
+</body>
     

@@ -10,13 +10,13 @@
     height: 63px;
     text-align: center;
 }
-
+/* 
 body{
     background-image: url(../../assets/images/bckgrnd_3.jpg);
     background-repeat: no-repeat, no-repeat;
     background-position: top ;
     background-color: #182a40;
-}
+} */
 #btnPad{
     padding:  0.5em 5em;
 }
