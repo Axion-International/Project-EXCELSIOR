@@ -31,13 +31,13 @@ export class PromotionComponent implements OnInit {
   pocessPromo(id:number,value:number,being:Superbeing){
     if(value == 1){
       being.leader=true;
-      this.service.promoteLeader(being).subscribe(data=>{
-        this.superbeing=data;
-      });
+      
     }else {
       being.leader=false;
     }
-   
+    this.service.promoteLeader(being).subscribe(data=>{
+      this.superbeing=data;
+    });
     this.service.deletePromotionRequest(id).subscribe(res=>this.ngOnInit());
   }
   open(content,id) {
