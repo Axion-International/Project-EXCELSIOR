@@ -89,23 +89,23 @@ export class UserpageComponent implements OnInit {
         this.service.addLocation(this.newLoc).subscribe(res=>{
           this.newSetLoc = res;
           this.newSuper.location = res;  // setting location
+          this.cityId = null;
+          if(this.newAlign.alignment_id == 1){
+            this.newAlign.alignment = "Hero";
+          }else if(this.newAlign.alignment_id == 2){
+            this.newAlign.alignment = "Neutral";
+          }else if(this.newAlign.alignment_id == 3){
+            this.newAlign.alignment = "Villain";
+          }
+    
+          
+          this.newSuper.alignment = this.newAlign;  // setting alignment
+          
+          console.dir(this.newSuper);
+    
+          this.service.addSuperbeing(this.newSuper).subscribe(res=>this.toUser());
         });
       }
-
-      if(this.newAlign.alignment_id == 1){
-        this.newAlign.alignment = "Hero";
-      }else if(this.newAlign.alignment_id == 2){
-        this.newAlign.alignment = "Neutral";
-      }else if(this.newAlign.alignment_id == 3){
-        this.newAlign.alignment = "Villain";
-      }
-
-      
-      this.newSuper.alignment = this.newAlign;  // setting alignment
-
-      console.dir(this.newSuper);
-
-      this.service.addSuperbeing(this.newSuper).subscribe(res=>this.toUser());
     }
     
   }
