@@ -122,8 +122,8 @@ public class AxionAllAccessApplication {
 
 			SuperBeing sb1 = new SuperBeing();
 			sb1.setSuperBeingId(1);
-			sb1.setFirstName("Sam");
-			sb1.setLastName("Cunnginham");
+			sb1.setFirstName("Jack");
+			sb1.setLastName("Black");
 			sb1.setSuperName("EyeKnot");
 			sb1.setStrength(7);
 			sb1.setAgility(26);
@@ -304,16 +304,16 @@ public class AxionAllAccessApplication {
 			User user1 = new User();
 			user1.setRole(role2);
 			user1.setUserId(1);
-			user1.setUsername("lululuvely");
-			user1.setPassword("hubbawubba");
+			user1.setUsername("jack");
+			user1.setPassword("black");
 			user1.setSuperbeing(sb1);
 			userService.registerUser(user1);
 
 			User user2 = new User();
 			user2.setRole(role1);
 			user2.setUserId(2);
-			user2.setUsername("samiam");
-			user2.setPassword("ilovegreeneggsandham");
+			user2.setUsername("sam");
+			user2.setPassword("hello");
 			user2.setSuperbeing(sb2);
 			userService.registerUser(user2);
 			
