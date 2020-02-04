@@ -20,7 +20,10 @@
                   </tr>
                   <tr>
                     <th>Team: </th>
-                    <th>{{superbeing.team.name}}</th>
+                    <th>
+                      <div *ngIf="superbeing.team != null">
+                        {{superbeing.team.name}}
+                      </div></th>
                   </tr>
                   <tr>
                     <th>Location: </th>

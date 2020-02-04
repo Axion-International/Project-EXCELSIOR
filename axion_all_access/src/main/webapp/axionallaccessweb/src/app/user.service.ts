@@ -21,7 +21,7 @@ export class UserService {
   private url:string;
   //change urls in methods they are not set for the spring controller
   constructor(private http:HttpClient) {
-    this.url="http://localhost:9000";
+    this.url="http://ec2-3-16-112-236.us-east-2.compute.amazonaws.com:9000";
    }
 
    public getAllSuperbeings(): Observable<Superbeing[]> {
