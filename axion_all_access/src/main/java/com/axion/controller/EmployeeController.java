@@ -20,7 +20,7 @@ import com.axion.service.EmployeeService;
 import com.axion.service.ReferenceService;
 
 @RestController
-@CrossOrigin(origins = "http://axionallaccesswebv1.1.s3-website.us-east-2.amazonaws.com:4200")
+@CrossOrigin(origins = "http://axionallaccesswebv1.1.s3-website.us-east-2.amazonaws.com")
 public class EmployeeController {
 	
 	@Autowired
