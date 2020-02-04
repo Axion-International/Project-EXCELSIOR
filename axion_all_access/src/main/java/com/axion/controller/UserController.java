@@ -20,7 +20,7 @@ import com.axion.service.TeamTransferRequestService;
 import com.axion.service.UserService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://axionallaccesswebv1.1.s3-website.us-east-2.amazonaws.com:4200")
 public class UserController {
 	
 	@Autowired
